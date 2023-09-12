@@ -96,7 +96,12 @@
                                 <li>
                                     <div class="dropdown-divider mb-0"></div>
                                 </li>
-                                <li><a class="dropdown-item" href="javascript:;"><i class='bx bx-log-out-circle'></i><span>Logout</span></a>
+                                <li>
+                                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                        <i class='bx bx-log-out-circle'></i><span>Logout</span></a>
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                            @csrf
+                                        </form>
                                 </li>
                             </ul>
                         </div>
@@ -104,47 +109,4 @@
                 </div>
             </header>
             <!--end header -->
-
-            <!--start page wrapper -->
-            <div class="page-wrapper">
-                <div class="page-content">
-
-                        <div class="row row-cols-1 row-cols-md-2 row-cols-xl-4">
-                            <div class="col">
-                                <div class="card radius-10 bg-gradient-deepblue">
-                                <div class="card-body">
-                                    <div class="d-flex align-items-center">
-                                        <h5 class="mb-0 text-white">9526</h5>
-                                        <div class="ms-auto">
-                                            <i class='bx bx-cart fs-3 text-white'></i>
-                                        </div>
-                                    </div>
-                                    <div class="progress my-3 bg-light-transparent" style="height:3px;">
-                                        <div class="progress-bar bg-white" role="progressbar" style="width: 55%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                    <div class="d-flex align-items-center text-white">
-                                        <p class="mb-0">Total Orders</p>
-                                        <p class="mb-0 ms-auto">+4.2%<span><i class='bx bx-up-arrow-alt'></i></span></p>
-                                    </div>
-                                </div>
-                            </div>
-                            </div>
-                        </div>
-                        <!--end row-->
-
-
-                </div>
-            </div>
-            <!--end page wrapper -->
-            <!--start overlay-->
-            <div class="overlay toggle-icon"></div>
-            <!--end overlay-->
-            <!--Start Back To Top Button--> <a href="javaScript:;" class="back-to-top"><i class='bx bxs-up-arrow-alt'></i></a>
-            <!--End Back To Top Button-->
-            <footer class="page-footer">
-                <p class="mb-0">Copyright © 2021. All right reserved.</p>
-            </footer>
-        </div>
-        <!--end wrapper-->
-
 @endsection
