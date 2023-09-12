@@ -1,9 +1,13 @@
 @extends('layouts.master')
 
 @section('content')
-
+<style>
+.wrapper.regwrapper {
+    padding: 65px 0px;
+}
+</style>
 <!--wrapper-->
-<div class="wrapper">
+<div class="wrapper regwrapper">
     <div class="d-flex align-items-center justify-content-center my-5 my-lg-0">
         <div class="container">
             <div class="row row-cols-1 row-cols-lg-2 row-cols-xl-2">
