@@ -11,6 +11,14 @@
                     <div class="my-4 text-center">
                         <img src="{{asset('/')}}images/logo-img.png" width="180" alt="" />
                     </div>
+
+                    @if(isset($successMessage))
+                        <div class="alert alert-success">
+                            {{ $successMessage }}
+                        </div>
+                    @endif
+
+
                     <div class="card">
                         <div class="card-body">
                             <div class="border p-4 rounded">

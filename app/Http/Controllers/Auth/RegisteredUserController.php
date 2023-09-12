@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 use Illuminate\View\View;
+use Illuminate\Support\Facades\Session;
 
 class RegisteredUserController extends Controller
 {
@@ -20,7 +21,10 @@ class RegisteredUserController extends Controller
      */
     public function create(): View
     {
-        return view('auth.register');
+        // Check for the 'success' flash message
+        $successMessage = Session::get('success');
+
+        return view('auth.register', ['successMessage' => $successMessage]);
     }
 
     /**
@@ -44,8 +48,12 @@ class RegisteredUserController extends Controller
 
         event(new Registered($user));
 
-        Auth::login($user);
+        //Auth::login($user);
 
-        return redirect(RouteServiceProvider::HOME);
+        // Set a success flash message
+        Session::flash('success', 'Registration successful!');
+
+        // Redirect back to the registration form
+        return redirect()->route('register');
     }
 }
