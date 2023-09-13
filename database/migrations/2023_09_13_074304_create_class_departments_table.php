@@ -11,11 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('sliders', function (Blueprint $table) {
+        Schema::create('class_departments', function (Blueprint $table) {
             $table->id();
-            $table->string('title',50);
-            $table->string('image',150)->nullable();
-            $table->string('description',240)->nullable(); 
+            $table->string('name',50);
+            $table->string('head_photo',150)->nullable();
+            $table->integer('teacher_id')->unsigned();
+            $table->foreign('teacher_id')->references('id')->on('teachers')->onDelete('RESTRICT');
+            $table->string('about',600)->nullable(); 
             $table->boolean('status')->default(1);           
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('RESTRICT');
@@ -29,6 +31,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('sliders');
+        Schema::dropIfExists('class_departments');
     }
 };

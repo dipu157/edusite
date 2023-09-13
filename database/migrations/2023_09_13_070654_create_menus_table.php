@@ -15,7 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('menu_name',50);
             $table->string('image',150)->nullable();
-            $table->string('description',600)->nullable();            
+            $table->string('description',600)->nullable(); 
+            $table->boolean('status')->default(1);           
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('RESTRICT');
             $table->timestamp('created_at')->default(\DB::raw('CURRENT_TIMESTAMP'));

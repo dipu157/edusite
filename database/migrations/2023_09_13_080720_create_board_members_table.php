@@ -11,12 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('sliders', function (Blueprint $table) {
+        Schema::create('board_members', function (Blueprint $table) {
             $table->id();
-            $table->string('title',50);
-            $table->string('image',150)->nullable();
-            $table->string('description',240)->nullable(); 
-            $table->boolean('status')->default(1);           
+            $table->string('full_name',150);
+            $table->string('position',150);
+            $table->string('photo',150)->nullable();
+            $table->string('email',190)->nullable();
+            $table->string('mobile',150)->nullable();
+            $table->date('dob')->nullable();
+            $table->char('gender',1)->comments('M=> Male F=>Female');
+            $table->char('blood_group',30)->nullable();
+            $table->string('national_id',20)->nullable();
+            $table->boolean('status')->default(1);
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('RESTRICT');
             $table->timestamp('created_at')->default(\DB::raw('CURRENT_TIMESTAMP'));
@@ -29,6 +35,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('sliders');
+        Schema::dropIfExists('board_members');
     }
 };

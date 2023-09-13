@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('email',190)->unique()->nullable();
             $table->string('city',200);
             $table->string('state',200)->nullable();
-            $table->string('post_code',200)->nullable();;
+            $table->string('post_code',200)->nullable();
             $table->string('country',100);
             $table->string('phone_no',200)->nullable();
             $table->string('website',190)->nullable();
