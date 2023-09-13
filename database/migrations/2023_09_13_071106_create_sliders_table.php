@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('sliders', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
             $table->string('title',50);
             $table->string('image',150)->nullable();
             $table->string('description',240)->nullable(); 

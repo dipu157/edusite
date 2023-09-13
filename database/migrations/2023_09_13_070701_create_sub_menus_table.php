@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('sub_menus', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
             $table->integer('menu_id')->unsigned();
             $table->foreign('menu_id')->references('id')->on('menus')->onDelete('RESTRICT');
             $table->string('sub_menu_name',50);
