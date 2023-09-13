@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Auth\RegisteredUserController;
+use App\Http\Controllers\Institute\InstituteController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,13 +24,23 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
-    Route::get('register', [RegisteredUserController::class, 'create'])
-                ->name('register');
+
+    // User Registration Route
+    Route::get('register', [RegisteredUserController::class, 'create'])->name('register');
     Route::post('register', [RegisteredUserController::class, 'store']);
     
+    // User Profile Route
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+Route::group(['prefix' => 'institute', 'namespace' => 'Institute', 'middleware' => ['auth']], function () {
+
+    //  Institute Manage Route
+    Route::get('/index',[InstituteController::class, 'index'])->name('manageInstitute');
+
+
 });
 
 require __DIR__.'/auth.php';
