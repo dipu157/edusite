@@ -14,8 +14,8 @@
         <!--end breadcrumb-->
       
         <div class="card">
-            <div class="card-body">
-                <div class="d-lg-flex align-items-center mb-4 gap-3">                  
+            <div class="card-body" id="show_institutes">
+                {{-- <div class="d-lg-flex align-items-center mb-4 gap-3">                  
                 </div>
                 <div class="table-responsive" id="instituteTableId">
                     <table id="instituteTable" class="table table-striped table-bordered" style="width:100%">
@@ -35,7 +35,7 @@
                           <!-- Table rows dynamically generated in your Django view -->
                         </tbody>
                     </table>
-                </div>
+                </div> --}}
             </div>
         </div>
 
@@ -46,3 +46,50 @@
 <!--end page wrapper -->
 
 @endsection
+
+@push('scripts')
+
+<script>
+
+$(document).ready(function() {
+    // Get All institute function call
+     fetchAllInstitute();
+ 
+     // Get All institute function
+    //  function fetchAllInstitute() {
+    //      axios.get("institutedata/")
+    //          .then(function (res) {
+    //              $('#instituteTable').DataTable({
+    //                  "bDestroy": true,
+    //                  data: res.data,
+    //                  columns: [
+    //                      { data: 'ID' },
+    //                      { data: 'Logo' },
+    //                      { data: 'Name' },
+    //                      { data: 'Address' },
+    //                      { data: 'Email' },
+    //                      { data: 'Phone' },
+    //                      { data: 'Website' },
+    //                      { data: 'Action' }
+    //                  ]
+    //              });
+    //          })
+    //          .catch(function (err) {
+    //              console.log(err);
+    //          });
+    //  }
+    // Get All Institute function
+		function fetchAllInstitute(){
+		$.ajax({
+		url: '{{ route('institutedata') }}',
+		method: 'get',
+		success: function(res){
+		    $("#show_institutes").html(res);
+		}
+		});
+		}
+});
+
+</script>
+
+@endpush
