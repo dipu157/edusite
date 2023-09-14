@@ -21,6 +21,9 @@
 	  <script src="{{asset('/')}}js/index.js"></script>
 	<!--app JS-->
 	<script src="{{asset('/')}}js/app.js"></script>
+
+	@stack('scripts')
+	
 </body>
 
 </html>

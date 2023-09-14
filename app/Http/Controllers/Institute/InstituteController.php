@@ -14,7 +14,8 @@ class InstituteController extends Controller
     public function index()
     {
         $instituteInfo = InstituteInfo::query()->get();
-        dd($instituteInfo);
+        //dd($instituteInfo);
+        return view('Institute.manageInstitute',compact('instituteInfo'));
     }
 
     /**
