@@ -47,34 +47,35 @@ $(document).ready(function() {
 
     // Add Institute Code
 	$("#instituteForm").submit(function(e){
-	e.preventDefault();
-	const fd = new FormData(this);
-	$("#btnsave").text('Adding...');
-	$.ajax({
-	url: '{{ route('save') }}',
-	method: 'post',
-	data: fd,
-	cache: false,
-	processData: false,
-	contentType: false,
-	success: function(res){
-	if(res.status == 200){
-		toastr.success('Data Save Successfully');
-		fetchAllInstitute();
-	}
-	$("#btnsave").text('SAVE');
-	$("#instituteForm")[0].reset();
-	$("#addInstituteModal").modal('hide');
-	},
-    error: function (request, status, error) {
-        toastr.error(request.responseText);
-        fetchAllInstitute();
-        $("#btnsave").text('SAVE');
-	$("#instituteForm")[0].reset();
-	$("#addInstituteModal").modal('hide');
-    }
+        e.preventDefault();
+        const fd = new FormData(this);
+        $("#btnsave").text('Adding...');
+        $.ajax({
+            url: '{{ route('save') }}',
+            method: 'post',
+            data: fd,
+            cache: false,
+            processData: false,
+            contentType: false,
+            success: function(res){
+                console.log(res);
+                if(res.status == 200){
+                    toastr.success('Data Save Successfully');
+                    fetchAllInstitute();
+                }
+                $("#btnsave").text('SAVE');
+                $("#instituteForm")[0].reset();
+                $("#addInstituteModal").modal('hide');
+            },
+            error: function (request, status, error) {
+                toastr.error(request.responseText);
+                fetchAllInstitute();
+                $("#btnsave").text('SAVE');
+            $("#instituteForm")[0].reset();
+            $("#addInstituteModal").modal('hide');
+            }
 
-	});
+        });
 	});
 });
 

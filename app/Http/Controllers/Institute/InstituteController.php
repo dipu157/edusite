@@ -67,7 +67,7 @@ class InstituteController extends Controller
 
         $file = $request->file('logo');
         $filename = time().'.'.$file->getClientOriginalExtension();
-        $file->storeAs('public/images/institute/', $filename);
+        $file->storeAs('public/images', $filename);
 
         // $insData = [
         //     'name' => $request->name,
