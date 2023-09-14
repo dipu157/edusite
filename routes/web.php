@@ -40,6 +40,7 @@ Route::group(['prefix' => 'institute', 'namespace' => 'Institute', 'middleware' 
     //  Institute Manage Route
     Route::get('/index',[InstituteController::class, 'index'])->name('manageInstitute');
     Route::get('/institutedata', [InstituteController::class, 'getAllInstitute'])->name('institutedata');
+    Route::post('/saveInstitute', [InstituteController::class, 'create'])->name('save');
 
 
 });

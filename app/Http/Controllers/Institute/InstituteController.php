@@ -60,4 +60,40 @@ class InstituteController extends Controller
             echo '<h1 class="text-center text-secondary my-5">No Record Found in Database</h1>';
         }
     }
+
+
+    public function create(Request $request)
+    {
+
+        $file = $request->file('logo');
+        $filename = time().'.'.$file->getClientOriginalExtension();
+        $file->storeAs('public/images/institute/', $filename);
+
+        // $insData = [
+        //     'name' => $request->name,
+        //     'email' => $request->email,
+        //     'phone_no' => $request->phone_no,
+        //     'website' => $request->website,
+        //     'address' => $request->address,
+        //     'city' => $request->city,
+        //     'state' => $request->state,
+        //     'logo' => $filename,
+        //     'post_code' => $request->post_code,
+        //     'country' => $request->country,
+        // ];
+
+        // InstituteInfo::create($insData);
+        // return response()->json([
+        //     'status' => 200
+        // ]);
+
+        InstituteInfo::create($request->only([
+            'name', 'email', 'phone_no', 'website', 'address', 'city', 'state', 'logo', 'post_code', 'country'
+        ]));
+    
+        return response()->json(['status' => 200]);
+    }
+
+
+
 }
