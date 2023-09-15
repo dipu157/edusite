@@ -8,7 +8,6 @@
 	<!--favicon-->
 	<link rel="icon" href="{{asset('/')}}images/favicon-32x32.png" type="image/png" />
 	<!--plugins-->
-	<link href="{{asset('/')}}plugins/vectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet"/>
 	<link href="{{asset('/')}}plugins/simplebar/css/simplebar.css" rel="stylesheet" />
 	<link href="{{asset('/')}}plugins/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet" />
 	<link href="{{asset('/')}}plugins/metismenu/css/metisMenu.min.css" rel="stylesheet" />
@@ -19,9 +18,5 @@
 	<link href="{{asset('/')}}css/bootstrap.min.css" rel="stylesheet">
 	<link href="{{asset('/')}}css/app.css" rel="stylesheet">
 	<link href="{{asset('/')}}css/icons.css" rel="stylesheet">
-	<!-- Theme Style CSS -->
-	<link rel="stylesheet" href="{{asset('/')}}css/dark-theme.css" />
-	<link rel="stylesheet" href="{{asset('/')}}css/semi-dark.css" />
-	<link rel="stylesheet" href="{{asset('/')}}css/header-colors.css" />
 	<title>Education Admin Template</title>
 </head>

@@ -40,8 +40,7 @@ class InstituteController extends Controller
             foreach ($instituteInfo as $i_info) {
                 $output .= '<tr>
                 <td>'.$i_info->id.'</td>
-                <td><img src="storage/images/'.$i_info->logo.'" width="50"
-                class="img-thumbnail"></td>
+                <td>'.$i_info->logo.'</td>
                 <td>'. $i_info->name.'</td>
                 <td>'.$i_info->address.'</td>
                 <td>'.$i_info->email.'</td>
@@ -69,28 +68,22 @@ class InstituteController extends Controller
         $filename = time().'.'.$file->getClientOriginalExtension();
         $file->storeAs('public/images', $filename);
 
-        // $insData = [
-        //     'name' => $request->name,
-        //     'email' => $request->email,
-        //     'phone_no' => $request->phone_no,
-        //     'website' => $request->website,
-        //     'address' => $request->address,
-        //     'city' => $request->city,
-        //     'state' => $request->state,
-        //     'logo' => $filename,
-        //     'post_code' => $request->post_code,
-        //     'country' => $request->country,
-        // ];
+        $insData = [
+            'name' => $request->name,
+            'email' => $request->email,
+            'phone_no' => $request->phone_no,
+            'website' => $request->website,
+            'address' => $request->address,
+            'city' => $request->city,
+            'state' => $request->state,
+            'logo' => $filename,
+            'post_code' => $request->post_code,
+            'country' => $request->country,
+        ];
 
-        // InstituteInfo::create($insData);
-        // return response()->json([
-        //     'status' => 200
-        // ]);
+        //dd($insData);
 
-        InstituteInfo::create($request->only([
-            'name', 'email', 'phone_no', 'website', 'address', 'city', 'state', 'logo', 'post_code', 'country'
-        ]));
-    
+        InstituteInfo::create($insData);
         return response()->json(['status' => 200]);
     }
 
