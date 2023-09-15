@@ -19,6 +19,7 @@
         </div>
 
         @include('Institute/modal/add_institute')
+        @include('Institute/modal/edit_institute')
 
     </div>
 </div>
@@ -77,6 +78,65 @@ $(document).ready(function() {
 
         });
 	});
+
+
+    //Edit Icon click for Employee Edit
+		$(document).on('click', '.editIcon', function(e){
+		e.preventDefault();
+		let id = $(this).attr('id');
+        console.log(id + "Clicked");
+		$.ajax({
+		url: '{{ route('edit') }}',
+		method: 'get',
+		data: {
+		id: id,
+		_token: '{{ csrf_token() }}'
+		},
+		success: function(res){
+			console.log(res);
+
+            $("#ins_id").val(res.id);
+			$("#name").val(res.name);
+			$("#email").val(res.email);
+			$("#address").val(res.address);
+			$("#city").val(res.city);
+			$("#state").val(res.state);
+			$("#post_code").val(res.post_code);
+			$("#country").val(res.country);
+			$("#phone_no").val(res.phone_no);
+			$("#website").val(res.website);
+			$("#logo_img").html(`<img src="storage/images/${res.logo}" width="100" class="img-fluid img-thumbnail">`);
+			$("#ins_logo").val(res.logo);
+		}
+		});
+		});
+
+		// update employee ajax request
+	$("#edit_employee_form").submit(function(e) {
+	e.preventDefault();
+	const fd = new FormData(this);
+	$("#edit_employee_btn").text('Updating...');
+		$.ajax({
+			url: '{{ route('update') }}',
+			method: 'post',
+			data: fd,
+			cache: false,
+			contentType: false,
+			processData: false,
+			dataType: 'json',
+		success: function(response) {
+			if (response.status == 200) {
+                toastr.success('Update Successfully');
+				fetchAllEmployees();
+			}
+			$("#edit_employee_btn").text('Update');
+			$("#edit_employee_form")[0].reset();
+			$("#editEmployeeModal").modal('hide');
+			}
+		});
+	});
+
+
 });
 
 </script>

@@ -28,7 +28,7 @@ Route::middleware('auth')->group(function () {
     // User Registration Route
     Route::get('register', [RegisteredUserController::class, 'create'])->name('register');
     Route::post('register', [RegisteredUserController::class, 'store']);
-    
+
     // User Profile Route
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
@@ -41,6 +41,8 @@ Route::group(['prefix' => 'institute', 'namespace' => 'Institute', 'middleware' 
     Route::get('/index',[InstituteController::class, 'index'])->name('manageInstitute');
     Route::get('/institutedata', [InstituteController::class, 'getAllInstitute'])->name('institutedata');
     Route::post('/saveInstitute', [InstituteController::class, 'create'])->name('save');
+    Route::get('/editInstitute', [InstituteController::class, 'edit'])->name('edit');
+    Route::post('/employeeUpdate', [InstituteController::class, 'update'])->name('update');
 
 
 });

@@ -19,7 +19,7 @@ class InstituteController extends Controller
 
     public function getAllInstitute()
     {
-        $instituteInfo = InstituteInfo::all();
+        $instituteInfo = InstituteInfo::query()->where('status',1)->get();
         $output = '';
         if($instituteInfo->count() > 0){
             $output .= '<table id="instituteTable" class="table table-striped table-bordered" style="width:100%">
@@ -51,7 +51,7 @@ class InstituteController extends Controller
                 <td>'.$i_info->phone_no.'</td>
                 <td>'.$i_info->website.'</td>
                 <td>
-                  <a class="btn-edit" data-bs-toggle="modal" data-bs-target="#addInstituteModal" id="' . $i_info->id . '"><i class="bx bxs-edit"></i></a>
+                  <a class="btn-edit editIcon" data-bs-toggle="modal" data-bs-target="#editInstituteModal" id="' . $i_info->id . '"><i class="bx bxs-edit"></i></a>
 
                   <a class="ms-3 btn-delete" id="' . $i_info->id . '"><i class="bx bxs-trash"></i></a>
                 </td>
@@ -89,6 +89,13 @@ class InstituteController extends Controller
 
         InstituteInfo::create($insData);
         return response()->json(['status' => 200]);
+    }
+
+    public function edit(Request $request){
+
+        $id = $request->id;
+        $ins = InstituteInfo::find($id);
+        return response()->json($ins);
     }
 
 
