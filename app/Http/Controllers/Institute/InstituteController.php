@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Institute;
 use App\Http\Controllers\Controller;
 use App\Models\InstituteInfo\InstituteInfo;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Asset;
 
 class InstituteController extends Controller
 {
@@ -13,8 +14,6 @@ class InstituteController extends Controller
      */
     public function index()
     {
-        //$instituteInfo = InstituteInfo::query()->get();
-        //dd($instituteInfo);
         return view('Institute.manageInstitute');
     }
 
@@ -38,16 +37,21 @@ class InstituteController extends Controller
             </thead>
             <tbody>';
             foreach ($instituteInfo as $i_info) {
+                // Generate the image URL
+                $defaultImage = asset('storage/images/1694713766.jpg');
+                $imageUrl = asset('storage/images/'.$i_info->logo);
+                $imageSrc =  $i_info->logo ? $imageUrl : $defaultImage;
+
                 $output .= '<tr>
                 <td>'.$i_info->id.'</td>
-                <td>'.$i_info->logo.'</td>
+                <td><img src='.$imageSrc.' width="50" class="img-thumbnail"></td>
                 <td>'. $i_info->name.'</td>
                 <td>'.$i_info->address.'</td>
                 <td>'.$i_info->email.'</td>
                 <td>'.$i_info->phone_no.'</td>
                 <td>'.$i_info->website.'</td>
                 <td>
-                  <a class="btn-edit" data-bs-toggle="modal" data-bs-target="#addDesignationModal" id="' . $i_info->id . '"><i class="bx bxs-edit"></i></a>
+                  <a class="btn-edit" data-bs-toggle="modal" data-bs-target="#addInstituteModal" id="' . $i_info->id . '"><i class="bx bxs-edit"></i></a>
 
                   <a class="ms-3 btn-delete" id="' . $i_info->id . '"><i class="bx bxs-trash"></i></a>
                 </td>

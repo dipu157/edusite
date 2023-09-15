@@ -12,7 +12,7 @@
                 <i class="bx bxs-plus-square"></i>Add Institute</button></div>
         </div>
         <!--end breadcrumb-->
-      
+
         <div class="card">
             <div class="card-body" id="show_institutes">
             </div>
@@ -32,18 +32,18 @@
 
 $(document).ready(function() {
     // Get All institute function call
-     fetchAllInstitute();
- 
+    fetchAllInstitute();
+
     // Get All Institute function
-		function fetchAllInstitute(){
-		$.ajax({
-		url: '{{ route('institutedata') }}',
-		method: 'get',
-		success: function(res){
-		    $("#show_institutes").html(res);
-		}
-		});
-		}
+    function fetchAllInstitute(){
+    $.ajax({
+    url: '{{ route('institutedata') }}',
+    method: 'get',
+    success: function(res){
+        $("#show_institutes").html(res);
+    }
+    });
+    }
 
     // Add Institute Code
 	$("#instituteForm").submit(function(e){
