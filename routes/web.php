@@ -42,7 +42,7 @@ Route::group(['prefix' => 'institute', 'namespace' => 'Institute', 'middleware' 
     Route::get('/institutedata', [InstituteController::class, 'getAllInstitute'])->name('institutedata');
     Route::post('/saveInstitute', [InstituteController::class, 'create'])->name('save');
     Route::get('/editInstitute', [InstituteController::class, 'edit'])->name('edit');
-    Route::post('/employeeUpdate', [InstituteController::class, 'update'])->name('update');
+    Route::post('/InstituteUpdate', [InstituteController::class, 'update'])->name('update');
 
 
 });

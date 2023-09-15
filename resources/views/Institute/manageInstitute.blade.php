@@ -112,10 +112,10 @@ $(document).ready(function() {
 		});
 
 		// update employee ajax request
-	$("#edit_employee_form").submit(function(e) {
+	$("#edit_instituteForm").submit(function(e) {
 	e.preventDefault();
 	const fd = new FormData(this);
-	$("#edit_employee_btn").text('Updating...');
+	$("#btnupdate").text('Updating...');
 		$.ajax({
 			url: '{{ route('update') }}',
 			method: 'post',
@@ -127,11 +127,11 @@ $(document).ready(function() {
 		success: function(response) {
 			if (response.status == 200) {
                 toastr.success('Update Successfully');
-				fetchAllEmployees();
+				fetchAllInstitute();
 			}
-			$("#edit_employee_btn").text('Update');
-			$("#edit_employee_form")[0].reset();
-			$("#editEmployeeModal").modal('hide');
+			$("#btnupdate").text('Update');
+			$("#edit_instituteForm")[0].reset();
+			$("#editInstituteModal").modal('hide');
 			}
 		});
 	});

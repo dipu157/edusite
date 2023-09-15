@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\InstituteInfo\InstituteInfo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Asset;
+use Illuminate\Support\Facades\Storage;
 
 class InstituteController extends Controller
 {
@@ -96,6 +97,42 @@ class InstituteController extends Controller
         $id = $request->id;
         $ins = InstituteInfo::find($id);
         return response()->json($ins);
+    }
+
+    // handle update an InstituteInfo ajax request
+    public function update(Request $request) {
+
+        $fileName = '';
+        $ins = InstituteInfo::find($request->id);
+
+        if ($request->hasFile('logo')) {
+            $file = $request->file('logo');
+            $fileName = time() . '.' . $file->getClientOriginalExtension();
+            $file->storeAs('public/images', $fileName);
+            if ($ins->photo) {
+                Storage::delete('public/images/' . $ins->logo);
+            }
+        } else {
+            $fileName = $request->ins_logo;
+        }
+
+        $insData = [
+            'name' => $request->name,
+            'email' => $request->email,
+            'phone_no' => $request->phone_no,
+            'website' => $request->website,
+            'address' => $request->address,
+            'city' => $request->city,
+            'state' => $request->state,
+            'post_code' => $request->post_code,
+            'country' => $request->country,
+            'photo' => $fileName
+        ];
+
+        $ins->update($insData);
+        return response()->json([
+            'status' => 200,
+        ]);
     }
 
 
