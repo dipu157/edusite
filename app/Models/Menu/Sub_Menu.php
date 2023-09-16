@@ -8,4 +8,17 @@ use Illuminate\Database\Eloquent\Model;
 class Sub_Menu extends Model
 {
     use HasFactory;
+
+    protected $table= 'sub_menus';
+
+    protected $guarded = ['id', 'created_at','updated_at'];
+
+    protected $fillable = [
+        'menu_id',
+        'sub_menu_name',
+        'image',
+        'description',
+        'status',
+        'user_id',
+    ];
 }

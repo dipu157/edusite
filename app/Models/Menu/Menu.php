@@ -8,4 +8,16 @@ use Illuminate\Database\Eloquent\Model;
 class Menu extends Model
 {
     use HasFactory;
+
+    protected $table= 'menus';
+
+    protected $guarded = ['id', 'created_at','updated_at'];
+
+    protected $fillable = [
+        'menu_name',
+        'image',
+        'description',
+        'status',
+        'user_id',
+    ];
 }

@@ -8,4 +8,22 @@ use Illuminate\Database\Eloquent\Model;
 class Notice extends Model
 {
     use HasFactory;
+
+    protected $table= 'staff';
+
+    protected $guarded = ['id', 'created_at','updated_at'];
+
+    protected $fillable = [
+        'title',
+        'attachment',
+        'short_description',
+        'description',
+        'notice_date',
+        'expiry_date',
+        'type',
+        'confidentiality',
+        'receiver',
+        'status',
+        'user_id',
+    ];
 }

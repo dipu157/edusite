@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('full_name',150);
             $table->string('father_name',100)->nullable();
             $table->string('mother_name',100)->nullable();
-            $table->string('position',150);
+            $table->string('roll',150);
             $table->string('class_department',150);
             $table->string('class_department_start',150);
             $table->string('photo',150)->nullable();
