@@ -35,7 +35,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::group(['prefix' => 'institute', 'namespace' => 'Institute', 'middleware' => ['auth']], function () {
+Route::group(['namespace' => 'Institute', 'middleware' => ['auth']], function () {
 
     //  Institute Manage Route
     Route::get('/index',[InstituteController::class, 'index'])->name('manageInstitute');
