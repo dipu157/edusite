@@ -47,4 +47,12 @@ Route::group(['namespace' => 'Institute', 'middleware' => ['auth']], function ()
 
 });
 
+Route::group(['namespace' => 'Members', 'middleware' => ['auth']], function () {
+
+    //  Members Manage Route
+    Route::get('/boardMemberIndex',[InstituteController::class, 'index'])->name('boardMembers');
+
+
+});
+
 require __DIR__.'/auth.php';
