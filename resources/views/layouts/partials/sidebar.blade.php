@@ -49,6 +49,19 @@
                 </li>
             </ul>
         </li>
+        <li>
+            <a href="javascript:;" class="has-arrow">
+                <div class="parent-icon"><i class='bx bx-user-circle'></i>
+                </div>
+                <div class="menu-title">Members</div>
+            </a>
+            <ul>
+                <li> <a href="#"><i class="bx bx-right-arrow-alt"></i>Board Members</a></li>
+                <li> <a href="#"><i class="bx bx-right-arrow-alt"></i>Teacher</a></li>
+                <li> <a href="#"><i class="bx bx-right-arrow-alt"></i>Staff</a></li>
+                <li> <a href="#"><i class="bx bx-right-arrow-alt"></i>Student</a></li>
+            </ul>
+        </li>
 
     </ul>
     <!--end navigation-->
