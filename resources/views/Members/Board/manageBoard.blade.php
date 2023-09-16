@@ -18,8 +18,8 @@
             </div>
         </div>
 
-        @include('Members/modal/add_member')
-        @include('Members/modal/edit_member')
+        @include('Members/Board/modal/add_member')
+        @include('Members/Board/modal/edit_member')
 
     </div>
 </div>
@@ -32,22 +32,22 @@
 <script>
 
 $(document).ready(function() {
-    // Get All institute function call
-    fetchAllInstitute();
+    // Get All Member function call
+    fetchAllMember();
 
-    // Get All Institute function
-    function fetchAllInstitute(){
+    // Get All Member function
+    function fetchAllMember(){
     $.ajax({
-    url: '{{ route('institutedata') }}',
+    url: '{{ route('boardMemberdata') }}',
     method: 'get',
     success: function(res){
-        $("#show_institutes").html(res);
+        $("#show_members").html(res);
     }
     });
     }
 
-    // Add Institute Code
-	$("#instituteForm").submit(function(e){
+    // Add Memeber Code
+	$("#bmemberForm").submit(function(e){
         e.preventDefault();
         const fd = new FormData(this);
         $("#btnsave").text('Adding...');

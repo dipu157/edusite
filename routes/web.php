@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Institute\InstituteController;
+use App\Http\Controllers\Members\BoardMemberController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -50,7 +51,8 @@ Route::group(['namespace' => 'Institute', 'middleware' => ['auth']], function ()
 Route::group(['namespace' => 'Members', 'middleware' => ['auth']], function () {
 
     //  Members Manage Route
-    Route::get('/boardMemberIndex',[InstituteController::class, 'index'])->name('boardMembers');
+    Route::get('/boardMemberIndex',[BoardMemberController::class, 'index'])->name('boardMembers');
+    Route::get('/boardMemberdata', [BoardMemberController::class, 'getAllMemebers'])->name('boardMemberdata');
 
 
 });
