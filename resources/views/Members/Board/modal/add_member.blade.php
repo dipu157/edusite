@@ -13,12 +13,12 @@
                         <div class="col-md-6">
                             <div class="form-group">
                               <label>Full Name</label>
-                              <input type="text" class="form-control" name="name" placeholder="Enter Name">
+                              <input type="text" class="form-control" name="full_name" placeholder="Enter Full Name">
                             </div>
 
                             <div class="form-group">
                                 <label>Position</label>
-                                <input type="text" class="form-control" name="website" placeholder="Enter website">
+                                <input type="text" class="form-control" name="position" placeholder="Enter position">
                               </div>
 
                             <div class="form-group">
@@ -28,42 +28,61 @@
 
                             <div class="form-group">
                                 <label>Mobile</label>
-                                <input type="text" class="form-control" name="phone_no" placeholder="Enter Phone">
+                                <input type="text" class="form-control" name="mobile" placeholder="Enter Mobile No.">
                             </div>
                         </div>
 
                          <div class="col-md-6">
                             <div class="form-group">
                                 <label>DOB</label>
-                                <input type="text" class="form-control" name="city" placeholder="Enter City">
-                            </div>
+                                <div class="input-group date" id="reservationdate" data-target-input="nearest">
+                                  <input type="text" name="dob" id="dob" class="form-control datetimepicker-input" data-target="#reservationdate"/>
+                                  <div class="input-group-append" data-target="#reservationdate" data-toggle="datetimepicker">
+                                  <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div class="form-group">
+                                <label>Blood Group</label>
+                                <select class="form-control select2" id="blood_group" name="blood_group" style="width: 100%;">
+                                  <option selected="selected" disabled="">Select Blood Group</option>
+                                  <option value="a+">A+</option>
+                                  <option value="a-">A-</option>
+                                  <option value="b+">B+</option>
+                                  <option value="b-">B-</option>
+                                  <option value="ab+">AB+</option>
+                                  <option value="ab-">AB-</option>
+                                  <option value="o+">O+</option>
+                                  <option value="o-">O-</option>
+                                </select>
+                              </div>
+
+                              <div class="form-group">
+                                <label>Gender</label>
+                                <select class="form-control select2" id="gender" name="gender" style="width: 100%;">
+                                  <option selected="selected" disabled="">Select Gender</option>
+                                  <option value="m">Male</option>
+                                  <option value="f">Female</option>
+                                </select>
+                              </div>
 
                             <div class="form-group">
-                            <label>Blood Group</label>
-                            <input type="text" class="form-control" name="state" placeholder="Enter state">
-                            </div>
-
-                            <div class="form-group">
-                            <label>Gender</label>
-                            <input type="text" class="form-control" name="post_code" placeholder="Enter post_code">
-                            </div>
-
-                            <div class="form-group">
-                            <label>National ID</label>
-                            <input type="text" class="form-control" name="country" placeholder="Enter Country">
+                                <label>National ID</label>
+                                <input type="text" class="form-control" name="national_id" placeholder="Enter National ID">
                             </div>
                             
                         </div>
 
                          <div class="col-md-12">
                             <div class="row">
-                              <div class="col-md-6">
+                              <div class="col-md-8">
                                 <div class="form-group">
                                   <label>Photo</label>
                                   <input type="file" class="form-control" id="photo" name="photo" onchange="loadFile(event)">
                                 </div>
                               </div>
-                              <div class="col-md-6">
+                              <div class="col-md-4 mt-2">
                                 <span id="photospan">
                                   <img id="output" height="120px" width="100px" />
                                 </span>
