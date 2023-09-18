@@ -56,6 +56,7 @@ Route::group(['namespace' => 'Members', 'middleware' => ['auth']], function () {
     Route::post('/saveBMember', [BoardMemberController::class, 'create'])->name('save');
     Route::get('/editMember', [BoardMemberController::class, 'edit'])->name('edit');
     Route::post('/memberUpdate', [BoardMemberController::class, 'update'])->name('update');
+    Route::delete('/deleteMember', [BoardMemberController::class, 'delete'])->name('delete');
 
 
 });

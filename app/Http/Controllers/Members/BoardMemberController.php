@@ -62,7 +62,7 @@ class BoardMemberController extends Controller
                 <td>
                   <a class="btn-edit editIcon" data-bs-toggle="modal" data-bs-target="#editMemberModal" id="' . $bm->id . '"><i class="bx bxs-edit"></i></a>
 
-                  <a class="ms-3 btn-delete" id="' . $bm->id . '"><i class="bx bxs-trash"></i></a>
+                  <a class="ms-3 btn-danger deleteIcon" id="' . $bm->id . '"><i class="bx bxs-trash"></i></a>
                 </td>
               </tr>';
             }
@@ -140,5 +140,13 @@ class BoardMemberController extends Controller
         return response()->json([
             'status' => 200,
         ]);
+    }
+
+    public function delete(Request $request) {
+        $id = $request->id;
+        $member = BoardMember::find($id);
+        if (Storage::delete('public/images/BMember/' . $member->photo)) {
+            BoardMember::destroy($id);
+        }
     }
 }

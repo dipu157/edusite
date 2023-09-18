@@ -1,5 +1,5 @@
 <div class="modal fade" id="addMemberModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-scrollable">
+    <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Add Board Member</h5>
@@ -10,7 +10,7 @@
                     @csrf
                     <div class="row">
 
-                        <div class="col-md-6">
+                        <div class="col-md-6 mt-2 p-2">
                             <div class="form-group">
                               <label>Full Name</label>
                               <input type="text" class="form-control" name="full_name" placeholder="Enter Full Name">
@@ -32,15 +32,15 @@
                             </div>
                         </div>
 
-                         <div class="col-md-6">
+                         <div class="col-md-6 mt-2 p-2">
                             <div class="form-group">
                                 <label>DOB</label>
-                                <input type="date" name="dob" class="form-control" />
+                                <input type="date" class="form-control datepicker" name="dob" class="form-control" />
                             </div>
 
                               <div class="form-group">
                                 <label>Blood Group</label>
-                                <select class="form-control select2" id="blood_group" name="blood_group" style="width: 100%;">
+                                <select class="form-control select2" name="blood_group" style="width: 100%;">
                                   <option selected="selected" disabled="">Select Blood Group</option>
                                   <option value="a+">A+</option>
                                   <option value="a-">A-</option>
@@ -55,7 +55,7 @@
 
                               <div class="form-group">
                                 <label>Gender</label>
-                                <select class="form-control select2" id="gender" name="gender" style="width: 100%;">
+                                <select class="form-control select2" name="gender" style="width: 100%;">
                                   <option selected="selected" disabled="">Select Gender</option>
                                   <option value="m">Male</option>
                                   <option value="f">Female</option>
@@ -71,13 +71,13 @@
 
                          <div class="col-md-12">
                             <div class="row">
-                              <div class="col-md-8">
+                              <div class="col-md-10">
                                 <div class="form-group">
                                   <label>Photo</label>
                                   <input type="file" class="form-control" id="photo" name="photo" onchange="loadFile(event)">
                                 </div>
                               </div>
-                              <div class="col-md-4 mt-2">
+                              <div class="col-md-2 mt-2">
                                 <span id="photospan">
                                   <img id="output" height="120px" width="100px" />
                                 </span>

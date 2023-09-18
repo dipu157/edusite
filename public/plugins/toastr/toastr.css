@@ -7,7 +7,7 @@
 }
 .toast-message a,
 .toast-message label {
-  color: #5206d6;
+  color: #FFFFFF;
 }
 .toast-message a:hover {
   color: #CCCCCC;
@@ -20,7 +20,7 @@
   float: right;
   font-size: 20px;
   font-weight: bold;
-  color: #0a0000;
+  color: #FFFFFF;
   -webkit-text-shadow: 0 1px 0 #ffffff;
   text-shadow: 0 1px 0 #ffffff;
   opacity: 0.8;
@@ -114,7 +114,7 @@ button.toast-close-button {
   -moz-box-shadow: 0 0 12px #999999;
   -webkit-box-shadow: 0 0 12px #999999;
   box-shadow: 0 0 12px #999999;
-  color: #4806ec;
+  color: #FFFFFF;
   opacity: 0.8;
   -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
   filter: alpha(opacity=80);

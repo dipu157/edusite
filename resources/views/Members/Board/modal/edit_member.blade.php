@@ -1,5 +1,5 @@
 <div class="modal fade" id="editMemberModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-scrollable">
+    <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Update Board Member</h5>
@@ -10,10 +10,10 @@
                     @csrf
                     <div class="row">
 
-                        <input type="text" name="id" id="bmem_id">
-                        <input type="text" name="bmem_photo" id="bmem_photo">
+                        <input type="hidden" name="id" id="bmem_id">
+                        <input type="hidden" name="bmem_photo" id="bmem_photo">
 
-                        <div class="col-md-6">
+                        <div class="col-md-6 mt-2">
                             <div class="form-group">
                               <label>Full Name</label>
                               <input type="text" class="form-control" id="full_name" name="full_name" placeholder="Enter Full Name">
@@ -35,7 +35,7 @@
                             </div>
                         </div>
 
-                         <div class="col-md-6">
+                         <div class="col-md-6 mt-2">
                             <div class="form-group">
                                 <label>DOB</label>
                                 <input type="date" name="dob" id="dob" class="form-control" />
@@ -74,13 +74,13 @@
 
                          <div class="col-md-12">
                             <div class="row">
-                              <div class="col-md-8">
+                              <div class="col-md-10">
                                 <div class="form-group">
                                   <label>Photo</label>
                                   <input type="file" class="form-control" id="photo" name="photo" onchange="loadFile(event)">
                                 </div>
                               </div>
-                              <div class="col-md-4 mt-2" id="logo_img">
+                              <div class="col-md-2 mt-2" id="logo_img">
                                 <span id="photospan">
                                   <img id="output" height="120px" width="100px" />
                                 </span>

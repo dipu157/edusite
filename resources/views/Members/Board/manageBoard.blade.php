@@ -79,6 +79,43 @@ $(document).ready(function() {
         });
 	});
 
+    // delete employee ajax request
+$(document).on('click', '.deleteIcon', function(e) {
+		e.preventDefault();
+        console.log("Delete Button Clicked");
+		let id = $(this).attr('id');
+		let csrf = '{{ csrf_token() }}';
+		Swal.fire({
+			title: 'Are you sure?',
+			text: "You won't be able to revert this!",
+			icon: 'warning',
+			showCancelButton: true,
+			confirmButtonColor: '#3085d6',
+			cancelButtonColor: '#d33',
+			confirmButtonText: 'Yes, delete it!'
+		}).then((result) => {
+		if (result.isConfirmed) {
+		$.ajax({
+			url: '{{ route('delete') }}',
+			method: 'delete',
+			data: {
+			id: id,
+			_token: csrf
+		},
+		success: function(response) {
+			console.log(response);
+			Swal.fire(
+			'Deleted!',
+			'Your file has been deleted.',
+			'success'
+			)
+			fetchAllMember();
+		}
+		});
+		}
+		})
+	});
+
 
 
     //Edit Icon click for Employee Edit
@@ -135,9 +172,9 @@ $(document).ready(function() {
 			}
 		});
 	});
-
-
 });
+
+
 
 </script>
 
