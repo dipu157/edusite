@@ -80,6 +80,7 @@ $(document).ready(function() {
 	});
 
 
+
     //Edit Icon click for Employee Edit
 		$(document).on('click', '.editIcon', function(e){
 		e.preventDefault();
@@ -95,24 +96,23 @@ $(document).ready(function() {
 		success: function(res){
 			console.log(res);
 
-            $("#ins_id").val(res.id);
-			$("#name").val(res.name);
+            $("#bmem_id").val(res.id);
+			$("#full_name").val(res.full_name);
 			$("#email").val(res.email);
-			$("#address").val(res.address);
-			$("#city").val(res.city);
-			$("#state").val(res.state);
-			$("#post_code").val(res.post_code);
-			$("#country").val(res.country);
-			$("#phone_no").val(res.phone_no);
-			$("#website").val(res.website);
-			$("#logo_img").html(`<img src="storage/images/${res.logo}" width="100" class="img-fluid img-thumbnail">`);
-			$("#ins_logo").val(res.logo);
+			$("#position").val(res.position);
+			$("#mobile").val(res.mobile);
+			$("#dob").val(res.dob);
+			$('#blood_group option[value="'+res.blood_group+'"]').prop('selected', true);
+			$('#gender option[value="'+res.gender+'"]').prop('selected', true);
+			$("#national_id").val(res.national_id);
+			$("#logo_img").html(`<img src="storage/images/BMember/${res.photo}" width="100" class="img-fluid img-thumbnail">`);
+			$("#bmem_photo").val(res.photo);
 		}
 		});
 		});
 
-		// update employee ajax request
-	$("#edit_instituteForm").submit(function(e) {
+        // update employee ajax request
+	$("#memberEditForm").submit(function(e) {
 	e.preventDefault();
 	const fd = new FormData(this);
 	$("#btnupdate").text('Updating...');
@@ -127,11 +127,11 @@ $(document).ready(function() {
 		success: function(response) {
 			if (response.status == 200) {
                 toastr.success('Update Successfully');
-				fetchAllInstitute();
+				fetchAllMember();
 			}
 			$("#btnupdate").text('Update');
-			$("#edit_instituteForm")[0].reset();
-			$("#editInstituteModal").modal('hide');
+			$("#memberEditForm")[0].reset();
+			$("#editMemberModal").modal('hide');
 			}
 		});
 	});

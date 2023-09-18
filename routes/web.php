@@ -54,6 +54,8 @@ Route::group(['namespace' => 'Members', 'middleware' => ['auth']], function () {
     Route::get('/boardMemberIndex',[BoardMemberController::class, 'index'])->name('boardMembers');
     Route::get('/boardMemberdata', [BoardMemberController::class, 'getAllMemebers'])->name('boardMemberdata');
     Route::post('/saveBMember', [BoardMemberController::class, 'create'])->name('save');
+    Route::get('/editMember', [BoardMemberController::class, 'edit'])->name('edit');
+    Route::post('/memberUpdate', [BoardMemberController::class, 'update'])->name('update');
 
 
 });

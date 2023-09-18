@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Member\BoardMember;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class BoardMemberController extends Controller
 {
@@ -96,5 +97,48 @@ class BoardMemberController extends Controller
 
         BoardMember::create($bData);
         return response()->json(['status' => 200]);
+    }
+
+    public function edit(Request $request){
+
+        $id = $request->id;
+        $ins = BoardMember::find($id);
+        return response()->json($ins);
+    }
+
+    // handle update an InstituteInfo ajax request
+    public function update(Request $request) {
+
+        $fileName = '';
+        $member = BoardMember::find($request->id);
+
+        if ($request->hasFile('photo')) {
+            $file = $request->file('photo');
+            $fileName = time() . '.' . $file->getClientOriginalExtension();
+            $file->storeAs('public/images/BMember', $fileName);
+            if ($member->photo) {
+                Storage::delete('public/images/BMember/' . $member->photo);
+            }
+        } else {
+            $fileName = $request->bmem_photo;
+        }
+
+        $bData = [
+            'full_name' => $request->full_name,
+            'email' => $request->email,
+            'position' => $request->position,
+            'mobile' => $request->mobile,
+            'dob' => $request->dob,
+            'blood_group' => $request->blood_group,
+            'gender' => $request->gender,
+            'national_id' => $request->national_id,
+            'photo' => $fileName,
+            'user_id' => $this->user_id,
+        ];
+
+        $member->update($bData);
+        return response()->json([
+            'status' => 200,
+        ]);
     }
 }
