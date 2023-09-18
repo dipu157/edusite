@@ -5,12 +5,21 @@ namespace App\Http\Controllers\Members;
 use App\Http\Controllers\Controller;
 use App\Models\Member\BoardMember;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class BoardMemberController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+    protected $user_id;
+    public function __construct()
+    {
+        $this->middleware(function ($request, $next) {
+
+            $this->user_id = Auth::id();
+
+            return $next($request);
+        });
+    }
+
     public function index()
     {
         return view('Members.Board.manageBoard');
@@ -38,7 +47,7 @@ class BoardMemberController extends Controller
             foreach ($bMember as $bm) {
                 // Generate the image URL
                 $defaultImage = asset('storage/images/1694713766.jpg');
-                $imageUrl = asset('storage/images/'.$bm->photo);
+                $imageUrl = asset('storage/images/BMember/'.$bm->photo);
                 $imageSrc =  $bm->photo ? $imageUrl : $defaultImage;
 
                 $output .= '<tr>
@@ -66,7 +75,7 @@ class BoardMemberController extends Controller
     public function create(Request $request)
     {
 
-        $file = $request->file('logo');
+        $file = $request->file('photo');
         $filename = time().'.'.$file->getClientOriginalExtension();
         $file->storeAs('public/images/BMember', $filename);
 
@@ -80,6 +89,7 @@ class BoardMemberController extends Controller
             'gender' => $request->gender,
             'national_id' => $request->national_id,
             'photo' => $filename,
+            'user_id' => $this->user_id,
         ];
 
         //dd($insData);
