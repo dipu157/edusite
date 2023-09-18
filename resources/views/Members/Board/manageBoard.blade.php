@@ -116,8 +116,6 @@ $(document).on('click', '.deleteIcon', function(e) {
 		})
 	});
 
-
-
     //Edit Icon click for Employee Edit
 		$(document).on('click', '.editIcon', function(e){
 		e.preventDefault();

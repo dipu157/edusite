@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Institute\InstituteController;
 use App\Http\Controllers\Members\BoardMemberController;
+use App\Http\Controllers\Members\TeacherController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -57,6 +58,14 @@ Route::group(['namespace' => 'Members', 'middleware' => ['auth']], function () {
     Route::get('/editMember', [BoardMemberController::class, 'edit'])->name('edit');
     Route::post('/memberUpdate', [BoardMemberController::class, 'update'])->name('update');
     Route::delete('/deleteMember', [BoardMemberController::class, 'delete'])->name('delete');
+
+    // Teacher Manage Route
+    Route::get('/teacherIndex',[TeacherController::class, 'index'])->name('teacherIndex');
+    Route::get('/teacherData', [TeacherController::class, 'getAllTeacher'])->name('teacherData');
+    Route::post('/saveTeacher', [TeacherController::class, 'create'])->name('saveTeacher');
+    Route::get('/editTeacher', [TeacherController::class, 'edit'])->name('editTeacher');
+    Route::post('/updateTeacher', [TeacherController::class, 'update'])->name('updateTeacher');
+    Route::delete('/deleteTeacher', [TeacherController::class, 'delete'])->name('deleteTeacher');
 
 
 });
