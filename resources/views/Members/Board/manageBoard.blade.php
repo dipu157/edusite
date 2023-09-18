@@ -62,18 +62,18 @@ $(document).ready(function() {
                 console.log(res);
                 if(res.status == 200){
                     toastr.success('Data Save Successfully');
-                    fetchAllInstitute();
+                    fetchAllMember();
                 }
                 $("#btnsave").text('SAVE');
-                $("#instituteForm")[0].reset();
-                $("#addInstituteModal").modal('hide');
+                $("#bmemberForm")[0].reset();
+                $("#addMemberModal").modal('hide');
             },
             error: function (request, status, error) {
                 toastr.error(request.responseText);
-                fetchAllInstitute();
+                fetchAllMember();
                 $("#btnsave").text('SAVE');
-            $("#instituteForm")[0].reset();
-            $("#addInstituteModal").modal('hide');
+            $("#bmemberForm")[0].reset();
+            $("#addMemberModal").modal('hide');
             }
 
         });

@@ -62,4 +62,29 @@ class BoardMemberController extends Controller
             echo '<h1 class="text-center text-secondary my-5">No Record Found in Database</h1>';
         }
     }
+
+    public function create(Request $request)
+    {
+
+        $file = $request->file('logo');
+        $filename = time().'.'.$file->getClientOriginalExtension();
+        $file->storeAs('public/images/BMember', $filename);
+
+        $bData = [
+            'full_name' => $request->full_name,
+            'email' => $request->email,
+            'position' => $request->position,
+            'mobile' => $request->mobile,
+            'dob' => $request->dob,
+            'blood_group' => $request->blood_group,
+            'gender' => $request->gender,
+            'national_id' => $request->national_id,
+            'photo' => $filename,
+        ];
+
+        //dd($insData);
+
+        BoardMember::create($bData);
+        return response()->json(['status' => 200]);
+    }
 }

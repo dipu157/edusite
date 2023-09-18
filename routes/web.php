@@ -53,6 +53,7 @@ Route::group(['namespace' => 'Members', 'middleware' => ['auth']], function () {
     //  Members Manage Route
     Route::get('/boardMemberIndex',[BoardMemberController::class, 'index'])->name('boardMembers');
     Route::get('/boardMemberdata', [BoardMemberController::class, 'getAllMemebers'])->name('boardMemberdata');
+    Route::post('/saveBMember', [BoardMemberController::class, 'create'])->name('save');
 
 
 });

@@ -2,7 +2,7 @@
     <div class="modal-dialog modal-dialog-scrollable">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Add Institute</h5>
+                <h5 class="modal-title">Add Board Member</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -35,13 +35,8 @@
                          <div class="col-md-6">
                             <div class="form-group">
                                 <label>DOB</label>
-                                <div class="input-group date" id="reservationdate" data-target-input="nearest">
-                                  <input type="text" name="dob" id="dob" class="form-control datetimepicker-input" data-target="#reservationdate"/>
-                                  <div class="input-group-append" data-target="#reservationdate" data-toggle="datetimepicker">
-                                  <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-                                  </div>
-                                </div>
-                              </div>
+                                <input type="date" name="dob" class="form-control" />
+                            </div>
 
                               <div class="form-group">
                                 <label>Blood Group</label>
@@ -71,7 +66,7 @@
                                 <label>National ID</label>
                                 <input type="text" class="form-control" name="national_id" placeholder="Enter National ID">
                             </div>
-                            
+
                         </div>
 
                          <div class="col-md-12">
