@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Auth\RegisteredUserController;
+use App\Http\Controllers\Common\MenuController;
 use App\Http\Controllers\Institute\InstituteController;
 use App\Http\Controllers\Members\BoardMemberController;
 use App\Http\Controllers\Members\TeacherController;
@@ -66,6 +67,19 @@ Route::group(['namespace' => 'Members', 'middleware' => ['auth']], function () {
     Route::get('/editTeacher', [TeacherController::class, 'edit'])->name('editTeacher');
     Route::post('/updateTeacher', [TeacherController::class, 'update'])->name('updateTeacher');
     Route::delete('/deleteTeacher', [TeacherController::class, 'delete'])->name('deleteTeacher');
+
+
+});
+
+Route::group(['namespace' => 'Menu', 'middleware' => ['auth']], function () {
+
+    //  Menu Manage Route
+    Route::get('/menuIndex',[MenuController::class, 'index'])->name('manageMenu');
+    Route::get('/menuData', [MenuController::class, 'getAllMemebers'])->name('menuData');
+    Route::post('/save', [MenuController::class, 'create'])->name('save');
+    Route::get('/edit', [MenuController::class, 'edit'])->name('edit');
+    Route::post('/member', [MenuController::class, 'update'])->name('update');
+    Route::delete('/delete', [MenuController::class, 'delete'])->name('delete');
 
 
 });
