@@ -135,12 +135,14 @@ $(document).on('click', '.deleteIcon', function(e) {
 			$("#full_name").val(res.full_name);
 			$("#email").val(res.email);
 			$("#position").val(res.position);
+			$("#class_department").val(res.class_department);
 			$("#mobile").val(res.mobile);
 			$("#dob").val(res.dob);
+			$("#joining_date").val(res.joining_date);
 			$('#blood_group option[value="'+res.blood_group+'"]').prop('selected', true);
 			$('#gender option[value="'+res.gender+'"]').prop('selected', true);
 			$("#national_id").val(res.national_id);
-			$("#logo_img").html(`<img src="storage/images/BMember/${res.photo}" width="100" class="img-fluid img-thumbnail">`);
+			$("#logo_img").html(`<img src="storage/images/teacher/${res.photo}" width="100" class="img-fluid img-thumbnail">`);
 			$("#bmem_photo").val(res.photo);
 		}
 		});

@@ -6,7 +6,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form method="post" class="row g-3" enctype="multipart/form-data" id="memberEditForm">
+                <form method="post" class="row g-3" enctype="multipart/form-data" id="teacherEditForm">
                     @csrf
                     <div class="row">
 
@@ -18,6 +18,11 @@
                               <label>Full Name</label>
                               <input type="text" class="form-control" id="full_name" name="full_name" placeholder="Enter Full Name">
                             </div>
+
+                            <div class="form-group">
+                                <label>Assigned Class</label>
+                                <input type="text" class="form-control" id="class_department" name="class_department" placeholder="Enter Class Name">
+                              </div>
 
                             <div class="form-group">
                                 <label>Position</label>
@@ -39,6 +44,11 @@
                             <div class="form-group">
                                 <label>DOB</label>
                                 <input type="date" name="dob" id="dob" class="form-control" />
+                            </div>
+
+                            <div class="form-group">
+                                <label>Joining Date</label>
+                                <input type="date" class="form-control datepicker" id="joining_date" name="joining_date" />
                             </div>
 
                               <div class="form-group">
