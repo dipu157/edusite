@@ -45,8 +45,7 @@
                 <div class="menu-title">Institute</div>
             </a>
             <ul>
-                <li> <a href="{{route('manageInstitute')}}"><i class="bx bx-right-arrow-alt"></i>Manage Institute</a>
-                </li>
+                {{-- <li> <a href="{{ route('manageInstitute') }}"><i class="bx bx-right-arrow-alt"></i>Manage Institute</a></li> --}}
             </ul>
         </li>
         <li>
@@ -72,6 +71,17 @@
             <ul>
                 <li> <a href="{{route('manageMenu')}}"><i class="bx bx-right-arrow-alt"></i>Manage Menu</a></li>
                 <li> <a href="{{route('manageSubMenu')}}"><i class="bx bx-right-arrow-alt"></i>Manage SubMenu</a></li>
+            </ul>
+        </li>
+
+        <li>
+            <a href="javascript:;" class="has-arrow">
+                <div class="parent-icon"><i class='bx bx-home'></i>
+                </div>
+                <div class="menu-title">Slider</div>
+            </a>
+            <ul>
+                <li> <a href="{{route('manageSlider')}}"><i class="bx bx-right-arrow-alt"></i>Manage Slider</a></li>
             </ul>
         </li>
 

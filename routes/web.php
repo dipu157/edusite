@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Common\MenuController;
+use App\Http\Controllers\Common\SliderController;
 use App\Http\Controllers\Common\SubMenuController;
 use App\Http\Controllers\Institute\InstituteController;
 use App\Http\Controllers\Members\BoardMemberController;
@@ -71,7 +72,6 @@ Route::group(['namespace' => 'Members', 'middleware' => ['auth']], function () {
     Route::post('/updateTeacher', [TeacherController::class, 'update'])->name('updateTeacher');
     Route::delete('/deleteTeacher', [TeacherController::class, 'delete'])->name('deleteTeacher');
 
-
 });
 
 Route::group(['namespace' => 'Menu', 'middleware' => ['auth']], function () {
@@ -111,6 +111,18 @@ Route::group(['namespace' => 'Notice', 'middleware' => ['auth']], function () {
     Route::get('/editnews', [NewsController::class, 'edit'])->name('editnews');
     Route::post('/updatenews', [NewsController::class, 'update'])->name('updatenews');
     Route::delete('/deletenews', [NewsController::class, 'delete'])->name('deletenews');
+
+});
+
+Route::group(['namespace' => 'Slider', 'middleware' => ['auth']], function () {
+
+    //  Slider Manage Route
+    Route::get('/index',[SliderController::class, 'index'])->name('manageSlider');
+    Route::get('/sliderdata', [SliderController::class, 'getAllSlider'])->name('sliderdata');
+    Route::post('/saveSlider', [SliderController::class, 'create'])->name('save');
+    Route::get('/editSlider', [SliderController::class, 'edit'])->name('edit');
+    Route::post('/sliderUpdate', [SliderController::class, 'update'])->name('update');
+    Route::delete('/sliderDelete', [SliderController::class, 'delete'])->name('delete');
 
 });
 
