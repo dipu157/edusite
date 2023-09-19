@@ -33,7 +33,7 @@
                                 <label for="expiry_date" class="col-sm-4 col-form-label text-md-right">Expiry Date</label>
                                 <div class="col-sm-8">
                                     <div class="input-group mb-3">
-                                        <input type="text" name="expiry_date" value="" class="form-control" readonly>
+                                        <input type="text" name="expiry_date" value="" class="form-control datepicker">
                                     </div>
                                 </div>
                             </div>
@@ -109,7 +109,7 @@
                                 <label for="description" class="col-sm-4 col-form-label text-md-right">Description</label>
                                 <div class="col-sm-8">
                                     <div class="input-group mb-3">
-                                        <textarea class="form-control" name="description" cols="50" rows="4" id="description"></textarea>
+                                        <textarea class="form-control" name="description" cols="50" rows="4"></textarea>
                                     </div>
                                 </div>
                             </div>

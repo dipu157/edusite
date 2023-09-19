@@ -132,7 +132,12 @@ $(document).ready(function() {
 			console.log(res);
 
             $("#bmem_id").val(res.id);
-			$("#menu_name").val(res.menu_name);
+			$("#title").val(res.title);
+			$("#notice_date").val(res.notice_date);
+			$("#expiry_date").val(res.expiry_date);
+            $("input[name=type][value=" + res.type + "]").prop('checked', true);
+            $("input[name=confidentiality][value=" + res.confidentiality + "]").prop('checked', true);
+            $("input[name=receiver][value=" + res.receiver + "]").prop('checked', true);
 			$("#description").val(res.description);
 		}
 		});
