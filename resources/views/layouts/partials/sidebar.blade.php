@@ -71,7 +71,7 @@
             </a>
             <ul>
                 <li> <a href="{{route('manageMenu')}}"><i class="bx bx-right-arrow-alt"></i>Manage Menu</a></li>
-                <li> <a href="{{route('manageMenu')}}"><i class="bx bx-right-arrow-alt"></i>Manage SubMenu</a></li>
+                <li> <a href="{{route('manageSubMenu')}}"><i class="bx bx-right-arrow-alt"></i>Manage SubMenu</a></li>
             </ul>
         </li>
 

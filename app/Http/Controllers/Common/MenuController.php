@@ -26,7 +26,7 @@ class MenuController extends Controller
         return view('menu.manageMenu');
     }
 
-    public function getAllMemebers()
+    public function getAllMenus()
     {
         $bMember = Menu::query()->where('status',1)->get();
         $output = '';

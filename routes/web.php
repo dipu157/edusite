@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Common\MenuController;
+use App\Http\Controllers\Common\SubMenuController;
 use App\Http\Controllers\Institute\InstituteController;
 use App\Http\Controllers\Members\BoardMemberController;
 use App\Http\Controllers\Members\TeacherController;
@@ -75,11 +76,19 @@ Route::group(['namespace' => 'Menu', 'middleware' => ['auth']], function () {
 
     //  Menu Manage Route
     Route::get('/menuIndex',[MenuController::class, 'index'])->name('manageMenu');
-    Route::get('/menuData', [MenuController::class, 'getAllMemebers'])->name('menuData');
-    Route::post('/save', [MenuController::class, 'create'])->name('save');
-    Route::get('/edit', [MenuController::class, 'edit'])->name('edit');
-    Route::post('/member', [MenuController::class, 'update'])->name('update');
-    Route::delete('/delete', [MenuController::class, 'delete'])->name('delete');
+    Route::get('/menuData', [MenuController::class, 'getAllMenus'])->name('menuData');
+    Route::post('/savemenu', [MenuController::class, 'create'])->name('save');
+    Route::get('/editmenu', [MenuController::class, 'edit'])->name('edit');
+    Route::post('/updatemenu', [MenuController::class, 'update'])->name('update');
+    Route::delete('/deletemenu', [MenuController::class, 'delete'])->name('delete');
+
+    //  SubMenu Manage Route
+    Route::get('/submenuIndex',[SubMenuController::class, 'index'])->name('manageSubMenu');
+    Route::get('/submenuData', [SubMenuController::class, 'getAllSubmenu'])->name('submenuData');
+    Route::post('/savesub', [SubMenuController::class, 'create'])->name('savesub');
+    Route::get('/editsub', [SubMenuController::class, 'edit'])->name('editsub');
+    Route::post('/updatesub', [SubMenuController::class, 'update'])->name('updatesub');
+    Route::delete('/deletesub', [SubMenuController::class, 'delete'])->name('deletesub');
 
 
 });
