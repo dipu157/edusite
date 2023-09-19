@@ -7,6 +7,7 @@ use App\Http\Controllers\Common\SubMenuController;
 use App\Http\Controllers\Institute\InstituteController;
 use App\Http\Controllers\Members\BoardMemberController;
 use App\Http\Controllers\Members\TeacherController;
+use App\Http\Controllers\Notice\NoticeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -90,6 +91,17 @@ Route::group(['namespace' => 'Menu', 'middleware' => ['auth']], function () {
     Route::post('/updatesub', [SubMenuController::class, 'update'])->name('updatesub');
     Route::delete('/deletesub', [SubMenuController::class, 'delete'])->name('deletesub');
 
+});
+
+Route::group(['namespace' => 'Notice', 'middleware' => ['auth']], function () {
+
+    //  Notice Manage Route
+    Route::get('/noticeIndex',[NoticeController::class, 'index'])->name('manageNotice');
+    Route::get('/noticeData', [NoticeController::class, 'getAllNotice'])->name('noticeData');
+    Route::post('/savenotice', [NoticeController::class, 'create'])->name('save');
+    Route::get('/editnotice', [NoticeController::class, 'edit'])->name('edit');
+    Route::post('/updatenotice', [NoticeController::class, 'update'])->name('update');
+    Route::delete('/deletenotice', [NoticeController::class, 'delete'])->name('delete');
 
 });
 

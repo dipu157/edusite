@@ -75,6 +75,18 @@
             </ul>
         </li>
 
+        <li>
+            <a href="javascript:;" class="has-arrow">
+                <div class="parent-icon"><i class='bx bx-home'></i>
+                </div>
+                <div class="menu-title">Notices</div>
+            </a>
+            <ul>
+                <li> <a href="{{route('manageNotice')}}"><i class="bx bx-right-arrow-alt"></i>Manage Notice</a></li>
+                <li> <a href="#"><i class="bx bx-right-arrow-alt"></i>Manage News</a></li>
+            </ul>
+        </li>
+
     </ul>
     <!--end navigation-->
 </div>

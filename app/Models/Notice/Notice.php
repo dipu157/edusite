@@ -9,7 +9,7 @@ class Notice extends Model
 {
     use HasFactory;
 
-    protected $table= 'staff';
+    protected $table= 'notices';
 
     protected $guarded = ['id', 'created_at','updated_at'];
 
