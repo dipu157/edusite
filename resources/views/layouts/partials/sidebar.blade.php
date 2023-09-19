@@ -45,7 +45,7 @@
                 <div class="menu-title">Institute</div>
             </a>
             <ul>
-                {{-- <li> <a href="{{ route('manageInstitute') }}"><i class="bx bx-right-arrow-alt"></i>Manage Institute</a></li> --}}
+                <li> <a href="{{ route('manageInstitute') }}"><i class="bx bx-right-arrow-alt"></i>Manage Institute</a></li>
             </ul>
         </li>
         <li>

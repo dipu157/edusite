@@ -26,9 +26,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () { return view('auth.login'); });
 
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/dashboard', function () { return view('dashboard');})->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
 
@@ -45,7 +43,7 @@ Route::middleware('auth')->group(function () {
 Route::group(['namespace' => 'Institute', 'middleware' => ['auth']], function () {
 
     //  Institute Manage Route
-    Route::get('/index',[InstituteController::class, 'index'])->name('manageInstitute');
+    Route::get('/instituteIndex',[InstituteController::class, 'index'])->name('manageInstitute');
     Route::get('/institutedata', [InstituteController::class, 'getAllInstitute'])->name('institutedata');
     Route::post('/saveInstitute', [InstituteController::class, 'create'])->name('save');
     Route::get('/editInstitute', [InstituteController::class, 'edit'])->name('edit');
