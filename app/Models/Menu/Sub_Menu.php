@@ -21,4 +21,9 @@ class Sub_Menu extends Model
         'status',
         'user_id',
     ];
+
+    public function menu()
+    {
+        return $this->belongsTo(Menu::class,'menu_id','id');
+    }
 }

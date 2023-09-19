@@ -47,7 +47,7 @@ class SubMenuController extends Controller
             foreach ($bMember as $bm) {
                 $output .= '<tr>
                 <td>'.$bm->id.'</td>
-                <td>'.$bm->menu_id.'</td>
+                <td>'.$bm->menu->menu_name.'</td>
                 <td>'. $bm->sub_menu_name.'</td>
                 <td>'.$bm->status.'</td>
                 <td>
