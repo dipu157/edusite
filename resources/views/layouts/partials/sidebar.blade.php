@@ -83,7 +83,7 @@
             </a>
             <ul>
                 <li> <a href="{{route('manageNotice')}}"><i class="bx bx-right-arrow-alt"></i>Manage Notice</a></li>
-                <li> <a href="#"><i class="bx bx-right-arrow-alt"></i>Manage News</a></li>
+                <li> <a href="{{route('manageNews')}}"><i class="bx bx-right-arrow-alt"></i>Manage News</a></li>
             </ul>
         </li>
 

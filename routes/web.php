@@ -7,6 +7,7 @@ use App\Http\Controllers\Common\SubMenuController;
 use App\Http\Controllers\Institute\InstituteController;
 use App\Http\Controllers\Members\BoardMemberController;
 use App\Http\Controllers\Members\TeacherController;
+use App\Http\Controllers\Notice\NewsController;
 use App\Http\Controllers\Notice\NoticeController;
 use Illuminate\Support\Facades\Route;
 
@@ -102,6 +103,14 @@ Route::group(['namespace' => 'Notice', 'middleware' => ['auth']], function () {
     Route::get('/editnotice', [NoticeController::class, 'edit'])->name('edit');
     Route::post('/updatenotice', [NoticeController::class, 'update'])->name('update');
     Route::delete('/deletenotice', [NoticeController::class, 'delete'])->name('delete');
+
+    //  News Manage Route
+    Route::get('/newsIndex',[NewsController::class, 'index'])->name('manageNews');
+    Route::get('/newsData', [NewsController::class, 'getAllNews'])->name('newsData');
+    Route::post('/savenews', [NewsController::class, 'create'])->name('savenews');
+    Route::get('/editnews', [NewsController::class, 'edit'])->name('editnews');
+    Route::post('/updatenews', [NewsController::class, 'update'])->name('updatenews');
+    Route::delete('/deletenews', [NewsController::class, 'delete'])->name('deletenews');
 
 });
 
