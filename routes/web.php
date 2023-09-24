@@ -5,6 +5,7 @@ use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Common\MenuController;
 use App\Http\Controllers\Common\SliderController;
 use App\Http\Controllers\Common\SubMenuController;
+use App\Http\Controllers\Frontend\FrontHomeController;
 use App\Http\Controllers\Institute\InstituteController;
 use App\Http\Controllers\Members\BoardMemberController;
 use App\Http\Controllers\Members\TeacherController;
@@ -23,7 +24,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () { return view('Frontend.landpage'); });
+#Route::get('/', function () { return view('Frontend.landpage'); });
+Route::get('/', [FrontHomeController::class, 'index'])->name('frontHomeIndex');
 Route::get('/admin/login', function () { return view('auth.login'); });
 
 
