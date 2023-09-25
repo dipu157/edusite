@@ -16,8 +16,8 @@
                         <!--menu-top-->
 	                    <br />
 	                    <div class="contact float-right mt-4">
-	                        <p class="phone"><i class="fas fa-phone"></i>কল করুন +০১৬১২২২৯৯৯৯২</p>
-	                        <p class="email"><i class="fas fa-envelope"></i><a href="contact.html">example@website.com</a></p>
+	                        <p class="phone"><i class="fas fa-phone"></i>কল করুন {{ $institute->phone_no }}</p>
+	                        <p class="email"><i class="fas fa-envelope"></i><a href="contact.html">{{ $institute->email }}</a></p>
 	                    </div>
 	                </div>
 	            </div>
@@ -39,10 +39,15 @@
 	                        <li class="nav-item dropdown">
 	                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false" href="#">অন্যান্য <i class="fas fa-angle-down"></i></a>
 	                            <div class="dropdown-menu">
-	                                <a class="dropdown-item" href="about.html">শিক্ষকমন্ডলী</a>
-	                                <a class="dropdown-item" href="privacy.html">প্রকাশনা</a>
+                                    @foreach($submenu as $s)
+                                    <a class="dropdown-item" href="about.html">{{ $s->sub_menu_name }}</a>
+                                    @endforeach
+
 	                            </div>
 	                        </li>
+                            @foreach($menu as $menu)
+                            <li class="nav-item"><a class="nav-link" href="index.html">{{ $menu->menu_name }}</a></li>
+                            @endforeach
 	                    </ul>
 	                </div>
 		        </nav>
