@@ -18,8 +18,8 @@ class FrontHomeController extends Controller
         $menu = Menu::query()->where('status', 1)->get();
         $submenu = Sub_Menu::query()->where('status', 1)->get();
         $notice = Notice::query()->where('status', 1)->get();
-        $slider = Slider::query()->where('status', 1)->get();
+        $sliders = Slider::query()->where('status', 1)->get();
 
-        return view('Frontend.landpage', compact('institute','menu','slider','submenu','notice'));
+        return view('Frontend.landpage', compact('institute','menu','sliders','submenu','notice'));
     }
 }

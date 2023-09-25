@@ -36,8 +36,6 @@
 	                <div class="navbar-collapse collapse" id="navbar-collapse">
 	                    <ul class="nav navbar-nav">
 	                        <li class="nav-item"><a class="nav-link" href="index.html">হোম</a></li>
-	                        <li class="nav-item"><a class="nav-link" href="news.html">নিউজ</a></li>
-	                        <li class="nav-item"><a class="nav-link" href="events.html">আমাদের পরিচিতি</a></li>
 	                        <li class="nav-item dropdown">
 	                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false" href="#">অন্যান্য <i class="fas fa-angle-down"></i></a>
 	                            <div class="dropdown-menu">
@@ -45,11 +43,6 @@
 	                                <a class="dropdown-item" href="privacy.html">প্রকাশনা</a>
 	                            </div>
 	                        </li>
-                            <li class="nav-item"><a class="nav-link" href="index.html">ক্লাশ রুটিন</a></li>
-	                        <li class="nav-item"><a class="nav-link" href="news.html">বিভাগ সমুহ</a></li>
-	                        <li class="nav-item"><a class="nav-link" href="news.html">গ্যালারী</a></li>
-	                        <li class="nav-item"><a class="nav-link" href="news.html">সিলেবাস</a></li>
-	                        <li class="nav-item"><a class="nav-link" href="events.html">যোগাযোগ</a></li>
 	                    </ul>
 	                </div>
 		        </nav>
@@ -66,14 +59,16 @@
         <div class="content container">
             <div id="promo-slider" class="slider flexslider rounded">
                 <ul class="slides">
+                    @foreach($sliders as $slid)
                     <li>
-                        <img src="{{asset('/')}}frontend/assets/images/slides/slide-1.jpg"  alt="" />
+                        <img src="{{asset('storage/images/Slider/' .$slid->image)}}"  alt="" />
                         <p class="flex-caption">
-                            <span class="main rounded" >Our Managements</span>
+                            <span class="main rounded" >{{ $slid->title }}</span>
                             <br />
-                            <span class="secondary clearfix rounded" >Here is our Shyamolian Managements Stuffs</span>
+                            <span class="secondary clearfix rounded" >{{ $slid->description }}</span>
                         </p>
                     </li>
+                    @endforeach
                 </ul>
                 <!--slides-->
             </div>
