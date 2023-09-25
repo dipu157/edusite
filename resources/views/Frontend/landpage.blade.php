@@ -3,7 +3,7 @@
             <div class="header-main container">
 	            <div class="row">
 	                <h1 class="logo col-md-6 col-12">
-	                    <a href="index.html"><img id="logo" src="{{asset('/')}}frontend/assets/images/barobazar_college.png" alt="Logo"></a>
+	                    <a href="index.html"><img id="logo" src="{{ asset('storage/images/'.$institute->logo) }}" alt="Logo"></a>
 	                </h1>
 	                <div class="info col-md-6 col-12">
 	                    <ul class="menu-top float-right d-none d-md-block">
@@ -72,30 +72,6 @@
                             <span class="main rounded" >Our Managements</span>
                             <br />
                             <span class="secondary clearfix rounded" >Here is our Shyamolian Managements Stuffs</span>
-                        </p>
-                    </li>
-                    <li>
-                        <img src="{{asset('/')}}frontend/assets/images/slides/slide-2.jpg"  alt="" />
-                        <p class="flex-caption">
-                            <span class="main rounded" >Placement Conference</span>
-                            <br />
-                            <span class="secondary clearfix rounded" >Presided by Principal M.A. Sattar With Ex Education Minister Nurul Islam Nahid.</span>
-                        </p>
-                    </li>
-                    <li>
-                        <img src="{{asset('/')}}frontend/assets/images/slides/slide-3.jpg"  alt="" />
-                        <p class="flex-caption">
-                            <span class="main rounded" >Our Computer Lab</span>
-                            <br />
-                            <span class="secondary clearfix rounded" >This is our institute Computer Lab. Student Work here all time.</span>
-                        </p>
-                    </li>
-                    <li>
-                        <img src="{{asset('/')}}frontend/assets/images/slides/slide-4.jpg"  alt="" />
-                        <p class="flex-caption">
-                            <span class="main rounded" >Our Main Campus</span>
-                            <br />
-                            <span class="secondary clearfix rounded" >location: WRRV+W8C, R140, Mandari, Sadar- Lakshmipur</span>
                         </p>
                     </li>
                 </ul>

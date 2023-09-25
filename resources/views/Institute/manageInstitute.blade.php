@@ -52,7 +52,7 @@ $(document).ready(function() {
         const fd = new FormData(this);
         $("#btnsave").text('Adding...');
         $.ajax({
-            url: '{{ route('save') }}',
+            url: '{{ route('saveInstitute') }}',
             method: 'post',
             data: fd,
             cache: false,
@@ -86,7 +86,7 @@ $(document).ready(function() {
 		let id = $(this).attr('id');
         console.log(id + "Clicked");
 		$.ajax({
-		url: '{{ route('edit') }}',
+		url: '{{ route('editInstitute') }}',
 		method: 'get',
 		data: {
 		id: id,
@@ -117,7 +117,7 @@ $(document).ready(function() {
 	const fd = new FormData(this);
 	$("#btnupdate").text('Updating...');
 		$.ajax({
-			url: '{{ route('update') }}',
+			url: '{{ route('InstituteUpdate') }}',
 			method: 'post',
 			data: fd,
 			cache: false,

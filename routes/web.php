@@ -48,9 +48,9 @@ Route::group(['namespace' => 'Institute', 'middleware' => ['auth']], function ()
     //  Institute Manage Route
     Route::get('/instituteIndex',[InstituteController::class, 'index'])->name('manageInstitute');
     Route::get('/institutedata', [InstituteController::class, 'getAllInstitute'])->name('institutedata');
-    Route::post('/saveInstitute', [InstituteController::class, 'create'])->name('save');
-    Route::get('/editInstitute', [InstituteController::class, 'edit'])->name('edit');
-    Route::post('/InstituteUpdate', [InstituteController::class, 'update'])->name('update');
+    Route::post('/saveInstitute', [InstituteController::class, 'create'])->name('saveInstitute');
+    Route::get('/editInstitute', [InstituteController::class, 'edit'])->name('editInstitute');
+    Route::post('/InstituteUpdate', [InstituteController::class, 'update'])->name('InstituteUpdate');
 
 
 });
