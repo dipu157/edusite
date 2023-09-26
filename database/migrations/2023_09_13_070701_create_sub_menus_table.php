@@ -13,12 +13,14 @@ return new class extends Migration
     {
         Schema::create('sub_menus', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('institute_id')->unsigned();
+            $table->foreign('institute_id')->references('id')->on('institute_infos')->onDelete('RESTRICT');
             $table->integer('menu_id')->unsigned();
             $table->foreign('menu_id')->references('id')->on('menus')->onDelete('RESTRICT');
             $table->string('sub_menu_name',50);
             $table->string('image',150)->nullable();
-            $table->string('description',600)->nullable();      
-            $table->boolean('status')->default(1);      
+            $table->string('description',600)->nullable();
+            $table->boolean('status')->default(1);
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('RESTRICT');
             $table->timestamp('created_at')->default(\DB::raw('CURRENT_TIMESTAMP'));

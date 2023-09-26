@@ -14,12 +14,15 @@ return new class extends Migration
         Schema::create('institute_infos', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name',240);
-            $table->string('address',200);
+            $table->string('about',540)->nullable();
+            $table->string('address',200)->nullable();
+            $table->string('principle_msg',500)->nullable();
+            $table->string('president_msg',500)->nullable();
             $table->string('email',190)->unique()->nullable();
-            $table->string('city',200);
+            $table->string('city',200)->nullable();
             $table->string('state',200)->nullable();
             $table->string('post_code',200)->nullable();
-            $table->string('country',100);
+            $table->string('country',100)->nullable();
             $table->string('phone_no',200)->nullable();
             $table->string('website',190)->nullable();
             $table->string('logo',150)->nullable();

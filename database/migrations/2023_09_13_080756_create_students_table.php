@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('students', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('institute_id')->unsigned();
+            $table->foreign('institute_id')->references('id')->on('institute_infos')->onDelete('RESTRICT');
             $table->string('full_name',150);
             $table->string('father_name',100)->nullable();
             $table->string('mother_name',100)->nullable();
@@ -25,7 +27,7 @@ return new class extends Migration
             $table->date('dob')->nullable();
             $table->char('gender',1)->comments('M=> Male F=>Female');
             $table->char('blood_group',30)->nullable();
-            $table->string('address',600)->nullable(); 
+            $table->string('address',600)->nullable();
             $table->string('national_id',20)->nullable();
             $table->boolean('status')->default(1);
             $table->integer('user_id')->unsigned();
