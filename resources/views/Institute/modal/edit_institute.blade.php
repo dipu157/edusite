@@ -25,6 +25,11 @@
                               </div>
 
                             <div class="form-group">
+                                <label>Principle Message</label>
+                                <textarea class="form-control" id="principle_msg" cols="50" rows="2" name="principle_msg"></textarea>
+                            </div>
+
+                            <div class="form-group">
                                 <label>Address</label>
                                 <textarea class="form-control" id="address" cols="50" rows="2" name="address"></textarea>
                             </div>
@@ -47,6 +52,11 @@
                             </div>
 
                             <div class="form-group">
+                                <label>President Message</label>
+                                <textarea class="form-control" id="president_msg" cols="50" rows="2" name="president_msg"></textarea>
+                            </div>
+
+                            <div class="form-group">
                             <label>Post Code</label>
                             <input type="text" id="post_code" class="form-control" name="post_code" placeholder="Enter post_code">
                             </div>
@@ -61,6 +71,13 @@
                                 <input type="text" id="phone_no" class="form-control" name="phone_no" placeholder="Enter Phone">
                               </div>
                         </div>
+
+                        <div class="col-md-12 mt-2">
+                            <div class="form-group">
+                                <label>About Institute</label>
+                                <textarea class="form-control" id="about" cols="50" rows="3" name="about"></textarea>
+                            </div>
+                         </div>
 
                          <div class="col-md-12">
                             <div class="row">
