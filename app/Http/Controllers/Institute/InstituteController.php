@@ -75,15 +75,18 @@ class InstituteController extends Controller
 
         $insData = [
             'name' => $request->name,
-            'email' => $request->email,
-            'phone_no' => $request->phone_no,
-            'website' => $request->website,
+            'about' => $request->about,
             'address' => $request->address,
+            'principle_msg' => $request->principle_msg,
+            'president_msg' => $request->president_msg,
+            'email' => $request->email,
             'city' => $request->city,
             'state' => $request->state,
-            'logo' => $filename,
             'post_code' => $request->post_code,
             'country' => $request->country,
+            'phone_no' => $request->phone_no,
+            'website' => $request->website,
+            'logo' => $filename,
         ];
 
         //dd($insData);
