@@ -63,12 +63,13 @@ class MenuController extends Controller
     public function create(Request $request)
     {
         $bData = [
+            'institute_id' => 1,
             'menu_name' => $request->menu_name,
             'description' => $request->description,
             'user_id' => $this->user_id,
         ];
 
-        //dd($insData);
+        //dd($bData);
 
         Menu::create($bData);
         return response()->json(['status' => 200]);

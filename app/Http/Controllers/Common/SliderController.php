@@ -73,6 +73,7 @@ class SliderController extends Controller
         $file->storeAs('public/images/Slider', $filename);
 
         $bData = [
+            'institute_id' => 1,
             'title' => $request->title,
             'image' => $filename,
             'description' => $request->description,
