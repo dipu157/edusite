@@ -99,6 +99,8 @@ $(document).ready(function() {
 			$("#name").val(res.name);
 			$("#email").val(res.email);
 			$("#address").val(res.address);
+            $("#principle_msg").val(res.principle_msg);
+            $("#president_msg").val(res.president_msg);
 			$("#city").val(res.city);
 			$("#state").val(res.state);
 			$("#post_code").val(res.post_code);

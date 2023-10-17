@@ -24,5 +24,7 @@ class InstituteInfo extends Model
         'phone_no',
         'country',
         'website',
+        'principle_message',
+        'president_message',
     ];
 }
