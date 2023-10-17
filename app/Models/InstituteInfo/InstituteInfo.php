@@ -15,6 +15,7 @@ class InstituteInfo extends Model
 
     protected $fillable = [
         'name',
+        'about',
         'logo',
         'email',
         'address',
@@ -24,7 +25,7 @@ class InstituteInfo extends Model
         'phone_no',
         'country',
         'website',
-        'principle_message',
-        'president_message',
+        'principle_msg',
+        'president_msg',
     ];
 }

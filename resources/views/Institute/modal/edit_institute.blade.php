@@ -1,5 +1,5 @@
 <div class="modal fade" id="editInstituteModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-scrollable">
+    <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Update Institute</h5>
@@ -10,8 +10,8 @@
                     @csrf
                     <div class="row">
 
-                        <input type="text" name="id" id="ins_id">
-                        <input type="text" name="emp_photo" id="ins_logo">
+                        <input type="hidden" name="id" id="ins_id">
+                        <input type="hidden" name="emp_photo" id="ins_logo">
 
                         <div class="col-md-6">
                             <div class="form-group">

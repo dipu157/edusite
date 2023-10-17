@@ -99,7 +99,7 @@ class InstituteController extends Controller
 
         $id = $request->id;
         $ins = InstituteInfo::find($id);
-        dd($ins);
+        //dd($ins);
         return response()->json($ins);
     }
 
@@ -123,6 +123,7 @@ class InstituteController extends Controller
         $insData = [
             'name' => $request->name,
             'email' => $request->email,
+            'about' => $request->about,
             'phone_no' => $request->phone_no,
             'website' => $request->website,
             'address' => $request->address,
