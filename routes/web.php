@@ -118,7 +118,7 @@ Route::group(['namespace' => 'Notice', 'middleware' => ['auth']], function () {
 Route::group(['namespace' => 'Slider', 'middleware' => ['auth']], function () {
 
     //  Slider Manage Route
-    Route::get('/index',[SliderController::class, 'index'])->name('manageSlider');
+    Route::get('/sliderindex',[SliderController::class, 'index'])->name('manageSlider');
     Route::get('/sliderdata', [SliderController::class, 'getAllSlider'])->name('sliderdata');
     Route::post('/saveSlider', [SliderController::class, 'create'])->name('save');
     Route::get('/editSlider', [SliderController::class, 'edit'])->name('edit');

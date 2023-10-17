@@ -112,7 +112,7 @@ class InstituteController extends Controller
             $file = $request->file('logo');
             $fileName = time() . '.' . $file->getClientOriginalExtension();
             $file->storeAs('public/images', $fileName);
-            if ($ins->photo) {
+            if ($ins->logo) {
                 Storage::delete('public/images/' . $ins->logo);
             }
         } else {
@@ -125,6 +125,8 @@ class InstituteController extends Controller
             'phone_no' => $request->phone_no,
             'website' => $request->website,
             'address' => $request->address,
+            'principle_msg' => $request->principle_msg,
+            'president_msg' => $request->president_msg,
             'city' => $request->city,
             'state' => $request->state,
             'post_code' => $request->post_code,
