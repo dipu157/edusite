@@ -80,10 +80,10 @@ Route::group(['namespace' => 'Menu', 'middleware' => ['auth']], function () {
     //  Menu Manage Route
     Route::get('/menuIndex',[MenuController::class, 'index'])->name('manageMenu');
     Route::get('/menuData', [MenuController::class, 'getAllMenus'])->name('menuData');
-    Route::post('/savemenu', [MenuController::class, 'create'])->name('save');
-    Route::get('/editmenu', [MenuController::class, 'edit'])->name('edit');
-    Route::post('/updatemenu', [MenuController::class, 'update'])->name('update');
-    Route::delete('/deletemenu', [MenuController::class, 'delete'])->name('delete');
+    Route::post('/savemenu', [MenuController::class, 'create'])->name('saveMenu');
+    Route::get('/editmenu', [MenuController::class, 'edit'])->name('editMenu');
+    Route::post('/updatemenu', [MenuController::class, 'update'])->name('updateMenu');
+    Route::delete('/deletemenu', [MenuController::class, 'delete'])->name('deleteMenu');
 
     //  SubMenu Manage Route
     Route::get('/submenuIndex',[SubMenuController::class, 'index'])->name('manageSubMenu');
