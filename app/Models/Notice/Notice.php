@@ -14,6 +14,7 @@ class Notice extends Model
     protected $guarded = ['id', 'created_at','updated_at'];
 
     protected $fillable = [
+        'institute_id',
         'title',
         'attachment',
         'short_description',

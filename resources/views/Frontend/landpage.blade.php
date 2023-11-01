@@ -1,322 +1,288 @@
 @include('Frontend.layout.header')
-            <!--to-bar-->
-            <div class="header-main container">
-	            <div class="row">
-	                <h1 class="logo col-md-6 col-12">
-	                    <a href="index.html"><img id="logo" src="{{ asset('storage/images/'.$institute->logo) }}" alt="Logo"></a>
-	                </h1>
-	                <div class="info col-md-6 col-12">
-	                    <ul class="menu-top float-right d-none d-md-block">
-	                        <li class="divider"><a href="index.html">হোম</a></li>
-	                        <li class="divider"><a href="index.html">বোর্ড মেম্বারস</a></li>
-	                        <li class="divider"><a href="index.html">শিক্ষকমন্ডলী</li>
-	                        <li class="divider"><a href="faq.html">প্রশ্ন</a></li>
-	                        <li><a href="contact.html">যোগাযোগ</a></li>
-	                    </ul>
-                        <!--menu-top-->
-	                    <br />
-	                    <div class="contact float-right mt-4">
-	                        <p class="phone"><i class="fas fa-phone"></i>কল করুন {{ $institute->phone_no }}</p>
-	                        <p class="email"><i class="fas fa-envelope"></i><a href="contact.html">{{ $institute->email }}</a></p>
-	                    </div>
-	                </div>
-	            </div>
+
+
+<!-- banner area start -->
+
+<section id="banner">
+    <div class="banner-slider">
+        <div class="banner-item">
+            <img src="{{asset("/frontend/assets/images/Rectangle 5.jpg")}}" alt="Rectangle" class="w-100 img-fluid ">
+            <div class="banner-text">
+                <h2>Welcome to</h2>
+                <h1>The International BL High-School</h1>
             </div>
-        </header>
-
-        <!-- NAV -->
-        <div class="main-nav-wrapper">
-            <div class="container d-flex">
-	            <nav class="main-nav navbar navbar-expand-md" role="navigation">
-	                <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbar-collapse">
-	                    <span class="sr-only"></span>
-	                    <span class="icon-bar"></span>
-	                </button>
-
-	                <div class="navbar-collapse collapse" id="navbar-collapse">
-	                    <ul class="nav navbar-nav">
-	                        <li class="nav-item"><a class="nav-link" href="index.html">হোম</a></li>
-	                        <li class="nav-item dropdown">
-	                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false" href="#">অন্যান্য <i class="fas fa-angle-down"></i></a>
-	                            <div class="dropdown-menu">
-                                    @foreach($submenu as $s)
-                                    <a class="dropdown-item" href="about.html">{{ $s->sub_menu_name }}</a>
-                                    @endforeach
-
-	                            </div>
-	                        </li>
-                            @foreach($menu as $menu)
-                            <li class="nav-item"><a class="nav-link" href="index.html">{{ $menu->menu_name }}</a></li>
-                            @endforeach
-	                    </ul>
-	                </div>
-		        </nav>
-	        </div>
         </div>
-
-
-        <marquee style="color:black">"<span class="text-danger"> বারবাজার ডিগ্রী কলেজ </span>"
-            বাংলাদেশের স্বনামধন্য একটি ডিগ্রী কলেজ। আমাদের প্রতিষ্ঠানে খুবই মনোরম পরিবেশে বিশ্বমানের
-            শিক্ষকমন্ডলী দ্বারা শিক্ষার্থীদেরকে পাঠ-দ্বান করা হয়। </marquee>
-
-
-        <!-- CONTENT -->
-        <div class="content container">
-            <div id="promo-slider" class="slider flexslider rounded">
-                <ul class="slides">
-                    @foreach($sliders as $slid)
-                    <li>
-                        <img src="{{asset('storage/images/Slider/' .$slid->image)}}"  alt="" />
-                        <p class="flex-caption">
-                            <span class="main rounded" >{{ $slid->title }}</span>
-                            <br />
-                            <span class="secondary clearfix rounded" >{{ $slid->description }}</span>
-                        </p>
-                    </li>
-                    @endforeach
-                </ul>
-                <!--slides-->
+        <div class="banner-item">
+            <img src="{{asset("/frontend/assets/images/Rectangle 5.jpg")}}" alt="Rectangle" class="w-100 img-fluid ">
+            <div class="banner-text">
+                <h2>Welcome to</h2>
+                <h1>The International BL High-School</h1>
             </div>
-
-            <div class="row cols-wrapper">
-                <div class="col-lg-3 col-12">
-                    <section class="links rounded shadow">
-                        <h1 class="section-heading text-highlight"><span class="line">সভাপতির মেসেজ</span></h1>
-                        <img src="assets/images/photo.png" height="100px" width="100px" alt="photo" />
-                        <div class="section-content">
-                            <p>এমন প্রশ্নে সরাসরি হ্যাঁ বা না বলার সুযোগ নেই। তবে তিনি যে বর্তমানে সেরা পেসারদের একজন, সে বিষয়ে সংশয় থাকার কোনো
-                                সুযোগ নেই। আর এশিয়া কাপে ভারতের বিপক্ষে প্রথম দেখায় যেভাবে রোহিত শর্মা, বিরাট কোহলিদের বোকা বানিয়েছেন;
-                                তাতে আফ্রিদির শ্রেষ্ঠত্ব মানছেন অনেকেই।
-                            </p>
-                        </div>
-                    </section>
-                    <section class="events rounded shadow">
-                        <h1 class="section-heading text-highlight"><span class="line">Events</span></h1>
-                        <div class="section-content">
-                            <div class="event-item">
-                                <p class="date-label">
-                                    <span class="month">FEB</span>
-                                    <span class="date-number">18</span>
-                                </p>
-                                <div class="details">
-                                    <h2 class="title">Open Day</h2>
-                                    <p class="time"><i class="far fa-clock"></i>10:00am - 18:00pm</p>
-                                    <p class="location"><i class="fas fa-map-marker-alt"></i>Lakshmipur Campus</p>
-                                </div>
-                            </div>
-                            <div class="event-item">
-                                <p class="date-label">
-                                    <span class="month">SEP</span>
-                                    <span class="date-number">06</span>
-                                </p>
-                                <div class="details">
-                                    <h2 class="title">E-learning at SEU</h2>
-                                    <p class="time"><i class="far fa-clock"></i>10:00am - 16:00pm</p>
-                                    <p class="location"><i class="fas fa-map-marker-alt"></i>SEU Learning Center</p>
-                                </div>
-                            </div>
-                            <div class="event-item">
-                                <p class="date-label">
-                                    <span class="month">JUN</span>
-                                    <span class="date-number">23</span>
-                                </p>
-                                <div class="details">
-                                    <h2 class="title">Career Fair</h2>
-                                    <p class="time"><i class="far fa-clock"></i>09:45am - 16:00pm</p>
-                                    <p class="location"><i class="fas fa-map-marker-alt"></i>SEU Library</p>
-                                </div>
-                            </div>
-                            <div class="event-item">
-                                <p class="date-label">
-                                    <span class="month">May</span>
-                                    <span class="date-number">17</span>
-                                </p>
-                                <div class="details">
-                                    <h2 class="title">Science Seminar</h2>
-                                    <p class="time"><i class="far fa-clock"></i>14:00pm - 18:00pm</p>
-                                    <p class="location"><i class="fas fa-map-marker-alt"></i>SEU Library</p>
-                                </div>
-                            </div>
-                            <a class="read-more" href="events.html">All events<i class="fas fa-chevron-right"></i></a>
-                        </div>
-                    </section>
-                </div>
-                <div class="col-lg-6 col-12">
-                    <section class="course-finder rounded shadow">
-                        <h1 class="section-heading text-highlight"><span class="line">আমাদের কলেজ সম্পর্কে</span></h1>
-                        <div class="section-content">
-                            <p>এমন প্রশ্নে সরাসরি হ্যাঁ বা না বলার সুযোগ নেই। তবে তিনি যে বর্তমানে সেরা পেসারদের একজন, সে বিষয়ে সংশয় থাকার কোনো সুযোগ নেই। আর এশিয়া কাপে ভারতের বিপক্ষে প্রথম দেখায় যেভাবে রোহিত শর্মা, বিরাট কোহলিদের বোকা বানিয়েছেন; তাতে আফ্রিদির শ্রেষ্ঠত্ব মানছেন অনেকেই।
-                                ভারতের বিপক্ষে এই পেসার নিয়েছিলেন ৩৫ রানে ৪ উইকেট। এখানেই শেষ নয়, আফ্রিদি বলেছেন এটা কেবল শুরু। এএফপিকে দেওয়া সাক্ষাৎকারে এই পেসার বলেছেন, তাঁর সেরাটা আসছে। এমন বলে কি ভারতকে হুমকি দিয়ে রাখলেন আফ্রিদি!
-                            </p>
-                            <a class="read-more" href="#">See Details<i class="fas fa-chevron-right"></i></a>
-                        </div>
-                    </section>
-
-                    <section class="events rounded shadow">
-                        <h1 class="section-heading text-highlight"><span class="line">নোটিশ</span></h1>
-                        <div class="section-content">
-                            <div class="event-item">
-                                <div class="details">
-                                    <h2 class="title"><b>উচ্চ মাধ্যমিক পরীক্ষা ২০২৩ উপলক্ষে কলেজের নতুন ক্যাম্পাসের পাঠদান বন্ধের নোটিশ</b></h2>
-                                    <p class="time">এমন প্রশ্নে সরাসরি হ্যাঁ বা না বলার সুযোগ নেই। তবে তিনি যে বর্তমানে সেরা পেসারদের একজন, সে বিষয়ে সংশয় থাকার কোনো সুযোগ নেই।
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="event-item">
-                                <div class="details">
-                                    <h2 class="title"><b>আগামীকাল শুভ জন্মাষ্টমীর উপলক্ষে কলেজ বন্ধ থাকবে</b></h2>
-                                    <p class="time">এমন প্রশ্নে সরাসরি হ্যাঁ বা না বলার সুযোগ নেই। তবে তিনি যে বর্তমানে সেরা পেসারদের একজন, সে বিষয়ে সংশয় থাকার কোনো সুযোগ নেই।
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="event-item">
-                                <div class="details">
-                                    <h2 class="title"><b>উচ্চ মাধ্যমিক পরীক্ষা ২০২৩ উপলক্ষে ব্যবসায় শিক্ষা ভবনের শ্রেণি কার্যক্রম বন্ধের নোটিশ</b></h2>
-                                    <p class="time">এমন প্রশ্নে সরাসরি হ্যাঁ বা না বলার সুযোগ নেই। তবে তিনি যে বর্তমানে সেরা পেসারদের একজন, সে বিষয়ে সংশয় থাকার কোনো সুযোগ নেই।
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="event-item">
-                                <div class="details">
-                                    <h2 class="title"><b>পুরাতন ক্যাম্পাাস ও নতুন ক্যাম্পাসের শ্রেণি কার্যক্রম শুরু করার নোটিশ</b></h2>
-                                    <p class="time">এমন প্রশ্নে সরাসরি হ্যাঁ বা না বলার সুযোগ নেই। তবে তিনি যে বর্তমানে সেরা পেসারদের একজন, সে বিষয়ে সংশয় থাকার কোনো সুযোগ নেই।
-                                    </p>
-                                </div>
-                            </div>
-                            <a class="read-more" href="#">All Notices<i class="fas fa-chevron-right"></i></a>
-                        </div>
-                    </section>
-                </div>
-                <div class="col-lg-3 col-12">
-
-                    <section class="links rounded shadow">
-                        <h1 class="section-heading text-highlight"><span class="line">প্রিন্সিপাল মেসেজ</span></h1>
-                        <img src="assets/images/photo.png" height="100px" width="100px" alt="photo" />
-                        <div class="section-content">
-                            <p>এমন প্রশ্নে সরাসরি হ্যাঁ বা না বলার সুযোগ নেই। তবে তিনি যে বর্তমানে সেরা পেসারদের একজন, সে বিষয়ে সংশয় থাকার কোনো সুযোগ নেই।
-                                আর এশিয়া কাপে ভারতের বিপক্ষে প্রথম দেখায় যেভাবে রোহিত শর্মা, বিরাট কোহলিদের বোকা বানিয়েছেন; তাতে আফ্রিদির শ্রেষ্ঠত্ব মানছেন অনেকেই।
-                            </p>
-                        </div>
-                    </section>
-
-                    <section class="links rounded shadow">
-                        <h1 class="section-heading text-highlight"><span class="line">Quick Links</span></h1>
-                        <div class="section-content">
-                            <p><a href="#"><i class="fas fa-caret-right"></i>E-learning Portal</a></p>
-                            <p><a href="#"><i class="fas fa-caret-right"></i>Gallery</a></p>
-                            <p><a href="#"><i class="fas fa-caret-right"></i>Job Vacancies</a></p>
-                            <p><a href="#"><i class="fas fa-caret-right"></i>Contact</a></p>
-                        </div>
-                    </section>
-
-                    <section class="testimonials">
-                        <h1 class="section-heading text-highlight"><span class="line"> Testimonials</span></h1>
-                        <div class="carousel-controls">
-                            <a class="prev rounded-pill" href="#testimonials-carousel" data-slide="prev"><i class="fas fa-caret-left"></i></a>
-                            <a class="next rounded-pill" href="#testimonials-carousel" data-slide="next"><i class="fas fa-caret-right"></i></a>
-                        </div>
-                        <div class="section-content">
-                            <div id="testimonials-carousel" class="testimonials-carousel carousel slide">
-                                <div class="carousel-inner">
-                                    <div class="carousel-item item active">
-                                        <blockquote class="quote">
-                                            <p><i class="fas fa-quote-left"></i>I’m very happy interdum eget ipsum. Nunc pulvinar ut nulla eget sollicitudin. In hac habitasse platea dictumst. Integer mattis varius ipsum, posuere posuere est porta vel. Integer metus ligula, blandit ut fermentum a, rhoncus in ligula. Duis luctus.</p>
-                                        </blockquote>
-                                        <div class="source">
-                                            <p class="people"><span class="name">Shahin Hossain</span></p>
-                                            <img class="profile" src="assets/images/testimonials/testimonial-1.jpg" alt="" />
-                                        </div>
-                                    </div>
-                                    <div class="carousel-item item">
-                                        <blockquote class="quote">
-                                            <p><i class="fas fa-quote-left"></i>
-                                            I'm very pleased commodo gravida ultrices. Sed massa leo, aliquet non velit eu, volutpat vulputate odio. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse porttitor metus eros, ut fringilla nulla auctor a.</p>
-                                        </blockquote>
-                                        <div class="source">
-                                            <p class="people"><span class="name">Harunur Rashid Noyon</span></p>
-                                            <img class="profile" src="assets/images/testimonials/testimonial-2.jpg"  alt="" />
-                                        </div>
-                                    </div>
-                                    <div class="carousel-item item">
-                                        <blockquote class="quote">
-                                            <p><i class="fas fa-quote-left"></i>
-                                            I'm delighted commodo gravida ultrices. Sed massa leo, aliquet non velit eu, volutpat vulputate odio. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse porttitor metus eros, ut fringilla nulla auctor a.</p>
-                                        </blockquote>
-                                        <div class="source">
-                                            <p class="people"><span class="name">Iqbal Hossain</span></p>
-                                            <img class="profile" src="assets/images/testimonials/testimonial-3.jpg"  alt="" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                </div>
+        </div>
+        <div class="banner-item">
+            <img src="{{asset("/frontend/assets/images/Rectangle 5.jpg")}}" alt="Rectangle" class="w-100 img-fluid ">
+            <div class="banner-text">
+                <h2>Welcome to</h2>
+                <h1>The International BL High-School</h1>
             </div>
+        </div>
+    </div>
+    <div class="admission-date">
+        <div class="container">
+            <div class="admission-date-inner">
+                <h4><marquee behavior="scroll" direction="right"><span>LATEST:</span> Admission Form-2024 is available....</marquee></h4>
+            </div>
+        </div>
+    </div>
+</section>
 
-             <!--promo-->
-             <section class="news rounded">
-                <h1 class="section-heading text-highlight fw-bold"><span class="line">সামপ্রতিক সংবাদ</span></h1>
-                <div class="carousel-controls">
-                    <a class="prev rounded-pill" href="#news-carousel" data-slide="prev"><i class="fas fa-caret-left"></i></a>
-                    <a class="next rounded-pill" href="#news-carousel" data-slide="next"><i class="fas fa-caret-right"></i></a>
-                </div>
-                <!--carousel-controls-->
-                <div class="section-content clearfix">
-                    <div id="news-carousel" class="news-carousel carousel slide">
-                        <div class="carousel-inner">
-                            <div class="item carousel-item active">
-	                            <div class="row">
-	                                <div class="col-lg-4 col-12 news-item">
-	                                    <h2 class="title"><a href="news.html">Award Giving Ceremony</a></h2>
-	                                    <img class="thumb rounded-pill" src="assets/images/news/news-thumb-1.jpg"  alt="" />
-	                                    <p>Suspendisse purus felis, porttitor quis sollicitudin sit amet, elementum et tortor. Praesent lacinia magna in malesuada vestibulum. Pellentesque urna libero.</p>
-	                                    <a class="read-more" href="news-single.html">Read more<i class="fas fa-chevron-right"></i></a>
-	                                </div>
-	                                <div class="col-lg-4 col-12 news-item">
-	                                    <h2 class="title"><a href="news.html">RAG Day (Batch 201-19)</a></h2>
-	                                    <p>Nam feugiat erat vel neque mollis, non vulputate erat aliquet. Maecenas ac leo porttitor, semper risus condimentum, cursus elit. Vivamus vitae libero tellus.</p>
-	                                    <a class="read-more" href="news.html">Read more<i class="fas fa-chevron-right"></i></a>
-	                                    <img class="thumb rounded-pill" src="assets/images/news/news-thumb-2.jpg"  alt="" />
-	                                </div>
-	                                <div class="col-lg-4 col-12 news-item">
-	                                    <h2 class="title"><a href="news.html">Tribute to Principal M.A. Sattar</a></h2>
-	                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam bibendum mauris eget sapien consectetur pellentesque. Proin elementum tristique euismod. </p>
-	                                    <a class="read-more" href="news.html">Read more<i class="fas fa-chevron-right"></i></a>
-	                                    <img class="thumb rounded-pill" src="assets/images/news/news-thumb-3.jpg"  alt="" />
-	                                </div>
-	                            </div>
-                            </div>
-                            <!--item-->
-                            <div class="item carousel-item">
-	                            <div class="row">
-	                                <div class="col-lg-4 col-12 news-item">
-	                                    <h2 class="title"><a href="news.html">Principal M. A. Sattar</a></h2>
-	                                    <img class="thumb rounded-pill" src="assets/images/news/news-thumb-4.jpg"  alt="" />
-	                                    <p>Suspendisse purus felis, porttitor quis sollicitudin sit amet, elementum et tortor. Praesent lacinia magna in malesuada vestibulum. Pellentesque urna libero.</p>
-	                                    <a class="read-more" href="news.html">Read more<i class="fas fa-chevron-right"></i></a>
-	                                </div>
-	                                <div class="col-lg-4 col-12 news-item">
-	                                    <h2 class="title"><a href="news.html">Conference</a></h2>
-	                                    <p>Nam feugiat erat vel neque mollis, non vulputate erat aliquet. Maecenas ac leo porttitor, semper risus condimentum, cursus elit. Vivamus vitae libero tellus.</p>
-	                                    <a class="read-more" href="news.html">Read more<i class="fas fa-chevron-right"></i></a>
-	                                    <img class="thumb rounded-pill" src="assets/images/news/news-thumb-5.jpg"  alt="" />
-	                                </div>
-	                                <div class="col-lg-4 col-12 news-item">
-	                                    <h2 class="title"><a href="news.html">Student Practical Training</a></h2>
-	                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam bibendum mauris eget sapien consectetur pellentesque. Proin elementum tristique euismod. </p>
-	                                    <a class="read-more" href="news.html">Read more<i class="fas fa-chevron-right"></i></a>
-	                                    <img class="thumb rounded-pill" src="assets/images/news/news-thumb-6.jpg"  alt="" />
-	                                </div>
-                                    <!--news-item-->
-	                            </div>
+<!-- banner area end -->
+
+<!-- notice-board area start -->
+
+<section id="notice-board">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-12">
+                <div class="row">
+                    <div class="col-lg-3 col-md-3 col-12">
+                        <div class="flag">
+                            <img src="{{asset("/frontend/assets/images/flag.svg")}}" alt="flag">
+                        </div>
+                    </div>
+                    <div class="col-lg-9 col-md-9 col-12">
+                        <div class="notice">
+                            <img  class="union" src="{{asset("/frontend/assets/images/Union.svg")}}" alt="Union">
+                            <div class="noticeBoard">
+                                <div class="noticeBoardTitle text-center">
+                                    <h3>NOTICE BOARD</h3>
+                                </div>
+                                <div class="noticeBoard-inner">
+                                    <img class="noticeBoard w-100 " src="{{asset("/frontend/assets/images/notice.svg")}}" alt="board">
+                                    <div class="noticeboard-innerText">
+                                        <h5 class="noticeBoard-lsit-title"><img src="{{asset("/frontend/assets/images/redpin.svg")}}" alt="redpin"> Notice To All the Classes: Puja vacation starts from tomorrow, 19.10.2023 Till 29.10.2023. School reopens on Monday, 30.10.2023 with day 1 routine.</h5>
+                                        <ul class="noticeList">
+                                            <li class="noticeListItem"><a href="#"><img src="{{asset("/frontend/assets/images/pin.svg")}}" alt="pin"> Notice to all parents_21.09.2023</a></li>
+                                            <li class="noticeListItem"><a href="#"><img src="{{asset("/frontend/assets/images/pin.svg")}}" alt="pin"> Teachers day celebration on 4th sept, 2023</a></li>
+                                            <li class="noticeListItem"><a href="#"><img src="{{asset("/frontend/assets/images/pin.svg")}}" alt="pin"> Teachers day celebration on 4th sept, 2023</a></li>
+                                            <li class="noticeListItem"><a href="#"><img src="{{asset("/frontend/assets/images/pin.svg")}}" alt="pin"> CLASS KG ADMISSION – ACADEMIC SESSION 2024-2025.....</a></li>
+                                            <li class="noticeListItem"><a href="#"><img src="{{asset("/frontend/assets/images/pin.svg")}}" alt="pin"> Update class routine for XI-XII (2023-24)</a></li>
+                                            <li class="noticeListItem"><a href="#"><img src="{{asset("/frontend/assets/images/pin.svg")}}" alt="pin"> Admission Notice XI 2023-24</a></li>
+                                            <li class="noticeListItem"><a href="#"><img src="{{asset("/frontend/assets/images/pin.svg")}}" alt="pin"> Admission Notice XI 2023-24</a></li>
+                                            <li class="noticeListItem"><a href="#"><img src="{{asset("/frontend/assets/images/pin.svg")}}" alt="pin"> Admission Notice XI 2023-24</a></li>
+                                            <li class="noticeListItem"><a href="#"><img src="{{asset("/frontend/assets/images/pin.svg")}}" alt="pin"> Admission Notice XI 2023-24</a></li>
+                                            <li class="noticeListItem"><a href="#"><img src="{{asset("/frontend/assets/images/pin.svg")}}" alt="pin"> Admission Notice XI 2023-24</a></li>
+                                            <li class="noticeListItem"><a href="#"><img src="{{asset("/frontend/assets/images/pin.svg")}}" alt="pin"> Admission Notice XI 2023-24</a></li>
+                                            <li class="noticeListItem"><a href="#"><img src="{{asset("/frontend/assets/images/pin.svg")}}" alt="pin"> Admission Notice XI 2023-24</a></li>
+                                            <li class="noticeListItem"><a href="#"><img src="{{asset("/frontend/assets/images/pin.svg")}}" alt="pin"> Admission Notice XI 2023-24</a></li>
+                                            <li class="noticeListItem"><a href="#"><img src="{{asset("/frontend/assets/images/pin.svg")}}" alt="pin"> Admission Notice XI 2023-24</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
-
-
+            </div>
+            <div class="col-lg-4 col-12">
+                <div class="teacher">
+                    <div class="message">
+                        <h3>Message</h3>
+                    </div>
+                   <div class="row">
+                    <div class="col-lg-12 col-12 col-sm-6">
+                        <div class="teacher-card text-center ">
+                            <h3>Honorable Principal</h3>
+                            <img class="avater" src="{{asset("/frontend/assets/images/avater.svg")}}" alt="avater">
+                            <h4>Md. Mirza Fakhrul Islam</h4>
+                            <p>Lorem ipsum dolor sit amet consectetur. Nisl odio elementum tempor etiam tincidunt nunc lectus. At sit sem erat est. Lorem adipiscing auctor pellentesque proin pulvinar. Purus vel mattis interdum eu ac.</p>
+                            <button>Read more <i class="fa-solid fa-angles-right"></i></button>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-12 col-sm-6">
+                        <div class="teacher-card text-center ">
+                            <h3>Honorable Principal</h3>
+                            <img class="avater" src="{{asset("/frontend/assets/images/avater.svg")}}" alt="avater">
+                            <h4>Md. Mirza Fakhrul Islam</h4>
+                            <p>Lorem ipsum dolor sit amet consectetur. Nisl odio elementum tempor etiam tincidunt nunc lectus. At sit sem erat est. Lorem adipiscing auctor pellentesque proin pulvinar. Purus vel mattis interdum eu ac.</p>
+                            <button>Read more <i class="fa-solid fa-angles-right"></i></button>
+                        </div>
+                    </div>
+                   </div>
+                </div>
+            </div>
         </div>
     </div>
+</section>
+
+<!-- notice-board area end -->
+
+<!-- school-events area start -->
+
+<section id="SchoolEvents">
+    <div class="container">
+        <div class="title text-center ">
+            <h2>SCHOOL EVENTS</h2>
+            <img src="{{asset("/frontend/assets/images/bar.svg")}}" alt="bar">
+        </div>
+        <div class="events-area">
+            <div class="row">
+                <div class="col-lg-7 col-12">
+                    <div class="upComingEvents">
+                        <img class="w-100 img-fluid " src="{{asset("/frontend/assets/images/eventsBG.svg")}}" alt="eventsBG">
+                        <h4 class="upComingEvenText">No Upcoming Event</h4>
+                    </div>
+                </div>
+                <div class="col-lg-5 col-12">
+                    <div class="eventsItem-wrapper">
+                       <div class="row">
+                        <div class="col-lg-6 col-12 col-sm-6">
+                            <div class="events-item text-center ">
+                                <img class="w-100 img-fluid " src="{{asset("/frontend/assets/images/event1.svg")}}" alt="event1">
+                                <div class="event-itemText">
+                                    <h4>asf</h4>
+                                    <h5><i class="fa-solid fa-calendar-days"></i> asdfa</h5>
+                                </div>
+                                <button>View Details</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-12 col-sm-6">
+                            <div class="events-item text-center ">
+                                <img class="w-100 img-fluid " src="{{asset("/frontend/assets/images/event2.svg")}}" alt="event1">
+                                <div class="event-itemText">
+                                    <h4>asf</h4>
+                                    <h5><i class="fa-solid fa-calendar-days"></i> asdfa</h5>
+                                </div>
+                                <button>View Details</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-12 col-sm-6">
+                            <div class="events-item text-center ">
+                                <img class="w-100 img-fluid " src="{{asset("/frontend/assets/images/event3.svg")}}" alt="event1">
+                                <div class="event-itemText">
+                                    <h4>asf</h4>
+                                    <h5><i class="fa-solid fa-calendar-days"></i> asdfa</h5>
+                                </div>
+                                <button>View Details</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-12 col-sm-6">
+                            <div class="events-item text-center ">
+                                <img class="w-100 img-fluid " src="{{asset("/frontend/assets/images/event4.svg")}}" alt="event1">
+                                <div class="event-itemText">
+                                    <h4>asf</h4>
+                                    <h5><i class="fa-solid fa-calendar-days"></i> asdfa</h5>
+                                </div>
+                                <button>View Details</button>
+                            </div>
+                        </div>
+                       </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- school-events area end -->
+
+<!-- administration area start -->
+
+<section id="administration">
+    <div class="container">
+        <div class="title text-center ">
+            <h2>ADMINISTRATION</h2>
+            <img src="{{asset("/frontend/assets/images/bar.svg")}}" alt="bar">
+        </div>
+        <div class="administration-wrapper">
+            <div class="admins-item">
+                <a href="#">
+                    <div class="admins-img">
+                        <img src="{{asset("/frontend/assets/images/teacher1.svg")}}" alt="teacher">
+                    </div>
+                    <h3>Vice Principal S</h3>
+                    <h4>Dr. Bikash Chandra</h4>
+                </a>
+            </div>
+            <div class="admins-item">
+                <a href="#">
+                    <div class="admins-img">
+                        <img src="{{asset("/frontend/assets/images/teacher2.svg")}}" alt="teacher">
+                    </div>
+                    <h3>Vice Principal (KG-5)</h3>
+                    <h4>Dr. Bikash Chandra</h4>
+                </a>
+            </div>
+            <div class="admins-item">
+                <a href="#">
+                    <div class="admins-img">
+                        <img src="{{asset("/frontend/assets/images/teacher3.svg")}}" alt="teacher">
+                    </div>
+                    <h3>Chaplion of School</h3>
+                    <h4>Dr. Bikash Chandra</h4>
+                </a>
+            </div>
+            <div class="admins-item">
+                <a href="#"> <div class="admins-img">
+                    <img src="{{asset("/frontend/assets/images/teacher4.svg")}}" alt="teacher">
+                </div>
+                    <h3>Medical Assistance</h3>
+                    <h4>Dr. Bikash Chandra</h4>
+                </a>
+            </div>
+            <div class="admins-item">
+                <a href="#">
+                    <div class="admins-img">
+                        <img src="{{asset("/frontend/assets/images/teacher5.svg")}}" alt="teacher">
+                    </div>
+                    <h3>Campus Administrator</h3>
+                    <h4>Dr. Bikash Chandra</h4>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- administration area end -->
+
+<!-- counter area start -->
+
+<section id="counter">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-6">
+                <div class="counter-item text-center ">
+                    <img src="{{asset("/frontend/assets/images/counterAvater1.png")}}" alt="counterAvater">
+                    <h2 class="counter">112</h2>
+                    <h5>CERTIFIED TEACHERS</h5>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6">
+                <div class="counter-item text-center ">
+                    <img src="{{asset("/frontend/assets/images/counterAvater2.png")}}" alt="counterAvater">
+                    <h2 class="counter">282673</h2>
+                    <h5>STUDENTS ENROLLED</h5>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6">
+                <div class="counter-item text-center ">
+                    <img src="{{asset("/frontend/assets/images/counterAvater3.png")}}" alt="counterAvater">
+                    <h2 class="counter">599666</h2>
+                    <h5>PASSING TO UNIVERSITIES</h5>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6">
+                <div class="counter-item text-center ">
+                    <img src="{{asset("/frontend/assets/images/counterAvater4.png")}}" alt="counterAvater">
+                    <h2 class="counter">1200</h2>
+                    <h5>SATISFIED PARENTS</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- counter area end -->
+
+
 @include('Frontend.layout.footer')

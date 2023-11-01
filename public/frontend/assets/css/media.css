@@ -1,0 +1,291 @@
+@media screen and (max-width: 575.99px) {
+    .banner-item img{
+        height: 300px;
+        object-fit: cover;
+    }
+    .banner-text h1 {
+        font-size: 35px;
+        margin-top: 20px;
+    }
+    .banner-arrow{
+        display: none !important;
+    }
+    .admission-date-inner h4 {
+        font-size: 13px;
+        letter-spacing: normal;
+    }
+    .admission-date-inner {
+        padding: 5px;
+    }
+    .flag{
+        text-align: center;
+    }
+    .flag img {
+        width: 295px;
+        height: 300px;
+    }
+    #notice-board {
+        padding-top: 35px;
+    }
+    .notice{
+        margin-bottom: 35px;
+    }
+    .union {
+        width: 100%;
+    }
+
+    .noticeBoard{
+        height: 700px;
+        object-fit: cover;
+    }
+
+    .noticeBoardTitle h3 {
+        font-size: 18px;
+    }
+
+    .message h3 {
+        font-size: 20px;
+    }
+    .upComingEvents img{
+        height: 300px;
+        object-fit: cover;
+    }
+    .upComingEvenText{
+        text-align: center;
+    }
+    .administration-wrapper {
+        flex-wrap: wrap;
+    }
+    .admins-item {
+        margin: 15px 12px;
+        text-align: center;
+        box-shadow: 0px 0px 10px 0px #00000033;
+    }
+    .counter-item{
+        margin-bottom: 25px;
+    }
+    .footer-left{
+        margin-bottom: 20px;
+    }
+    .footerList{
+        margin-bottom: 30px;
+    }
+}
+
+@media screen and (min-width: 576px) and (max-width: 767.99px) {
+
+    .banner-item img{
+        height: 300px;
+        object-fit: cover;
+    }
+    .banner-text h1 {
+        font-size: 35px;
+        margin-top: 20px;
+    }
+    .banner-arrow{
+        display: none !important;
+    }
+    .admission-date-inner {
+        padding: 8px;
+    }
+    .admission-date-inner h4 {
+        font-size: 17px;
+    }
+    #notice-board {
+        padding-top: 30px;
+    }
+    .flag{
+        text-align: center;
+    }
+    .flag img {
+        width: 240px;
+        height: 500px;
+    }
+    .union {
+        width: 100%;
+    }
+    
+    .noticeBoard{
+        height: 700px;
+        object-fit: cover;
+        margin-bottom: 40px;
+    }
+
+    .notice{
+        margin-bottom: 40px;
+    }
+    .message {
+        margin-bottom: 20px;
+    }
+    .teacher-card p {
+        padding: 0 10px;
+    }
+    .upComingEvenText{
+        text-align: center;
+    }
+    .administration-wrapper{
+        flex-wrap: wrap;
+    }
+    .admins-item{
+        margin-bottom: 20px;
+    }
+    .counter-item{
+        margin-bottom: 30px;
+    }
+    .footer-left{
+        margin-bottom: 40px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991.99px) {
+    .banner-item img{
+        height: 400px;
+        object-fit: cover;
+    }
+    .banner-text h1 {
+        font-size: 40px;;
+    }
+    #notice-board {
+        padding-top: 50px;
+    }
+    .flag img {
+        width: 190px;
+        height: 620px;
+    }
+    .union {
+        width: 100%;
+    }
+
+    .noticeBoard{
+        height: 700px;
+        object-fit: cover;
+    }
+    
+    .teacher {
+        margin-top: 80px;
+    }
+
+    .upComingEvenText{
+        text-align: center;
+    }
+    .administration-wrapper{
+        flex-wrap: wrap;
+    }
+    .admins-item{
+        margin-bottom: 30px;
+    }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1199.99px) {
+
+    .admission {
+        font-size: 12px;
+        margin-left: 10px;
+        width: 100px;
+        padding: 7px;
+    }
+    .head-cont-list a {
+        font-size: 12px;
+    }
+    .nav-links {
+        margin-right: 10px;
+    }
+    .nav-links i {
+        font-size: 15px;
+    }
+    .nav-item a span {
+        margin-left: 10px;
+    }
+    .header-logo img {
+        width: 170px;
+    }
+    .nav-item a {
+        font-size: 11px;;
+    }
+    .nav-item {
+        margin-right: 12px;
+    }
+    .banner-text h1 {
+        font-size: 43px;
+    }
+    .flag img {
+        width: 150px;
+        height: 540px;
+        object-fit: cover;
+    }
+    .noticeBoard{
+        height: 700px;
+        object-fit: cover;
+    }
+    .union {
+        width: 100%;
+    }
+    #notice-board {
+        padding-top: 60px;
+    }
+    .teacher-card {
+        margin-bottom: 30px;
+    }
+    .upComingEvenText{
+        text-align: center;
+    }
+    .events-item button {
+        font-size: 13px;
+    }
+    .administration-wrapper{
+        flex-wrap: wrap;
+    }
+    .admins-item{
+        margin-bottom: 25px;
+    }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1399.99px) {
+    .admission {
+        font-size: 13px;
+        margin-left: 10px;
+        width: 120px;
+        padding: 7px;
+    }
+    .nav-links i {
+        font-size: 16px;
+    }
+    .nav-links {
+        margin-right: 10px;
+    }
+    .nav-item {
+        margin-right: 10px;
+    }
+    .nav-item a span {
+        margin-left: 10px;
+    }
+    .nav-item a {
+        font-size: 13px;
+    }
+    .head-cont-list a {
+        font-size: 13px;
+    }
+    .banner-text h1 {
+        font-size: 45px;
+    }
+    .flag img {
+        width: 190px;
+        height: 710px;
+    }
+    .union {
+        width: 100%;
+    }
+    .noticeBoard {
+        height: 700px;
+        object-fit: cover;
+    }
+    .teacher-card {
+        margin-bottom: 30px;
+    }
+    .administration-wrapper{
+        flex-wrap: wrap;
+    }
+    .admins-item{
+        margin-bottom: 25px;
+    }
+}

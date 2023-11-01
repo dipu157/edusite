@@ -1,81 +1,50 @@
+    <!-- footer area start -->
 
-    <!-- FOOTER -->
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="container">
-                <div class="row">
-                <div class="footer-col col-lg-3 col-md-4 col-12 about">
-                    <div class="footer-col-inner">
-                        <h3>About</h3>
-                        <ul>
-                            <li><a href="#"><i class="fas fa-caret-right"></i>About us</a></li>
-                            <li><a href="#"><i class="fas fa-caret-right"></i>Contact us</a></li>
-                            <li><a href="#"><i class="fas fa-caret-right"></i>Privacy policy</a></li>
-                            <li><a href="#"><i class="fas fa-caret-right"></i>Terms & Conditions</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="footer-col col-lg-3 col-md-4 col-12 about">
-                    <div class="footer-col-inner">
-                        <h3>Important Links</h3>
-                        <ul>
-                            <li><a href="#"><i class="fas fa-caret-right"></i>About us</a></li>
-                            <li><a href="#"><i class="fas fa-caret-right"></i>Contact us</a></li>
-                            <li><a href="#"><i class="fas fa-caret-right"></i>Privacy policy</a></li>
-                            <li><a href="#"><i class="fas fa-caret-right"></i>Terms & Conditions</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="footer-col col-lg-3 col-md-4 col-12 about">
-                    <div class="footer-col-inner">
-                        <h3>Important Links</h3>
-                        <ul>
-                            <li><a href="#"><i class="fas fa-caret-right"></i>About us</a></li>
-                            <li><a href="#"><i class="fas fa-caret-right"></i>Contact us</a></li>
-                            <li><a href="#"><i class="fas fa-caret-right"></i>Privacy policy</a></li>
-                            <li><a href="#"><i class="fas fa-caret-right"></i>Terms & Conditions</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="footer-col col-lg-3 col-12 contact">
-                    <div class="footer-col-inner">
-                        <h3>Contact us</h3>
-                        <div class="row">
-                            <p class="adr clearfix col-lg-12 col-md-4 col-12">
-                                <i class="fas fa-map-marker-alt float-left"></i>
-                                <span class="adr-group float-left">
-                                    <span class="street-address">বারবাজার ডিগ্রী কলেজ,বারবাজার</span><br>
-                                    <span class="region">Mandari, Sadar</span><br>
-                                    <span class="postal-code">Lakshmipur</span><br>
-                                    <span class="country-name">Bangladesh</span>
-                                </span>
-                            </p>
-                            <p class="tel col-lg-12 col-md-4 col-12"><i class="fas fa-phone"></i>+8801712345678</p>
-                            <p class="email col-lg-12 col-md-4 col-12"><i class="fas fa-envelope"></i><a href="#">example@website.com</a></p>
+    <footer id="footer">
+        <div class="container">
+            <div class="footer-row">
+                <div class="row align-items-center ">
+                    <div class="col-lg-6 col-md-6">
+                        <div class="footer-left">
+                            <img class="w-100 img-fluid " src="{{asset("/frontend/assets/images/map.svg")}}" alt="map">
                         </div>
                     </div>
-                </div>
+                    <div class="col-lg-3 col-sm-6 col-md-3 text-center ">
+                        <h4 class="footListTitle">PRIMARY SECTION</h4>
+                        <ul class="footerList">
+                            <li>Avenue 6, road 11</li>
+                            <li>Mirpur DOHS, Dhaka-1210</li>
+                            <li><a href="#">Ph: +8801712600748</a></li>
+                            <li><a href="#">Email: hot24hrs@gmail.com</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 col-md-3 text-center ">
+                        <h4 class="footListTitle">Secondary SECTION</h4>
+                        <ul class="footerList">
+                            <li>Avenue 6, road 11</li>
+                            <li>Mirpur DOHS, Dhaka-1210</li>
+                            <li><a href="#">Ph: +8801712600748</a></li>
+                            <li><a href="#">Email: hot24hrs@gmail.com</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="bottom-bar">
-            <div class="container">
-                <div class="row">
-                    <small class="copyright col-lg-6 col-12">All Copyright @ বারবাজার ডিগ্রী কলেজ</small>
-                </div>
-            </div>
+        <div class="footer-bottom text-center ">
+            <p> copyright@abc.com</p>
         </div>
     </footer>
 
-    <!-- Javascript -->
-    <script type="text/javascript" src="{{asset('/')}}frontend/assets/plugins/jquery-3.4.1.min.js"></script>
-    <script type="text/javascript" src="{{asset('/')}}frontend/assets/plugins/popper.min.js"></script>
-    <script type="text/javascript" src="{{asset('/')}}frontend/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="{{asset('/')}}frontend/assets/plugins/back-to-top.js"></script>
-    <script type="text/javascript" src="{{asset('/')}}frontend/assets/plugins/flexslider/jquery.flexslider-min.js"></script>
-    <script type="text/javascript" src="{{asset('/')}}frontend/assets/plugins/jflickrfeed/jflickrfeed.min.js"></script>
-    <script type="text/javascript" src="{{asset('/')}}frontend/assets/js/main.js"></script>
+    <!-- footer area end -->
+
+
+    <script src="{{asset("/frontend/assets/js/jquery-1.12.4.min.js")}}"></script>
+    <script src="{{asset("/frontend/assets/js/bootstrap.bundle.min.js")}}"></script>
+    <script src="{{asset("/frontend/assets/js/jquery.counterup.min.js")}}"></script>
+    <script src="{{asset("/frontend/assets/js/waypoints.min.js")}}"></script>
+    <script src="{{asset("/frontend/assets/js/slick.min.js")}}"></script>
+    <script src="{{asset("/frontend/assets/js/script.js")}}"></script>
 
 </body>
-</html>
 
+</html>

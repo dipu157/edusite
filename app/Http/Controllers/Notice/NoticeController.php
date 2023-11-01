@@ -65,6 +65,7 @@ class NoticeController extends Controller
     public function create(Request $request)
     {
         $bData = [
+            'institute_id' => 1,
             'title' => $request->title,
             'short_description' => $request->short_description,
             'description' => $request->description,
@@ -76,7 +77,7 @@ class NoticeController extends Controller
             'user_id' => $this->user_id,
         ];
 
-        //dd($insData);
+        //dd($bData);
 
         Notice::create($bData);
         return response()->json(['status' => 200]);
