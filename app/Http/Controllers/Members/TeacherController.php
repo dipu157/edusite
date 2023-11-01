@@ -79,6 +79,7 @@ class TeacherController extends Controller
         $file->storeAs('public/images/teacher', $filename);
 
         $bData = [
+            'institute_id' => 1,
             'full_name' => $request->full_name,
             'email' => $request->email,
             'position' => $request->position,

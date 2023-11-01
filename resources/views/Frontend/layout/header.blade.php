@@ -35,26 +35,22 @@
                             <ul class="headCont-wrapper">
                                 <li class="head-cont-list">
                                     <i class="fa-solid fa-phone"></i>
-                                    <a href="#">Call: +8801712600748</a>
+                                    <a href="#">Call: {{ $institute->phone_no }}</a>
                                 </li>
                                 <li class="head-cont-list">
                                     <i class="fa-solid fa-envelope"></i>
-                                    <a href="#">Email: hot24hrs@gmail.com</a>
+                                    <a href="#">Email: {{ $institute->email }}</a>
                                 </li>
                             </ul>
                             <button class="translate">TRANSLATE <i class="fa-solid fa-caret-down"></i></button>
                         </div>
                         <div class="school-navbar d-flex align-items-baseline ">
                             <ul class="navbar-wrapper d-flex ">
+                                @foreach($menus as $menu)
                                 <li class="nav-item">
-                                    <a href="#">ABOUT <span>/</span></a>
+                                    <a href="#">{{$menu->menu_name}} <span>/</span></a>
                                 </li>
-                                <li class="nav-item">
-                                    <a href="#">ACADEMICS <span>/</span></a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#">ACTIVITIES <span>/</span></a>
-                                </li>
+                                @endforeach
                                 <li class="nav-item">
                                     <a href="#">GALLERY <span>/</span></a>
                                     <div class="gallery-dropdown">
@@ -65,9 +61,6 @@
                                             <li><a href="#">Demo 4</a></li>
                                         </ul>
                                     </div>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#">CONTACT</a>
                                 </li>
                             </ul>
                             <ul class="nav-links-wrapper d-flex ">

@@ -52,7 +52,7 @@ $(document).ready(function() {
         const fd = new FormData(this);
         $("#btnsave").text('Adding...');
         $.ajax({
-            url: '{{ route('savenotice') }}',
+            url: '{{ route('saveNotice') }}',
             method: 'post',
             data: fd,
             cache: false,

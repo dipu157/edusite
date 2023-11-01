@@ -5,32 +5,20 @@
 
 <section id="banner">
     <div class="banner-slider">
+        @foreach($sliders as $slid)
         <div class="banner-item">
-            <img src="{{asset("/frontend/assets/images/Rectangle 5.jpg")}}" alt="Rectangle" class="w-100 img-fluid ">
+            <img src="{{asset('storage/images/Slider/' .$slid->image)}}" alt="Rectangle" class="w-100 img-fluid ">
             <div class="banner-text">
-                <h2>Welcome to</h2>
-                <h1>The International BL High-School</h1>
+                <h2>{{ $slid->title }}</h2>
+                <h1>{{ $slid->description }}</h1>
             </div>
         </div>
-        <div class="banner-item">
-            <img src="{{asset("/frontend/assets/images/Rectangle 5.jpg")}}" alt="Rectangle" class="w-100 img-fluid ">
-            <div class="banner-text">
-                <h2>Welcome to</h2>
-                <h1>The International BL High-School</h1>
-            </div>
-        </div>
-        <div class="banner-item">
-            <img src="{{asset("/frontend/assets/images/Rectangle 5.jpg")}}" alt="Rectangle" class="w-100 img-fluid ">
-            <div class="banner-text">
-                <h2>Welcome to</h2>
-                <h1>The International BL High-School</h1>
-            </div>
-        </div>
+        @endforeach
     </div>
     <div class="admission-date">
         <div class="container">
             <div class="admission-date-inner">
-                <h4><marquee behavior="scroll" direction="right"><span>LATEST:</span> Admission Form-2024 is available....</marquee></h4>
+                <h4><marquee behavior="scroll" direction="left"><span>LATEST:</span> Admission Form-2024 is available....</marquee></h4>
             </div>
         </div>
     </div>
@@ -62,20 +50,9 @@
                                     <div class="noticeboard-innerText">
                                         <h5 class="noticeBoard-lsit-title"><img src="{{asset("/frontend/assets/images/redpin.svg")}}" alt="redpin"> Notice To All the Classes: Puja vacation starts from tomorrow, 19.10.2023 Till 29.10.2023. School reopens on Monday, 30.10.2023 with day 1 routine.</h5>
                                         <ul class="noticeList">
-                                            <li class="noticeListItem"><a href="#"><img src="{{asset("/frontend/assets/images/pin.svg")}}" alt="pin"> Notice to all parents_21.09.2023</a></li>
-                                            <li class="noticeListItem"><a href="#"><img src="{{asset("/frontend/assets/images/pin.svg")}}" alt="pin"> Teachers day celebration on 4th sept, 2023</a></li>
-                                            <li class="noticeListItem"><a href="#"><img src="{{asset("/frontend/assets/images/pin.svg")}}" alt="pin"> Teachers day celebration on 4th sept, 2023</a></li>
-                                            <li class="noticeListItem"><a href="#"><img src="{{asset("/frontend/assets/images/pin.svg")}}" alt="pin"> CLASS KG ADMISSION – ACADEMIC SESSION 2024-2025.....</a></li>
-                                            <li class="noticeListItem"><a href="#"><img src="{{asset("/frontend/assets/images/pin.svg")}}" alt="pin"> Update class routine for XI-XII (2023-24)</a></li>
-                                            <li class="noticeListItem"><a href="#"><img src="{{asset("/frontend/assets/images/pin.svg")}}" alt="pin"> Admission Notice XI 2023-24</a></li>
-                                            <li class="noticeListItem"><a href="#"><img src="{{asset("/frontend/assets/images/pin.svg")}}" alt="pin"> Admission Notice XI 2023-24</a></li>
-                                            <li class="noticeListItem"><a href="#"><img src="{{asset("/frontend/assets/images/pin.svg")}}" alt="pin"> Admission Notice XI 2023-24</a></li>
-                                            <li class="noticeListItem"><a href="#"><img src="{{asset("/frontend/assets/images/pin.svg")}}" alt="pin"> Admission Notice XI 2023-24</a></li>
-                                            <li class="noticeListItem"><a href="#"><img src="{{asset("/frontend/assets/images/pin.svg")}}" alt="pin"> Admission Notice XI 2023-24</a></li>
-                                            <li class="noticeListItem"><a href="#"><img src="{{asset("/frontend/assets/images/pin.svg")}}" alt="pin"> Admission Notice XI 2023-24</a></li>
-                                            <li class="noticeListItem"><a href="#"><img src="{{asset("/frontend/assets/images/pin.svg")}}" alt="pin"> Admission Notice XI 2023-24</a></li>
-                                            <li class="noticeListItem"><a href="#"><img src="{{asset("/frontend/assets/images/pin.svg")}}" alt="pin"> Admission Notice XI 2023-24</a></li>
-                                            <li class="noticeListItem"><a href="#"><img src="{{asset("/frontend/assets/images/pin.svg")}}" alt="pin"> Admission Notice XI 2023-24</a></li>
+                                            @foreach($notice as $not)
+                                            <li class="noticeListItem"><a href="#"><img src="{{asset("/frontend/assets/images/pin.svg")}}" alt="pin"> {{ $not->title }}</a></li>
+                                            @endforeach
                                         </ul>
                                     </div>
                                 </div>
@@ -195,50 +172,17 @@
             <img src="{{asset("/frontend/assets/images/bar.svg")}}" alt="bar">
         </div>
         <div class="administration-wrapper">
-            <div class="admins-item">
-                <a href="#">
-                    <div class="admins-img">
-                        <img src="{{asset("/frontend/assets/images/teacher1.svg")}}" alt="teacher">
-                    </div>
-                    <h3>Vice Principal S</h3>
-                    <h4>Dr. Bikash Chandra</h4>
-                </a>
-            </div>
-            <div class="admins-item">
-                <a href="#">
-                    <div class="admins-img">
-                        <img src="{{asset("/frontend/assets/images/teacher2.svg")}}" alt="teacher">
-                    </div>
-                    <h3>Vice Principal (KG-5)</h3>
-                    <h4>Dr. Bikash Chandra</h4>
-                </a>
-            </div>
-            <div class="admins-item">
-                <a href="#">
-                    <div class="admins-img">
-                        <img src="{{asset("/frontend/assets/images/teacher3.svg")}}" alt="teacher">
-                    </div>
-                    <h3>Chaplion of School</h3>
-                    <h4>Dr. Bikash Chandra</h4>
-                </a>
-            </div>
-            <div class="admins-item">
-                <a href="#"> <div class="admins-img">
-                    <img src="{{asset("/frontend/assets/images/teacher4.svg")}}" alt="teacher">
+            @foreach ($teachers as $teach)
+                <div class="admins-item">
+                    <a href="#">
+                        <div class="admins-img">
+                            <img src="{{asset('storage/images/teacher/' .$teach->photo)}}" alt="teacher">
+                        </div>
+                        <h3>{{ $teach->position }}</h3>
+                        <h4>{{ $teach->full_name }}</h4>
+                    </a>
                 </div>
-                    <h3>Medical Assistance</h3>
-                    <h4>Dr. Bikash Chandra</h4>
-                </a>
-            </div>
-            <div class="admins-item">
-                <a href="#">
-                    <div class="admins-img">
-                        <img src="{{asset("/frontend/assets/images/teacher5.svg")}}" alt="teacher">
-                    </div>
-                    <h3>Campus Administrator</h3>
-                    <h4>Dr. Bikash Chandra</h4>
-                </a>
-            </div>
+            @endforeach
         </div>
     </div>
 </section>
