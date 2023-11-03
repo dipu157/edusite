@@ -7,7 +7,7 @@
     <div class="banner-slider">
         @foreach($sliders as $slid)
         <div class="banner-item">
-            <img src="{{asset('storage/images/Slider/' .$slid->image)}}" alt="Rectangle" class="w-100 img-fluid ">
+            <img height="605 px" width="1920 px" src="{{asset('storage/images/Slider/' .$slid->image)}}" alt="Rectangle" class="w-100 img-fluid ">
             <div class="banner-text">
                 <h2>{{ $slid->title }}</h2>
                 <h1>{{ $slid->description }}</h1>
@@ -72,7 +72,7 @@
                             <h3>Honorable Principal</h3>
                             <img class="avater" src="{{asset("/frontend/assets/images/avater.svg")}}" alt="avater">
                             <h4>Md. Mirza Fakhrul Islam</h4>
-                            <p>Lorem ipsum dolor sit amet consectetur. Nisl odio elementum tempor etiam tincidunt nunc lectus. At sit sem erat est. Lorem adipiscing auctor pellentesque proin pulvinar. Purus vel mattis interdum eu ac.</p>
+                            <p>{{ $institute->principle_msg }}</p>
                             <button>Read more <i class="fa-solid fa-angles-right"></i></button>
                         </div>
                     </div>
@@ -81,7 +81,7 @@
                             <h3>Honorable Principal</h3>
                             <img class="avater" src="{{asset("/frontend/assets/images/avater.svg")}}" alt="avater">
                             <h4>Md. Mirza Fakhrul Islam</h4>
-                            <p>Lorem ipsum dolor sit amet consectetur. Nisl odio elementum tempor etiam tincidunt nunc lectus. At sit sem erat est. Lorem adipiscing auctor pellentesque proin pulvinar. Purus vel mattis interdum eu ac.</p>
+                            <p>{{ $institute->president_msg }}</p>
                             <button>Read more <i class="fa-solid fa-angles-right"></i></button>
                         </div>
                     </div>

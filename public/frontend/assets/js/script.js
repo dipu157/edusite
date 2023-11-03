@@ -2,7 +2,7 @@
 $('.banner-slider').slick({
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: false,
+    autoplay: true,
     autoplaySpeed: 2000,
     nextArrow: '<i class="fas fa-chevron-left banner-arrow  left-arrow"></i>',
     prevArrow: '<i class="fas fa-chevron-right banner-arrow right-arrow"></i>',
