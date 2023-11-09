@@ -31,7 +31,7 @@
                             </div>
 
                             <div class="form-group row">
-                                <label for="description" class="col-sm-4 col-form-label text-md-right">Image</label>
+                                <label for="description" class="col-sm-4 col-form-label text-md-right">Image(1920 by 605 px)</label>
                                 <div class="col-sm-6">
                                     <div class="input-group mb-3">
                                         <input type="file" class="form-control" id="image" name="image" onchange="loadFile(event)">

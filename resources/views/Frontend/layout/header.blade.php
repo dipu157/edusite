@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The International BL High-School</title>
+    <title>BoroBazar Degree College</title>
     <link rel="stylesheet" href="{{asset("/frontend/assets/css/bootstrap.min.css")}}">
     <link rel="stylesheet" href="{{asset("/frontend/assets/css/all.min.css")}}">
     <link rel="stylesheet" href="{{asset("/frontend/assets/css/slick.css")}}">
@@ -17,7 +17,7 @@
 
 <body>
 
-    
+
     <!-- navbar area start -->
 
     <header id="header" class=" d-none d-lg-block">
@@ -25,7 +25,7 @@
                 <div class="col-lg-3">
                     <div class="header-logo">
                        <a href="index.html">
-                        <img src="{{asset("/frontend/assets/images/LOGO.svg")}}" alt="LOGO">
+                        <img height="50px" width="300px" src="{{asset("/frontend/assets/images/logo1.jpg")}}" alt="LOGO">
                        </a>
                     </div>
                 </div>
@@ -82,7 +82,7 @@
             <button class="showSidebar" ><i class="fa-solid fa-bars"></i></button>
         <div class="res-logo">
             <a href="index.html">
-                <img src="{{asset("/frontend/assets/images/LOGO.svg" alt="LOGO">
+                <img height="20px" width="100px" src="{{asset("/frontend/assets/images/logo1.jpg")}}" alt="LOGO">
             </a>
         </div>
         <button><i class="fa-solid fa-magnifying-glass resSearchbarShow"></i>
