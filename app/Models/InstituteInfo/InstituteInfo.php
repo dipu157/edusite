@@ -15,17 +15,20 @@ class InstituteInfo extends Model
 
     protected $fillable = [
         'name',
-        'about',
+        'phone',
         'logo',
         'email',
+        'social_link1',
+        'social_link2',
+        'social_link3',
+        'social_link4',
+        'map_link',
         'address',
         'city',
         'state',
-        'post_code',
-        'phone_no',
-        'country',
+        'post_code',        
         'website',
-        'principle_msg',
-        'president_msg',
+        'status',
+        
     ];
 }

@@ -22,9 +22,19 @@
                             </div>
 
                             <div class="form-group">
-                                <label>Principle Message</label>
-                                <textarea class="form-control" cols="50" rows="2" name="principle_msg"></textarea>
-                            </div>
+                                <label>Email</label>
+                                <input type="email" class="form-control" name="email" placeholder="Enter Email">
+                              </div>
+
+                              <div class="form-group">
+                                <label>Facebook Link</label>
+                                <input type="text" class="form-control" name="social_link1" placeholder="Enter Facebook Link">
+                              </div>
+
+                              <div class="form-group">
+                                <label>Linkedin Link</label>
+                                <input type="text" class="form-control" name="social_link2" placeholder="Enter Linkedin Link">
+                              </div>
 
                             <div class="form-group">
                                 <label>Address</label>
@@ -32,65 +42,57 @@
                             </div>
 
                             <div class="form-group">
-                                <label>Email</label>
-                                <input type="email" class="form-control" name="email" placeholder="Enter Email">
+                                <label>Logo</label>
+                                <input type="file" class="form-control" id="logo" name="logo" onchange="loadFile(event)">
                               </div>
                         </div>
 
                          <div class="col-md-6 mt-3">
+                            <div class="form-group">
+                                <label>Phone</label>
+                                <input type="text" class="form-control" name="phone" placeholder="Enter Phone">
+                              </div>
+
                             <div class="form-group">
                                 <label>City</label>
                                 <input type="text" class="form-control" name="city" placeholder="Enter City">
                             </div>
 
                             <div class="form-group">
-                            <label>State</label>
-                            <input type="text" class="form-control" name="state" placeholder="Enter state">
+                                <label>State</label>
+                                <input type="text" class="form-control" name="state" placeholder="Enter state">
                             </div>
 
                             <div class="form-group">
-                                <label>President Message</label>
-                                <textarea class="form-control" cols="50" rows="2" name="president_msg"></textarea>
+                                <label>Post Code</label>
+                                <input type="text" class="form-control" name="post_code" placeholder="Enter post_code">
                             </div>
 
                             <div class="form-group">
-                            <label>Post Code</label>
-                            <input type="text" class="form-control" name="post_code" placeholder="Enter post_code">
-                            </div>
-
-                            <div class="form-group">
-                            <label>Country</label>
-                            <input type="text" class="form-control" name="country" placeholder="Enter Country">
-                            </div>
-
-                            <div class="form-group">
-                                <label>Phone</label>
-                                <input type="text" class="form-control" name="phone_no" placeholder="Enter Phone">
+                                <label>Twitter Link</label>
+                                <input type="text" class="form-control" name="social_link3" placeholder="Enter Twitter Link">
                               </div>
+
+                              <div class="form-group">
+                                <label>Youtube Link</label>
+                                <input type="text" class="form-control" name="social_link4" placeholder="Enter Youtube Link">
+                              </div>
+
+                              <div class="form-group">
+                                <label>Google Map Link</label>
+                                <textarea class="form-control" cols="50" rows="2" name="map_link"></textarea>
+                            </div>
+
+                            
                         </div>
 
-                        <div class="col-md-12 mt-2">
-                            <div class="form-group">
-                                <label>About Institute</label>
-                                <textarea class="form-control" cols="50" rows="3" name="about"></textarea>
-                            </div>
-                         </div>
-
-                         <div class="col-md-12 mt-2">
-                            <div class="row">
-                              <div class="col-md-8">
-                                <div class="form-group">
-                                  <label>Logo</label>
-                                  <input type="file" class="form-control" id="logo" name="logo" onchange="loadFile(event)">
-                                </div>
-                              </div>
-                              <div class="col-md-4">
-                                <span id="logo">
-                                  <img id="output" height="100px" width="160px" />
-                                </span>
-                              </div>
-                            </div>
-                         </div>
+                    <div class="row mt-2">
+                        <div class="col-md-8">
+                        <span id="logo">
+                            <img id="output" height="100px" width="160px" />
+                        </span>
+                        </div>
+                    </div>
 
                       </div>
                     <input type="submit" class="btn btn-primary" id="btnsave" value="Save">

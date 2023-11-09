@@ -49,7 +49,7 @@ class InstituteController extends Controller
                 <td>'. $i_info->name.'</td>
                 <td>'.$i_info->address.'</td>
                 <td>'.$i_info->email.'</td>
-                <td>'.$i_info->phone_no.'</td>
+                <td>'.$i_info->phone.'</td>
                 <td>'.$i_info->website.'</td>
                 <td>
                   <a class="btn-edit editIcon" data-bs-toggle="modal" data-bs-target="#editInstituteModal" id="' . $i_info->id . '"><i class="bx bxs-edit"></i></a>
@@ -75,18 +75,20 @@ class InstituteController extends Controller
 
         $insData = [
             'name' => $request->name,
-            'about' => $request->about,
-            'address' => $request->address,
-            'principle_msg' => $request->principle_msg,
-            'president_msg' => $request->president_msg,
+            'phone' => $request->phone,
             'email' => $request->email,
+            'logo' => $filename,
+            'social_link1' => $request->social_link1,
+            'social_link2' => $request->social_link2,
+            'social_link3' => $request->social_link3,
+            'social_link4' => $request->social_link4,
+            'map_link' => $request->map_link,
             'city' => $request->city,
             'state' => $request->state,
             'post_code' => $request->post_code,
-            'country' => $request->country,
-            'phone_no' => $request->phone_no,
+            'address' => $request->address,
             'website' => $request->website,
-            'logo' => $filename,
+            
         ];
 
         //dd($insData);
@@ -122,18 +124,20 @@ class InstituteController extends Controller
 
         $insData = [
             'name' => $request->name,
+            'phone' => $request->phone,
             'email' => $request->email,
-            'about' => $request->about,
-            'phone_no' => $request->phone_no,
-            'website' => $request->website,
             'address' => $request->address,
-            'principle_msg' => $request->principle_msg,
-            'president_msg' => $request->president_msg,
+            'social_link1' => $request->social_link1,
+            'social_link2' => $request->social_link2,
+            'social_link3' => $request->social_link3,
+            'social_link4' => $request->social_link4,
+            'map_link' => $request->map_link,
             'city' => $request->city,
             'state' => $request->state,
             'post_code' => $request->post_code,
-            'country' => $request->country,
-            'photo' => $fileName
+            'address' => $request->address,
+            'website' => $request->website,
+            'logo' => $fileName
         ];
 
         $ins->update($insData);

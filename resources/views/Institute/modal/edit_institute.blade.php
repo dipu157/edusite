@@ -13,71 +13,76 @@
                         <input type="hidden" name="id" id="ins_id">
                         <input type="hidden" name="emp_photo" id="ins_logo">
 
-                        <div class="col-md-6">
-                            <div class="form-group">
-                              <label>Name</label>
-                              <input type="text" id="name" class="form-control" name="name" placeholder="Enter Name">
+                        <div class="col-md-6 mt-3">
+                          <div class="form-group">
+                            <label>Name</label>
+                            <input type="text" class="form-control" name="name" id="name">
+                          </div>
+
+                          <div class="form-group">
+                              <label>Website</label>
+                              <input type="text" class="form-control" name="website" id="website">
+                          </div>
+
+                          <div class="form-group">
+                              <label>Email</label>
+                              <input type="email" class="form-control" name="email" id="email">
                             </div>
 
                             <div class="form-group">
-                                <label>Website</label>
-                                <input type="text" id="website" class="form-control" name="website" placeholder="Enter website">
-                              </div>
-
-                            <div class="form-group">
-                                <label>Principle Message</label>
-                                <textarea class="form-control" id="principle_msg" cols="50" rows="2" name="principle_msg"></textarea>
+                              <label>Facebook Link</label>
+                              <input type="text" class="form-control" name="social_link1" id="social_link1">
                             </div>
 
                             <div class="form-group">
-                                <label>Address</label>
-                                <textarea class="form-control" id="address" cols="50" rows="2" name="address"></textarea>
+                              <label>Linkedin Link</label>
+                              <input type="text" class="form-control" name="social_link2" id="social_link2">
+                            </div>
+
+                          <div class="form-group">
+                              <label>Address</label>
+                              <textarea class="form-control" cols="50" rows="2" name="address" id="address"></textarea>
+                          </div>
+                      </div>
+
+                       <div class="col-md-6 mt-3">
+                          <div class="form-group">
+                              <label>Phone</label>
+                              <input type="text" class="form-control" name="phone" id="phone">
+                            </div>
+
+                          <div class="form-group">
+                              <label>City</label>
+                              <input type="text" class="form-control" name="city" id="city">
+                          </div>
+
+                          <div class="form-group">
+                              <label>State</label>
+                              <input type="text" class="form-control" name="state" id="state">
+                          </div>
+
+                          <div class="form-group">
+                              <label>Post Code</label>
+                              <input type="text" class="form-control" name="post_code" id="post_code">
+                          </div>
+
+                          <div class="form-group">
+                              <label>Twitter Link</label>
+                              <input type="text" class="form-control" name="social_link3" id="social_link3">
                             </div>
 
                             <div class="form-group">
-                                <label>Email</label>
-                                <input type="email" id="email" class="form-control" name="email" placeholder="Enter Email">
-                              </div>
-                        </div>
-
-                         <div class="col-md-6">
-                            <div class="form-group">
-                                <label>City</label>
-                                <input type="text" id="city" class="form-control" name="city" placeholder="Enter City">
+                              <label>Youtube Link</label>
+                              <input type="text" class="form-control" name="social_link4" id="social_link4">
                             </div>
 
                             <div class="form-group">
-                            <label>State</label>
-                            <input type="text" id="state" class="form-control" name="state" placeholder="Enter state">
-                            </div>
+                              <label>Google Map Link</label>
+                              <textarea class="form-control" cols="50" rows="2" name="map_link" id="map_link"></textarea>
+                          </div>
 
-                            <div class="form-group">
-                                <label>President Message</label>
-                                <textarea class="form-control" id="president_msg" cols="50" rows="2" name="president_msg"></textarea>
-                            </div>
-
-                            <div class="form-group">
-                            <label>Post Code</label>
-                            <input type="text" id="post_code" class="form-control" name="post_code" placeholder="Enter post_code">
-                            </div>
-
-                            <div class="form-group">
-                            <label>Country</label>
-                            <input type="text" id="country" class="form-control" name="country" placeholder="Enter Country">
-                            </div>
-
-                            <div class="form-group">
-                                <label>Phone</label>
-                                <input type="text" id="phone_no" class="form-control" name="phone_no" placeholder="Enter Phone">
-                              </div>
-                        </div>
-
-                        <div class="col-md-12 mt-2">
-                            <div class="form-group">
-                                <label>About Institute</label>
-                                <textarea class="form-control" id="about" cols="50" rows="3" name="about"></textarea>
-                            </div>
-                         </div>
+                          
+                      </div>
 
                          <div class="col-md-12">
                             <div class="row">
