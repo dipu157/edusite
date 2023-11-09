@@ -15,9 +15,10 @@ return new class extends Migration
             $table->increments('id');
             $table->integer('institute_id')->unsigned();
             $table->foreign('institute_id')->references('id')->on('institute_infos')->onDelete('RESTRICT');
-            $table->string('message_from',50);
+            $table->string('name',50);
             $table->string('photo',150)->nullable();
-            $table->string('message',600)->nullable();
+            $table->string('position',50)->nullable();
+            $table->string('message',400)->nullable();
             $table->boolean('status')->default(1);
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('RESTRICT');

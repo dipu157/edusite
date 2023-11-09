@@ -11,16 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('sub_menus', function (Blueprint $table) {
+        Schema::create('events', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('institute_id')->unsigned();
             $table->foreign('institute_id')->references('id')->on('institute_infos')->onDelete('RESTRICT');
-            $table->integer('menu_id')->unsigned();
-            $table->foreign('menu_id')->references('id')->on('menus')->onDelete('RESTRICT');
-            $table->string('name',50);
-            $table->string('image',150)->nullable();
-            $table->string('slug',100)->nullable();
-            $table->string('link',100)->nullable();
+            $table->string('title',50);
+            $table->string('image',150)->nullable();            
+            $table->date('event_date')->default(Carbon\Carbon::now()->format('Y-m-d'));
+            $table->string('details',600)->nullable();
             $table->boolean('status')->default(1);
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('RESTRICT');
@@ -34,6 +32,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('sub_menus');
+        Schema::dropIfExists('events');
     }
 };

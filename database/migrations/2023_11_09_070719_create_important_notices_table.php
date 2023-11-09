@@ -11,20 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('staff', function (Blueprint $table) {
+        Schema::create('important_notices', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('institute_id')->unsigned();
             $table->foreign('institute_id')->references('id')->on('institute_infos')->onDelete('RESTRICT');
-            $table->string('full_name',150);
-            $table->string('position',150);
-            $table->string('photo',150)->nullable();
-            $table->string('email',190)->nullable();
-            $table->string('mobile',150)->nullable();
-            $table->date('dob')->nullable();
-            $table->date('joining_date')->nullable();
-            $table->char('gender',1)->comments('M=> Male F=>Female');
-            $table->char('blood_group',30)->nullable();
-            $table->string('national_id',20)->nullable();
+            $table->string('title',50);
+            $table->string('description',200)->nullable();
             $table->boolean('status')->default(1);
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('RESTRICT');
@@ -38,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('staff');
+        Schema::dropIfExists('important_notices');
     }
 };

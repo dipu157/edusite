@@ -11,15 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('class_departments', function (Blueprint $table) {
+        Schema::create('menu_details', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('institute_id')->unsigned();
             $table->foreign('institute_id')->references('id')->on('institute_infos')->onDelete('RESTRICT');
-            $table->string('name',50);
-            $table->string('head_photo',150)->nullable();
-            $table->integer('teacher_id')->unsigned();
-            $table->foreign('teacher_id')->references('id')->on('teachers')->onDelete('RESTRICT');
-            $table->string('about',600)->nullable();
+            $table->integer('menu_id')->unsigned();
+            $table->foreign('menu_id')->references('id')->on('menus')->onDelete('RESTRICT');
+            $table->string('title',50)->nullable();
+            $table->string('description',150)->nullable();
             $table->boolean('status')->default(1);
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('RESTRICT');
@@ -33,6 +32,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('class_departments');
+        Schema::dropIfExists('menu_details');
     }
 };

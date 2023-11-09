@@ -15,7 +15,7 @@ return new class extends Migration
             $table->increments('id');
             $table->integer('institute_id')->unsigned();
             $table->foreign('institute_id')->references('id')->on('institute_infos')->onDelete('RESTRICT');
-            $table->string('full_name',150);
+            $table->string('name',150);
             $table->string('position',150);
             $table->string('class_department',150);
             $table->string('photo',150)->nullable();
@@ -23,9 +23,8 @@ return new class extends Migration
             $table->string('mobile',150)->nullable();
             $table->date('dob')->nullable();
             $table->date('joining_date')->nullable();
-            $table->char('gender',1)->comments('M=> Male F=>Female');
+            $table->char('gender',1)->comments('M=> Male, F=>Female');
             $table->char('blood_group',30)->nullable();
-            $table->string('national_id',20)->nullable();
             $table->boolean('status')->default(1);
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('RESTRICT');

@@ -15,9 +15,10 @@ return new class extends Migration
             $table->increments('id');
             $table->integer('institute_id')->unsigned();
             $table->foreign('institute_id')->references('id')->on('institute_infos')->onDelete('RESTRICT');
-            $table->string('menu_name',50);
+            $table->string('name',50);
+            $table->string('slug',50)->nullable();
             $table->string('image',150)->nullable();
-            $table->string('description',600)->nullable();
+            $table->string('link',50)->nullable();
             $table->boolean('status')->default(1);
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('RESTRICT');

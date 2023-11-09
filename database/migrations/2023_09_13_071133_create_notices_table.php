@@ -20,10 +20,6 @@ return new class extends Migration
             $table->string('short_description',240)->nullable();
             $table->string('description',600)->nullable();
             $table->date('notice_date')->default(Carbon\Carbon::now()->format('Y-m-d'));
-            $table->date('expiry_date')->nullable();
-            $table->char('type',1)->default('D')->comment('D=>Display E=>Email');
-            $table->char('confidentiality',1)->default('P')->comment('P=>Public C=>Confidential');
-            $table->char('receiver',1)->default('A')->comment('A=>all; P=>Person D=>Department');
             $table->boolean('status')->default(1);
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('RESTRICT');
