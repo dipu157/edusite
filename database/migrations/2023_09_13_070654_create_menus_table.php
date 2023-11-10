@@ -13,8 +13,6 @@ return new class extends Migration
     {
         Schema::create('menus', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('institute_id')->unsigned();
-            $table->foreign('institute_id')->references('id')->on('institute_infos')->onDelete('RESTRICT');
             $table->string('name',50);
             $table->string('slug',50)->nullable();
             $table->string('image',150)->nullable();

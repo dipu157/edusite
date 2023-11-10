@@ -13,10 +13,8 @@ return new class extends Migration
     {
         Schema::create('events', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('institute_id')->unsigned();
-            $table->foreign('institute_id')->references('id')->on('institute_infos')->onDelete('RESTRICT');
             $table->string('title',50);
-            $table->string('image',150)->nullable();            
+            $table->string('image',150)->nullable();
             $table->date('event_date')->default(Carbon\Carbon::now()->format('Y-m-d'));
             $table->string('details',600)->nullable();
             $table->boolean('status')->default(1);

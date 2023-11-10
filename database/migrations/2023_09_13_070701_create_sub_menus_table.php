@@ -13,8 +13,6 @@ return new class extends Migration
     {
         Schema::create('sub_menus', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('institute_id')->unsigned();
-            $table->foreign('institute_id')->references('id')->on('institute_infos')->onDelete('RESTRICT');
             $table->integer('menu_id')->unsigned();
             $table->foreign('menu_id')->references('id')->on('menus')->onDelete('RESTRICT');
             $table->string('name',50);

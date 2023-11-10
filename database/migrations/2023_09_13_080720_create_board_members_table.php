@@ -13,8 +13,6 @@ return new class extends Migration
     {
         Schema::create('board_members', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('institute_id')->unsigned();
-            $table->foreign('institute_id')->references('id')->on('institute_infos')->onDelete('RESTRICT');
             $table->string('name',150);
             $table->string('position',150);
             $table->string('photo',150)->nullable();
