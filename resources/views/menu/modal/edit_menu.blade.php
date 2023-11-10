@@ -10,17 +10,22 @@
                     @csrf
                     <div class="row">
 
-                        <input type="text" name="id" id="bmem_id">
+                        <input type="hidden" name="id" id="bmem_id">
 
                         <div class="col-md-12 mt-2 p-2">
                             <div class="form-group">
                               <label>Menu Name</label>
-                              <input type="text" class="form-control" id="menu_name" name="menu_name" placeholder="Enter Menu Name">
+                              <input type="text" class="form-control" id="name" name="name" placeholder="Enter Menu Name">
                             </div>
 
                             <div class="form-group">
-                                <label>Description</label>
-                                <input type="text" class="form-control" id="description" name="description" placeholder="Enter Description">
+                                <label>Slug</label>
+                                <input type="text" class="form-control" id="slug" name="slug" placeholder="Enter Menu Slug">
+                              </div>
+
+                            <div class="form-group">
+                                <label>Link</label>
+                                <input type="text" class="form-control" id="link" name="link" placeholder="Enter Link">
                               </div>
                         </div>
 

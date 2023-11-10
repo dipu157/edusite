@@ -132,8 +132,9 @@ $(document).on('click', '.deleteIcon', function(e) {
 			console.log(res);
 
             $("#bmem_id").val(res.id);
-			$("#menu_name").val(res.menu_name);
-			$("#description").val(res.description);
+			$("#name").val(res.name);
+			$("#slug").val(res.slug);
+			$("#link").val(res.link);
 		}
 		});
 		});

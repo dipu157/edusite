@@ -36,6 +36,7 @@ class MenuController extends Controller
               <tr>
                 <th>ID</th>
                 <th>Name</th>
+                <th>Slug</th>
                 <th>Status</th>
                 <th>Action</th>
               </tr>
@@ -44,7 +45,8 @@ class MenuController extends Controller
             foreach ($bMember as $bm) {
                 $output .= '<tr>
                 <td>'.$bm->id.'</td>
-                <td>'. $bm->menu_name.'</td>
+                <td>'. $bm->name.'</td>
+                <td>'. $bm->slug.'</td>
                 <td>'.$bm->status.'</td>
                 <td>
                   <a class="btn-edit editIcon" data-bs-toggle="modal" data-bs-target="#editMenuModal" id="' . $bm->id . '"><i class="bx bxs-edit"></i></a>
@@ -63,9 +65,9 @@ class MenuController extends Controller
     public function create(Request $request)
     {
         $bData = [
-            'institute_id' => 1,
-            'menu_name' => $request->menu_name,
-            'description' => $request->description,
+            'name' => $request->name,
+            'slug' => $request->slug,
+            'link' => $request->link,
             'user_id' => $this->user_id,
         ];
 
@@ -88,8 +90,9 @@ class MenuController extends Controller
         $member = Menu::find($request->id);
 
         $bData = [
-            'menu_name' => $request->menu_name,
-            'description' => $request->description,
+            'name' => $request->name,
+            'slug' => $request->slug,
+            'link' => $request->link,
             'user_id' => $this->user_id,
         ];
 

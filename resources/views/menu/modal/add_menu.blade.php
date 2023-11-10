@@ -13,12 +13,17 @@
                         <div class="col-md-12 mt-2 p-2">
                             <div class="form-group">
                               <label>Menu Name</label>
-                              <input type="text" class="form-control" name="menu_name" placeholder="Enter Menu Name">
+                              <input type="text" class="form-control" name="name" placeholder="Enter Menu Name">
                             </div>
 
                             <div class="form-group">
-                                <label>Description</label>
-                                <input type="text" class="form-control" name="description" placeholder="Enter Description">
+                                <label>Slug</label>
+                                <input type="text" class="form-control" name="slug" placeholder="Enter Slug">
+                            </div>
+
+                            <div class="form-group">
+                                <label>link</label>
+                                <input type="text" class="form-control" name="link" placeholder="Enter link">
                               </div>
                         </div>
 
