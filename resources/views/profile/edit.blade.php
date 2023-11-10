@@ -13,7 +13,7 @@
                     <ol class="breadcrumb mb-0 p-0">
                         <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
                         </li>
-                        <li class="breadcrumb-item active" aria-current="page">User Profilep</li>
+                        <li class="breadcrumb-item active" aria-current="page">User Profile</li>
                     </ol>
                 </nav>
             </div>
@@ -26,11 +26,10 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="d-flex flex-column align-items-center text-center">
-                                    <img src="{{asset('/')}}images/avatars/avatar-2.png" alt="Admin" class="rounded-circle p-1 bg-primary" width="110">
+                                    <img src="{{asset('/')}}images/avatars/Avatar.png" alt="Admin" class="rounded-circle p-1 bg-primary" width="110">
                                     <div class="mt-3">
-                                        <h4>John Doe</h4>
-                                        <p class="text-secondary mb-1">Full Stack Developer</p>
-                                        <p class="text-muted font-size-sm">Bay Area, San Francisco, CA</p>
+                                        <h4>{{$user->name}}</h4>
+                                        <p class="text-secondary mb-1">{{$user->email}}</p>
                                         <button class="btn btn-primary">Follow</button>
                                         <button class="btn btn-outline-primary">Message</button>
                                     </div>

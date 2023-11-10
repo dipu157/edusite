@@ -5,7 +5,7 @@
             <img src="{{asset('/')}}images/logo-icon.png" class="logo-icon" alt="logo icon">
         </div>
         <div>
-            <h4 class="logo-text">Construction</h4>
+            <h6>Barobazar Degree College</h6>
         </div>
         <div class="toggle-icon ms-auto"><i class='bx bx-arrow-to-left'></i>
         </div>
