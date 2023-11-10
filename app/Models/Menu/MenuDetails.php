@@ -1,27 +1,22 @@
 <?php
 
-namespace App\Models\Member;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class BoardMember extends Model
+class MenuDetails extends Model
 {
     use HasFactory;
 
-    protected $table= 'board_members';
+    protected $table= 'menu_details';
 
     protected $guarded = ['id', 'created_at','updated_at'];
 
     protected $fillable = [
-        'name',
-        'position',
-        'photo',
-        'email',
-        'mobile',
-        'dob',
-        'gender',
-        'blood_group',
+        'menu_id',
+        'title',
+        'description',
         'status',
         'user_id',
     ];

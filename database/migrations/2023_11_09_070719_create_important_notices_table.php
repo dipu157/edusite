@@ -13,8 +13,6 @@ return new class extends Migration
     {
         Schema::create('important_notices', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('institute_id')->unsigned();
-            $table->foreign('institute_id')->references('id')->on('institute_infos')->onDelete('RESTRICT');
             $table->string('title',50);
             $table->string('description',200)->nullable();
             $table->boolean('status')->default(1);

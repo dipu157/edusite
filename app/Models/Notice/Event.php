@@ -1,27 +1,23 @@
 <?php
 
-namespace App\Models\Member;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class BoardMember extends Model
+class Event extends Model
 {
     use HasFactory;
 
-    protected $table= 'board_members';
+    protected $table= 'events';
 
     protected $guarded = ['id', 'created_at','updated_at'];
 
     protected $fillable = [
-        'name',
-        'position',
-        'photo',
-        'email',
-        'mobile',
-        'dob',
-        'gender',
-        'blood_group',
+        'title',
+        'image',
+        'details',
+        'event_date',
         'status',
         'user_id',
     ];

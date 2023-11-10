@@ -14,8 +14,9 @@ class Messages extends Model
     protected $guarded = ['id', 'created_at','updated_at'];
 
     protected $fillable = [
-        'message_from',
+        'name',
         'photo',
+        'position',
         'message',
         'status',
         'user_id',
