@@ -18,12 +18,17 @@
 
                             <div class="form-group">
                               <label>SubMenu Name</label>
-                              <input type="text" class="form-control" name="sub_menu_name" placeholder="Enter SubMenu Name">
+                              <input type="text" class="form-control" name="name" placeholder="Enter SubMenu Name">
                             </div>
 
                             <div class="form-group">
-                                <label>Description</label>
-                                <input type="text" class="form-control" name="description" placeholder="Enter Description">
+                                <label>Slug</label>
+                                <input type="text" class="form-control" name="slug" placeholder="Enter Slug">
+                            </div>
+
+                            <div class="form-group">
+                                <label>link</label>
+                                <input type="text" class="form-control" name="link" placeholder="Enter link">
                               </div>
                         </div>
 

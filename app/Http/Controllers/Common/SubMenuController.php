@@ -24,7 +24,7 @@ class SubMenuController extends Controller
 
     public function index()
     {
-        $menus = Menu::query()->where('status',1)->pluck('menu_name','id');
+        $menus = Menu::query()->where('status',1)->pluck('name','id');
         return view('sub_menu.manageSubMenu',compact('menus'));
     }
 
@@ -47,8 +47,8 @@ class SubMenuController extends Controller
             foreach ($bMember as $bm) {
                 $output .= '<tr>
                 <td>'.$bm->id.'</td>
-                <td>'.$bm->menu->menu_name.'</td>
-                <td>'. $bm->sub_menu_name.'</td>
+                <td>'.$bm->menu->name.'</td>
+                <td>'. $bm->name.'</td>
                 <td>'.$bm->status.'</td>
                 <td>
                   <a class="btn-edit editIcon" data-bs-toggle="modal" data-bs-target="#editSubMenuModal" id="' . $bm->id . '"><i class="bx bxs-edit"></i></a>
@@ -68,8 +68,9 @@ class SubMenuController extends Controller
     {
         $bData = [
             'menu_id' => $request->menu_id,
-            'sub_menu_name' => $request->sub_menu_name,
-            'description' => $request->description,
+            'name' => $request->name,
+            'slug' => $request->slug,
+            'link' => $request->link,
             'user_id' => $this->user_id,
         ];
 
@@ -93,8 +94,9 @@ class SubMenuController extends Controller
 
         $bData = [
             'menu_id' => $request->menu_id,
-            'sub_menu_name' => $request->sub_menu_name,
-            'description' => $request->description,
+            'name' => $request->name,
+            'slug' => $request->slug,
+            'link' => $request->link,
             'user_id' => $this->user_id,
         ];
 
