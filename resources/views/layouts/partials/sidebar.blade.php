@@ -57,8 +57,8 @@
             <ul>
                 <li> <a href="{{ route('boardMembers') }}"><i class="bx bx-right-arrow-alt"></i>Board Members</a></li>
                 <li> <a href="{{ route('teacherIndex') }}"><i class="bx bx-right-arrow-alt"></i>Teacher</a></li>
-                <li> <a href="#"><i class="bx bx-right-arrow-alt"></i>Staff</a></li>
-                <li> <a href="#"><i class="bx bx-right-arrow-alt"></i>Student</a></li>
+                {{-- <li> <a href="#"><i class="bx bx-right-arrow-alt"></i>Staff</a></li>
+                <li> <a href="#"><i class="bx bx-right-arrow-alt"></i>Student</a></li> --}}
             </ul>
         </li>
 
@@ -71,6 +71,7 @@
             <ul>
                 <li> <a href="{{route('manageMenu')}}"><i class="bx bx-right-arrow-alt"></i>Manage Menu</a></li>
                 <li> <a href="{{route('manageSubMenu')}}"><i class="bx bx-right-arrow-alt"></i>Manage SubMenu</a></li>
+                <li> <a href="{{route('menuPageIndex')}}"><i class="bx bx-right-arrow-alt"></i>Menu Page</a></li>
             </ul>
         </li>
 

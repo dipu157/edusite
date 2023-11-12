@@ -72,7 +72,9 @@
                             <h3>Honorable Principal</h3>
                             <img class="avater" src="{{asset("/frontend/assets/images/avater.svg")}}" alt="avater">
                             <h4>Md. Mirza Fakhrul Islam</h4>
-                            <p>{{ $institute->principle_msg }}</p>
+                            <p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate
+                                the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum
+                                may be used as a placeholder before final copy is available.</p>
                             <button>Read more <i class="fa-solid fa-angles-right"></i></button>
                         </div>
                     </div>
@@ -81,7 +83,8 @@
                             <h3>Honorable Principal</h3>
                             <img class="avater" src="{{asset("/frontend/assets/images/avater.svg")}}" alt="avater">
                             <h4>Md. Mirza Fakhrul Islam</h4>
-                            <p>{{ $institute->president_msg }}</p>
+                            <p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document
+                            or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.</p>
                             <button>Read more <i class="fa-solid fa-angles-right"></i></button>
                         </div>
                     </div>
@@ -176,7 +179,7 @@
                 <div class="admins-item">
                     <a href="#">
                         <div class="admins-img">
-                            <img src="{{asset('storage/images/teacher/' .$teach->photo)}}" alt="teacher">
+                            {{-- <img src="{{asset('storage/images/teacher/' .$teach->photo)}}" alt="teacher"> --}}
                         </div>
                         <h3>{{ $teach->position }}</h3>
                         <h4>{{ $teach->full_name }}</h4>

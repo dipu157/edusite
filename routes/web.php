@@ -2,13 +2,16 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Auth\RegisteredUserController;
-use App\Http\Controllers\Common\MenuController;
+use App\Http\Controllers\Common\MenuController as CommonMenuController;
+use App\Http\Controllers\Menu\MenuController;
 use App\Http\Controllers\Common\SliderController;
-use App\Http\Controllers\Common\SubMenuController;
+use App\Http\Controllers\Common\SubMenuController as CommonSubMenuController;
+use App\Http\Controllers\Menu\SubMenuController;
 use App\Http\Controllers\Frontend\FrontHomeController;
 use App\Http\Controllers\Institute\InstituteController;
 use App\Http\Controllers\Members\BoardMemberController;
 use App\Http\Controllers\Members\TeacherController;
+use App\Http\Controllers\Menu\MenuPageController;
 use App\Http\Controllers\Notice\NewsController;
 use App\Http\Controllers\Notice\NoticeController;
 use Illuminate\Support\Facades\Route;
@@ -92,6 +95,14 @@ Route::group(['namespace' => 'Menu', 'middleware' => ['auth']], function () {
     Route::get('/editsub', [SubMenuController::class, 'edit'])->name('editsub');
     Route::post('/updatesub', [SubMenuController::class, 'update'])->name('updatesub');
     Route::delete('/deletesub', [SubMenuController::class, 'delete'])->name('deletesub');
+
+    //  Menu Page Route
+    Route::get('/menuPageIndex',[MenuPageController::class, 'index'])->name('menuPageIndex');
+    Route::get('/menuPageData', [MenuPageController::class, 'getAllmenuPage'])->name('menuPageData');
+    Route::post('/savemenupage', [MenuPageController::class, 'create'])->name('savemenupage');
+    Route::get('/editmenupage', [MenuPageController::class, 'edit'])->name('editmenupage');
+    Route::post('/updatemenupage', [MenuPageController::class, 'update'])->name('updatemenupage');
+    Route::delete('/deletemenupage', [MenuPageController::class, 'delete'])->name('deletemenupage');
 
 });
 

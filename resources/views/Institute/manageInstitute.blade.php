@@ -72,7 +72,6 @@ $(document).ready(function() {
                 toastr.error(request.responseText);
                 fetchAllInstitute();
                 $("#btnsave").text('SAVE');
-            $("#instituteForm")[0].reset();
             $("#addInstituteModal").modal('hide');
             }
 

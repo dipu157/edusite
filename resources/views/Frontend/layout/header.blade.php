@@ -35,20 +35,20 @@
                             <ul class="headCont-wrapper">
                                 <li class="head-cont-list">
                                     <i class="fa-solid fa-phone"></i>
-                                    <a href="#">Call: {{ $institute->phone_no }}</a>
+                                    <a href="#">Call: {{ $institute->phone }}</a>
                                 </li>
                                 <li class="head-cont-list">
                                     <i class="fa-solid fa-envelope"></i>
                                     <a href="#">Email: {{ $institute->email }}</a>
                                 </li>
                             </ul>
-                            <button class="translate">TRANSLATE <i class="fa-solid fa-caret-down"></i></button>
+                            {{-- <button class="translate">TRANSLATE <i class="fa-solid fa-caret-down"></i></button> --}}
                         </div>
                         <div class="school-navbar d-flex align-items-baseline ">
                             <ul class="navbar-wrapper d-flex ">
                                 @foreach($menus as $menu)
                                 <li class="nav-item">
-                                    <a href="#">{{$menu->menu_name}} <span>/</span></a>
+                                    <a href="#">{{$menu->name}} <span>/</span></a>
                                 </li>
                                 @endforeach
                                 <li class="nav-item">
