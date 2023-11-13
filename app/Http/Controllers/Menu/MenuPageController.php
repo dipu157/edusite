@@ -33,6 +33,7 @@ class MenuPageController extends Controller
     public function getAllmenuPage()
     {
         $menupage = MenuDetails::query()->where('status',1)->get();
+        //dd($menupage);
         $output = '';
         if($menupage->count() > 0){
             $output .= '<table id="menuPageTable" class="table table-striped table-bordered" style="width:100%">
