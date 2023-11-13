@@ -48,7 +48,7 @@
                             <ul class="navbar-wrapper d-flex ">
                                 @foreach($menus as $menu)
                                 <li class="nav-item">
-                                    <a href="#">{{$menu->name}} <span>/</span></a>
+                                    <a href="{{ route('menu.show', ['id' => $menu->id]) }}">{{$menu->name}} <span>/</span></a>
                                 </li>
                                 @endforeach
                                 <li class="nav-item">
@@ -56,9 +56,6 @@
                                     <div class="gallery-dropdown">
                                         <ul>
                                             <li><a href="#">Demo 1</a></li>
-                                            <li><a href="#">Demo 2</a></li>
-                                            <li><a href="#">Demo 3</a></li>
-                                            <li><a href="#">Demo 4</a></li>
                                         </ul>
                                     </div>
                                 </li>

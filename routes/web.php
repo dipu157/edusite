@@ -88,6 +88,8 @@ Route::group(['namespace' => 'Menu', 'middleware' => ['auth']], function () {
     Route::post('/updatemenu', [MenuController::class, 'update'])->name('updateMenu');
     Route::delete('/deletemenu', [MenuController::class, 'delete'])->name('deleteMenu');
 
+    Route::get('/menu/{id}', [MenuController::class, 'show'])->name('menu.show');
+
     //  SubMenu Manage Route
     Route::get('/submenuIndex',[SubMenuController::class, 'index'])->name('manageSubMenu');
     Route::get('/submenuData', [SubMenuController::class, 'getAllSubmenu'])->name('submenuData');

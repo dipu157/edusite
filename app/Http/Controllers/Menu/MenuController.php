@@ -3,7 +3,10 @@
 namespace App\Http\Controllers\Menu;
 
 use App\Http\Controllers\Controller;
+use App\Models\InstituteInfo\InstituteInfo;
 use App\Models\Menu\Menu;
+use App\Models\Menu\MenuDetails;
+use App\Models\Menu\Sub_Menu;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
@@ -105,5 +108,16 @@ class MenuController extends Controller
     public function delete(Request $request) {
         $id = $request->id;
         Menu::destroy($id);
+    }
+
+    public function show($id){
+
+        $institute = InstituteInfo::query()->where('id', 1)->first();
+        $menus = Menu::query()->where('status', 1)->get();
+        $submenu = Sub_Menu::query()->where('status', 1)->get();
+        $menupage = MenuDetails::query()->where('menu_id', $id)->first();
+        //dd($menupage);
+
+        return view('Frontend.menupage.menupagelayout', compact('institute','menus','submenu','menupage'));
     }
 }
