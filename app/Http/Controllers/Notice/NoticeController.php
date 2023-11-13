@@ -49,9 +49,10 @@ class NoticeController extends Controller
                 <td>'.$bm->description.'</td>
                 <td>'.$bm->notice_date.'</td>
                 <td>
-                  <a class="btn-edit editIcon" data-bs-toggle="modal" data-bs-target="#editNoticeModal" id="' . $bm->id . '"><i class="bx bxs-edit"></i></a>
-
-                  <a class="ms-3 btn-danger deleteIcon" id="' . $bm->id . '"><i class="bx bxs-trash"></i></a>
+                  <a class="btn btn-sm btn-edit editIcon" data-bs-toggle="modal" data-bs-target="#editNoticeModal"
+                  id="' . $bm->id . '"><i class="bx bxs-edit"></i></a>
+                  <a class="btn btn-sm ms-3 btn-success viewIcon" id="' . $bm->id . '"><i class="bx bxs-envelope"></i></a>
+                  <a class="btn btn-sm ms-3 btn-danger deleteIcon" id="' . $bm->id . '"><i class="bx bxs-trash"></i></a>
                 </td>
               </tr>';
             }
@@ -64,16 +65,15 @@ class NoticeController extends Controller
 
     public function create(Request $request)
     {
+        $file = $request->file('attachment');
+        $filename = time().'.'.$file->getClientOriginalExtension();
+        $file->storeAs('public/notice', $filename);
+
         $bData = [
-            'institute_id' => 1,
             'title' => $request->title,
-            'short_description' => $request->short_description,
             'description' => $request->description,
             'notice_date' => $request->notice_date,
-            'expiry_date' => $request->expiry_date,
-            'type' => $request->type,
-            'confidentiality' => $request->confidentiality,
-            'receiver' => $request->receiver,
+            'attachment' => $filename,
             'user_id' => $this->user_id,
         ];
 
@@ -97,13 +97,8 @@ class NoticeController extends Controller
 
         $bData = [
             'title' => $request->title,
-            'short_description' => $request->short_description,
             'description' => $request->description,
             'notice_date' => $request->notice_date,
-            'expiry_date' => $request->expiry_date,
-            'type' => $request->type,
-            'confidentiality' => $request->confidentiality,
-            'receiver' => $request->receiver,
             'user_id' => $this->user_id,
         ];
 
