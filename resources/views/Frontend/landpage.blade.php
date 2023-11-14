@@ -68,29 +68,20 @@
                     <div class="message">
                         <h3>Message</h3>
                     </div>
-                   <div class="row">
-                    <div class="col-lg-12 col-12 col-sm-6">
-                        <div class="teacher-card text-center ">
-                            <h3>Honorable Principal</h3>
-                            <img class="avater" src="{{asset("/frontend/assets/images/avater.svg")}}" alt="avater">
-                            <h4>Md. Mirza Fakhrul Islam</h4>
-                            <p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate
-                                the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum
-                                may be used as a placeholder before final copy is available.</p>
-                            <button>Read more <i class="fa-solid fa-angles-right"></i></button>
+
+                    @foreach ($message as $msg)
+                        <div class="row">
+                                <div class="col-lg-12 col-12 col-sm-6">
+                                    <div class="teacher-card text-center ">
+                                        <h3>{{ $msg->position }}</h3>
+                                        <img class="avater" src="{{asset('storage/message/' .$msg->photo)}}" alt="avater">
+                                        <h4>{{ $msg->name }}</h4>
+                                        <p>{{ $msg->message }}</p>
+                                        <button>Read more <i class="fa-solid fa-angles-right"></i></button>
+                                    </div>
+                                </div>
                         </div>
-                    </div>
-                    <div class="col-lg-12 col-12 col-sm-6">
-                        <div class="teacher-card text-center ">
-                            <h3>Honorable Principal</h3>
-                            <img class="avater" src="{{asset("/frontend/assets/images/avater.svg")}}" alt="avater">
-                            <h4>Md. Mirza Fakhrul Islam</h4>
-                            <p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document
-                            or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.</p>
-                            <button>Read more <i class="fa-solid fa-angles-right"></i></button>
-                        </div>
-                    </div>
-                   </div>
+                   @endforeach
                 </div>
             </div>
         </div>

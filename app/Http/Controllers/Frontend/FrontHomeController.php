@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Common\Messages;
 use App\Models\Common\Slider;
 use App\Models\InstituteInfo\InstituteInfo;
 use App\Models\Member\Teachers;
@@ -23,9 +24,10 @@ class FrontHomeController extends Controller
         $sliders = Slider::query()->where('status', 1)->get();
         $teachers = Teachers::query()->where('status',1)->get();
         $inotice = ImportantNotice::query()->where('status',1)->first();
+        $message = Messages::query()->where('status',1)->get();
 
-        //dd($inotice);
+        //dd($message);
 
-        return view('Frontend.landpage', compact('institute','menus','inotice','sliders','submenu','notice','teachers'));
+        return view('Frontend.landpage', compact('institute','message','menus','inotice','sliders','submenu','notice','teachers'));
     }
 }

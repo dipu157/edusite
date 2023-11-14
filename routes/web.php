@@ -2,10 +2,9 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Auth\RegisteredUserController;
-use App\Http\Controllers\Common\MenuController as CommonMenuController;
+use App\Http\Controllers\Common\MessageController;
 use App\Http\Controllers\Menu\MenuController;
 use App\Http\Controllers\Common\SliderController;
-use App\Http\Controllers\Common\SubMenuController as CommonSubMenuController;
 use App\Http\Controllers\Menu\SubMenuController;
 use App\Http\Controllers\Frontend\FrontHomeController;
 use App\Http\Controllers\Institute\InstituteController;
@@ -54,6 +53,19 @@ Route::group(['namespace' => 'Institute', 'middleware' => ['auth']], function ()
     Route::post('/saveInstitute', [InstituteController::class, 'create'])->name('saveInstitute');
     Route::get('/editInstitute', [InstituteController::class, 'edit'])->name('editInstitute');
     Route::post('/InstituteUpdate', [InstituteController::class, 'update'])->name('InstituteUpdate');
+
+
+});
+
+Route::group(['namespace' => 'Message', 'middleware' => ['auth']], function () {
+
+    //  Institute Manage Route
+    Route::get('/messageIndex',[MessageController::class, 'index'])->name('manageMessage');
+    Route::get('/messageData', [MessageController::class, 'getAllMessage'])->name('messageData');
+    Route::post('/saveMessage', [MessageController::class, 'create'])->name('saveMessage');
+    Route::get('/editMessage', [MessageController::class, 'edit'])->name('editMessage');
+    Route::post('/messageUpdate', [MessageController::class, 'update'])->name('updateMessage');
+    Route::post('/deleteMessage', [MessageController::class, 'delete'])->name('deleteMessage');
 
 
 });

@@ -57,8 +57,8 @@
             <ul>
                 <li> <a href="{{ route('boardMembers') }}"><i class="bx bx-right-arrow-alt"></i>Board Members</a></li>
                 <li> <a href="{{ route('teacherIndex') }}"><i class="bx bx-right-arrow-alt"></i>Teacher</a></li>
-                {{-- <li> <a href="#"><i class="bx bx-right-arrow-alt"></i>Staff</a></li>
-                <li> <a href="#"><i class="bx bx-right-arrow-alt"></i>Student</a></li> --}}
+                {{-- <li> <a href="#"><i class="bx bx-right-arrow-alt"></i>Staff</a></li>--}}
+                <li> <a href="{{ route('manageMessage') }}"><i class="bx bx-right-arrow-alt"></i>Message</a></li> 
             </ul>
         </li>
 
