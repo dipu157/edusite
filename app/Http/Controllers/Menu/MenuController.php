@@ -70,7 +70,6 @@ class MenuController extends Controller
         $bData = [
             'name' => $request->name,
             'slug' => $request->slug,
-            'link' => $request->link,
             'user_id' => $this->user_id,
         ];
 
@@ -95,7 +94,6 @@ class MenuController extends Controller
         $bData = [
             'name' => $request->name,
             'slug' => $request->slug,
-            'link' => $request->link,
             'user_id' => $this->user_id,
         ];
 

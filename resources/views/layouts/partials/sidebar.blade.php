@@ -95,6 +95,7 @@
             <ul>
                 <li> <a href="{{route('manageNotice')}}"><i class="bx bx-right-arrow-alt"></i>Manage Notice</a></li>
                 <li> <a href="{{route('manageNews')}}"><i class="bx bx-right-arrow-alt"></i>Manage News</a></li>
+                <li> <a href="{{route('manageInotice')}}"><i class="bx bx-right-arrow-alt"></i>Important Notice</a></li>
             </ul>
         </li>
 

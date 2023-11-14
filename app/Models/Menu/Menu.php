@@ -17,7 +17,6 @@ class Menu extends Model
         'name',
         'slug',
         'image',
-        'link',
         'status',
         'user_id',
     ];

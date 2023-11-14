@@ -118,6 +118,14 @@ Route::group(['namespace' => 'Notice', 'middleware' => ['auth']], function () {
     Route::post('/updatenotice', [NoticeController::class, 'update'])->name('updateNotice');
     Route::delete('/deletenotice', [NoticeController::class, 'delete'])->name('deleteNotice');
 
+    //  Important Notice Route
+    Route::get('/inoticeIndex',[NoticeController::class, 'inoticeIndex'])->name('manageInotice');
+    Route::get('/inoticeData', [NoticeController::class, 'getAllInotice'])->name('inoticeData');
+    Route::post('/saveInotice', [NoticeController::class, 'createInotice'])->name('saveInotice');
+    Route::get('/editInotice', [NoticeController::class, 'editInotice'])->name('editInotice');
+    Route::post('/updateInotice', [NoticeController::class, 'updateInotice'])->name('updateInotice');
+    Route::delete('/deleteInotice', [NoticeController::class, 'deleteInotice'])->name('deleteInotice');
+    
     //  News Manage Route
     Route::get('/newsIndex',[NewsController::class, 'index'])->name('manageNews');
     Route::get('/newsData', [NewsController::class, 'getAllNews'])->name('newsData');

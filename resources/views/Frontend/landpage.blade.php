@@ -16,9 +16,9 @@
         @endforeach
     </div>
     <div class="admission-date">
-        <div class="container">
+        <div class="container text-white"><span>important Note:</span>
             <div class="admission-date-inner">
-                <h4><marquee behavior="scroll" direction="left"><span>LATEST:</span> Admission Form-2024 is available....</marquee></h4>
+                <h4><marquee behavior="scroll" direction="left"> {{ $inotice->title }}</marquee></h4>
             </div>
         </div>
     </div>
@@ -33,11 +33,7 @@
         <div class="row">
             <div class="col-lg-8 col-12">
                 <div class="row">
-                    <div class="col-lg-3 col-md-3 col-12">
-                        <div class="flag">
-                            <img src="{{asset("/frontend/assets/images/flag.svg")}}" alt="flag">
-                        </div>
-                    </div>
+                    
                     <div class="col-lg-9 col-md-9 col-12">
                         <div class="notice">
                             <img  class="union" src="{{asset("/frontend/assets/images/Union.svg")}}" alt="Union">
@@ -57,6 +53,12 @@
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-3 col-12">
+                        <div class="flag">
+                            <img src="{{asset("/frontend/assets/images/flag.svg")}}" alt="flag">
                         </div>
                     </div>
                 </div>
@@ -102,7 +104,7 @@
 <section id="SchoolEvents">
     <div class="container">
         <div class="title text-center ">
-            <h2>SCHOOL EVENTS</h2>
+            <h2>COLLEGE EVENTS</h2>
             <img src="{{asset("/frontend/assets/images/bar.svg")}}" alt="bar">
         </div>
         <div class="events-area">

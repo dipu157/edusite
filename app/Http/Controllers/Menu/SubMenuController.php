@@ -70,7 +70,6 @@ class SubMenuController extends Controller
             'menu_id' => $request->menu_id,
             'name' => $request->name,
             'slug' => $request->slug,
-            'link' => $request->link,
             'user_id' => $this->user_id,
         ];
 
@@ -96,7 +95,6 @@ class SubMenuController extends Controller
             'menu_id' => $request->menu_id,
             'name' => $request->name,
             'slug' => $request->slug,
-            'link' => $request->link,
             'user_id' => $this->user_id,
         ];
 

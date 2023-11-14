@@ -25,7 +25,7 @@
                 <div class="col-lg-3">
                     <div class="header-logo">
                        <a href="index.html">
-                        <img height="50px" width="300px" src="{{asset("/frontend/assets/images/logo1.jpg")}}" alt="LOGO">
+                        <img height="50px" width="300px" src="{{asset('storage/images/'.$institute->logo)}}" alt="LOGO">
                        </a>
                     </div>
                 </div>
@@ -52,7 +52,7 @@
                                 </li>
                                 @endforeach
                                 <li class="nav-item">
-                                    <a href="#">GALLERY <span>/</span></a>
+                                    <a href="#">Gallery </a>
                                     <div class="gallery-dropdown">
                                         <ul>
                                             <li><a href="#">Demo 1</a></li>
@@ -61,11 +61,11 @@
                                 </li>
                             </ul>
                             <ul class="nav-links-wrapper d-flex ">
-                                <li class="nav-links"><i class="fa-solid fa-magnifying-glass"></i></li>
-                                <li class="nav-links"><i class="fa-brands fa-facebook-f"></i></li>
+                                {{-- <li class="nav-links"><i class="fa-solid fa-magnifying-glass"></i></li> --}}
+                                {{-- <li class="nav-links"><i class="fa-brands fa-facebook-f"></i></li>
                                 <li class="nav-links"><i class="fa-brands fa-twitter"></i></li>
-                                <li class="nav-links"><i class="fa-brands fa-linkedin-in"></i></li>
-                                <li class="nav-links"><i class="fa-brands fa-instagram"></i></li>
+                                <li class="nav-links"><i class="fa-brands fa-linkedin-in"></i></li> --}}
+                                {{-- <li class="nav-links"><i class="fa-brands fa-instagram"></i></li> --}}
                             </ul>
                             <button class="admission">ADMISSION</button>
                         </div>

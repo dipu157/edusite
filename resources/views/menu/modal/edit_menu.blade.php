@@ -21,12 +21,7 @@
                             <div class="form-group">
                                 <label>Slug</label>
                                 <input type="text" class="form-control" id="slug" name="slug" placeholder="Enter Menu Slug">
-                              </div>
-
-                            <div class="form-group">
-                                <label>Link</label>
-                                <input type="text" class="form-control" id="link" name="link" placeholder="Enter Link">
-                              </div>
+                            </div>
                         </div>
 
                       </div>

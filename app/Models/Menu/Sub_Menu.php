@@ -18,7 +18,6 @@ class Sub_Menu extends Model
         'name',
         'image',
         'slug',
-        'link',
         'status',
         'user_id',
     ];

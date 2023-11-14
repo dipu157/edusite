@@ -8,6 +8,7 @@ use App\Models\InstituteInfo\InstituteInfo;
 use App\Models\Member\Teachers;
 use App\Models\Menu\Menu;
 use App\Models\Menu\Sub_Menu;
+use App\Models\Notice\ImportantNotice;
 use App\Models\Notice\Notice;
 use Illuminate\Http\Request;
 
@@ -21,7 +22,10 @@ class FrontHomeController extends Controller
         $notice = Notice::query()->where('status', 1)->get();
         $sliders = Slider::query()->where('status', 1)->get();
         $teachers = Teachers::query()->where('status',1)->get();
+        $inotice = ImportantNotice::query()->where('status',1)->first();
 
-        return view('Frontend.landpage', compact('institute','menus','sliders','submenu','notice','teachers'));
+        //dd($inotice);
+
+        return view('Frontend.landpage', compact('institute','menus','inotice','sliders','submenu','notice','teachers'));
     }
 }
