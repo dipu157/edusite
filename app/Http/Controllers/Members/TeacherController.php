@@ -46,14 +46,14 @@ class TeacherController extends Controller
             <tbody>';
             foreach ($bMember as $bm) {
                 // Generate the image URL
-                $defaultImage = asset('storage/images/1694713766.jpg');
+                $defaultImage = asset('storage/images/1694713766.png');
                 $imageUrl = asset('storage/images/teacher/'.$bm->photo);
                 $imageSrc =  $bm->photo ? $imageUrl : $defaultImage;
 
                 $output .= '<tr>
                 <td>'.$bm->id.'</td>
                 <td><img src='.$imageSrc.' width="50" class="img-thumbnail"></td>
-                <td>'. $bm->full_name.'</td>
+                <td>'. $bm->name.'</td>
                 <td>'. $bm->class_department.'</td>
                 <td>'.$bm->position.'</td>
                 <td>'.$bm->joining_date.'</td>
@@ -79,8 +79,7 @@ class TeacherController extends Controller
         $file->storeAs('public/images/teacher', $filename);
 
         $bData = [
-            'institute_id' => 1,
-            'full_name' => $request->full_name,
+            'name' => $request->full_name,
             'email' => $request->email,
             'position' => $request->position,
             'class_department' => $request->class_department,
@@ -89,7 +88,6 @@ class TeacherController extends Controller
             'joining_date' => $request->joining_date,
             'blood_group' => $request->blood_group,
             'gender' => $request->gender,
-            'national_id' => $request->national_id,
             'photo' => $filename,
             'user_id' => $this->user_id,
         ];
@@ -125,7 +123,7 @@ class TeacherController extends Controller
         }
 
         $bData = [
-            'full_name' => $request->full_name,
+            'name' => $request->full_name,
             'email' => $request->email,
             'position' => $request->position,
             'class_department' => $request->class_department,
@@ -134,7 +132,6 @@ class TeacherController extends Controller
             'joining_date' => $request->joining_date,
             'blood_group' => $request->blood_group,
             'gender' => $request->gender,
-            'national_id' => $request->national_id,
             'photo' => $fileName,
             'user_id' => $this->user_id,
         ];

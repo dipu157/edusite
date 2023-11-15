@@ -11,6 +11,7 @@ use App\Http\Controllers\Institute\InstituteController;
 use App\Http\Controllers\Members\BoardMemberController;
 use App\Http\Controllers\Members\TeacherController;
 use App\Http\Controllers\Menu\MenuPageController;
+use App\Http\Controllers\Notice\EventsController;
 use App\Http\Controllers\Notice\NewsController;
 use App\Http\Controllers\Notice\NoticeController;
 use Illuminate\Support\Facades\Route;
@@ -120,6 +121,18 @@ Route::group(['namespace' => 'Menu', 'middleware' => ['auth']], function () {
 
 });
 
+Route::group(['namespace' => 'Slider', 'middleware' => ['auth']], function () {
+
+    //  Slider Manage Route
+    Route::get('/sliderindex',[SliderController::class, 'index'])->name('manageSlider');
+    Route::get('/sliderdata', [SliderController::class, 'getAllSlider'])->name('sliderdata');
+    Route::post('/saveSlider', [SliderController::class, 'create'])->name('save');
+    Route::get('/editSlider', [SliderController::class, 'edit'])->name('edit');
+    Route::post('/sliderUpdate', [SliderController::class, 'update'])->name('update');
+    Route::delete('/sliderDelete', [SliderController::class, 'delete'])->name('delete');
+
+});
+
 Route::group(['namespace' => 'Notice', 'middleware' => ['auth']], function () {
 
     //  Notice Manage Route
@@ -148,16 +161,6 @@ Route::group(['namespace' => 'Notice', 'middleware' => ['auth']], function () {
 
 });
 
-Route::group(['namespace' => 'Slider', 'middleware' => ['auth']], function () {
 
-    //  Slider Manage Route
-    Route::get('/sliderindex',[SliderController::class, 'index'])->name('manageSlider');
-    Route::get('/sliderdata', [SliderController::class, 'getAllSlider'])->name('sliderdata');
-    Route::post('/saveSlider', [SliderController::class, 'create'])->name('save');
-    Route::get('/editSlider', [SliderController::class, 'edit'])->name('edit');
-    Route::post('/sliderUpdate', [SliderController::class, 'update'])->name('update');
-    Route::delete('/sliderDelete', [SliderController::class, 'delete'])->name('delete');
-
-});
 
 require __DIR__.'/auth.php';

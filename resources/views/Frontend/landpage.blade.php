@@ -109,46 +109,18 @@
                 <div class="col-lg-5 col-12">
                     <div class="eventsItem-wrapper">
                        <div class="row">
-                        <div class="col-lg-6 col-12 col-sm-6">
-                            <div class="events-item text-center ">
-                                <img class="w-100 img-fluid " src="{{asset("/frontend/assets/images/event1.svg")}}" alt="event1">
-                                <div class="event-itemText">
-                                    <h4>asf</h4>
-                                    <h5><i class="fa-solid fa-calendar-days"></i> asdfa</h5>
+                        @foreach ($news as $new)
+                            <div class="col-lg-6 col-12 col-sm-6">
+                                <div class="events-item text-center ">
+                                    <img class="w-100 img-fluid " src="{{asset('storage/images/news_events/' .$new->attachment)}}" alt="event1">
+                                    <div class="event-itemText">
+                                        <h4>{{ $new->headline }}</h4>
+                                        <h5><i class="fa-solid fa-calendar-days"></i> {{ $new->headline }}</h5>
+                                    </div>
+                                    <button>View Details</button>
                                 </div>
-                                <button>View Details</button>
                             </div>
-                        </div>
-                        <div class="col-lg-6 col-12 col-sm-6">
-                            <div class="events-item text-center ">
-                                <img class="w-100 img-fluid " src="{{asset("/frontend/assets/images/event2.svg")}}" alt="event1">
-                                <div class="event-itemText">
-                                    <h4>asf</h4>
-                                    <h5><i class="fa-solid fa-calendar-days"></i> asdfa</h5>
-                                </div>
-                                <button>View Details</button>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-12 col-sm-6">
-                            <div class="events-item text-center ">
-                                <img class="w-100 img-fluid " src="{{asset("/frontend/assets/images/event3.svg")}}" alt="event1">
-                                <div class="event-itemText">
-                                    <h4>asf</h4>
-                                    <h5><i class="fa-solid fa-calendar-days"></i> asdfa</h5>
-                                </div>
-                                <button>View Details</button>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-12 col-sm-6">
-                            <div class="events-item text-center ">
-                                <img class="w-100 img-fluid " src="{{asset("/frontend/assets/images/event4.svg")}}" alt="event1">
-                                <div class="event-itemText">
-                                    <h4>asf</h4>
-                                    <h5><i class="fa-solid fa-calendar-days"></i> asdfa</h5>
-                                </div>
-                                <button>View Details</button>
-                            </div>
-                        </div>
+                        @endforeach
                        </div>
                     </div>
                 </div>
@@ -164,7 +136,7 @@
 <section id="administration">
     <div class="container">
         <div class="title text-center ">
-            <h2>ADMINISTRATION</h2>
+            <h2>OUR TEACHERS</h2>
             <img src="{{asset("/frontend/assets/images/bar.svg")}}" alt="bar">
         </div>
         <div class="administration-wrapper">
@@ -172,7 +144,7 @@
                 <div class="admins-item">
                     <a href="#">
                         <div class="admins-img">
-                            {{-- <img src="{{asset('storage/images/teacher/' .$teach->photo)}}" alt="teacher"> --}}
+                            <img src="{{asset('storage/images/teacher/' .$teach->photo)}}" alt="teacher">
                         </div>
                         <h3>{{ $teach->position }}</h3>
                         <h4>{{ $teach->full_name }}</h4>

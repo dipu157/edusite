@@ -64,11 +64,16 @@ class NewsController extends Controller
 
     public function create(Request $request)
     {
+
+        $file = $request->file('photo');
+        $filename = time().'.'.$file->getClientOriginalExtension();
+        $file->storeAs('public/images/news_events', $filename);
+
         $bData = [
-            'title' => $request->title,
             'headline' => $request->headline,
             'short_description' => $request->short_description,
             'description' => $request->description,
+            'attachment' => $filename,
             'user_id' => $this->user_id,
         ];
 

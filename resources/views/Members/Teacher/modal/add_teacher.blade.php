@@ -72,11 +72,6 @@
                                 </select>
                               </div>
 
-                            <div class="form-group">
-                                <label>National ID</label>
-                                <input type="text" class="form-control" name="national_id" placeholder="Enter National ID">
-                            </div>
-
                         </div>
 
                          <div class="col-md-12">

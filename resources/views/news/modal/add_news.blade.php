@@ -38,6 +38,21 @@
                                     </div>
                                 </div>
                             </div>
+
+                            <div class="form-group row">
+                                <label for="photo" class="col-sm-4 col-form-label text-md-right">Photo</label>
+                                <div class="col-sm-6">
+                                    <div class="input-group mb-3">
+                                        <input type="file" class="form-control" id="photo" name="photo" onchange="loadFile(event)">
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-2">
+                                    <span id="photospan">
+                                      <img id="output" height="120px" width="100px" />
+                                    </span>
+                                </div>
+                            </div>
                         </div>
 
                       </div>
@@ -52,3 +67,13 @@
 </div>
 
 
+<script>
+    var loadFile = function(event) {
+        var reader = new FileReader();
+        reader.onload = function(){
+        var output = document.getElementById('output');
+        output.src = reader.result;
+        };
+        reader.readAsDataURL(event.target.files[0]);
+    };
+</script>
