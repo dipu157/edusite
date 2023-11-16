@@ -69,9 +69,15 @@ class MenuPageController extends Controller
 
     public function create(Request $request)
     {
+
+        $file = $request->file('photo');
+        $filename = time().'.'.$file->getClientOriginalExtension();
+        $file->storeAs('public/images/news_events', $filename);
+
         $bData = [
             'menu_id' => $request->menu_id,
             'title' => $request->title,
+            'image' => $filename,
             'description' => $request->description,
             'user_id' => $this->user_id,
         ];

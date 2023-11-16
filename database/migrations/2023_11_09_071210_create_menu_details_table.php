@@ -16,6 +16,7 @@ return new class extends Migration
             $table->integer('menu_id')->unsigned();
             $table->foreign('menu_id')->references('id')->on('menus')->onDelete('RESTRICT');
             $table->string('title',50)->nullable();
+            $table->string('image',150)->nullable();
             $table->string('description',150)->nullable();
             $table->boolean('status')->default(1);
             $table->integer('user_id')->unsigned();

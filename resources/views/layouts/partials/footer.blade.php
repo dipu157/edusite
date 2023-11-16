@@ -1,5 +1,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
 	<!-- Bootstrap JS -->
 	<script src="{{asset('/')}}js/bootstrap.bundle.min.js"></script>
 	<!--plugins-->
@@ -20,6 +21,7 @@
 
     <script src="{{asset('/')}}plugins/bootstrap-material-datetimepicker/js/moment.min.js"></script>
     <script src="{{asset('/')}}plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.min.js"></script>
+    
 
 
 

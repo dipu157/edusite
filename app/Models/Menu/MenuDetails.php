@@ -16,6 +16,7 @@ class MenuDetails extends Model
     protected $fillable = [
         'menu_id',
         'title',
+        'image',
         'description',
         'status',
         'user_id',
