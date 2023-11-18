@@ -3,9 +3,20 @@
 
 <!-- Menu Page area start -->
 
-<section id="menupage">
-    <div class="menu-page">
-        <h1>This is {{$menupage->menu->name}} page</h1>
+<section id="menupage" class="card">
+    <div class="card-header">
+        <p class="menupage-title">{{ $menupage->title }}</p>
+
+    </div>
+
+    <div class="row mt-4 mb-6">
+        <div class="col-md-6 col-lg-6 col-xl-6">
+            <img src="{{asset('storage/images/news_events/' .$menupage->image)}}" alt="Rectangle" class="w-100 img-fluid menupage-img">
+        </div>
+        <div class="col-md-6">
+            <p class="menupage-description">{{ $menupage->description }}</p>
+        </div>
+
     </div>
 </section>
 
