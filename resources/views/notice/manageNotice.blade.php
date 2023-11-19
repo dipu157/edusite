@@ -135,6 +135,7 @@ $(document).ready(function() {
 			$("#title").val(res.title);
 			$("#notice_date").val(res.notice_date);
 			$("#description").val(res.description);
+			$("#attach").val(res.attachment);
 		}
 		});
 		});

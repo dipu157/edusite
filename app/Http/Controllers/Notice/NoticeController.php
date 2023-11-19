@@ -94,12 +94,26 @@ class NoticeController extends Controller
     // handle update an InstituteInfo ajax request
     public function update(Request $request) {
 
+        
+        $fileName = '';
         $member = Notice::find($request->id);
+
+        if ($request->hasFile('attachment')) {
+            $file = $request->file('attachment');
+            $fileName = time() . '.' . $file->getClientOriginalExtension();
+            $file->storeAs('public/notice', $fileName);
+            if ($member->attachment) {
+                Storage::delete('public/notice/' . $member->attachment);
+            }
+        } else {
+            $fileName = $request->attachment;
+        }
 
         $bData = [
             'title' => $request->title,
             'description' => $request->description,
             'notice_date' => $request->notice_date,
+            'attachment' => $fileName,
             'user_id' => $this->user_id,
         ];
 
@@ -111,7 +125,11 @@ class NoticeController extends Controller
 
     public function delete(Request $request) {
         $id = $request->id;
-        Notice::destroy($id);
+        $member = Notice::find($id);
+        if (Storage::delete('public/notice/' . $member->attachment)) {
+            Notice::destroy($id);
+        }
+        
     }
 
     

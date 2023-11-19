@@ -7,7 +7,7 @@
     <div class="banner-slider">
         @foreach($sliders as $slid)
         <div class="banner-item">
-            <img height="605 px" width="1920 px" src="{{asset('storage/images/Slider/' .$slid->image)}}" alt="Rectangle" class="w-100 img-fluid ">
+            <img src="{{asset('storage/images/Slider/' .$slid->image)}}" alt="Rectangle"  class="w-100 img-fluid">
             <div class="banner-text">
                 <h2>{{ $slid->title }}</h2>
                 <h1>{{ $slid->description }}</h1>
