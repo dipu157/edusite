@@ -47,74 +47,74 @@ $(document).ready(function() {
     }
 
     // Add Memeber Code
-	$("#noticeForm").submit(function(e){
-        e.preventDefault();
-        const fd = new FormData(this);
-        $("#btnsave").text('Adding...');
-        $.ajax({
-            url: '{{ route('saveNotice') }}',
-            method: 'post',
-            data: fd,
-            cache: false,
-            processData: false,
-            contentType: false,
-            success: function(res){
-                console.log(res);
-                if(res.status == 200){
-                    toastr.success('Data Save Successfully');
-                    fetchAllNotice();
-                }
-                $("#btnsave").text('SAVE');
-                $("#noticeForm")[0].reset();
-                $("#addNoticeModal").modal('hide');
-            },
-            error: function (request, status, error) {
-                toastr.error(request.responseText);
-                fetchAllNotice();
-                $("#btnsave").text('SAVE');
-                $("#noticeForm")[0].reset();
-                $("#addNoticeModal").modal('hide');
-            }
+	// $("#noticeForm").submit(function(e){
+    //     e.preventDefault();
+    //     const fd = new FormData(this);
+    //     $("#btnsave").text('Adding...');
+    //     $.ajax({
+    //         url: '{{ route('saveNotice') }}',
+    //         method: 'post',
+    //         data: fd,
+    //         cache: false,
+    //         processData: false,
+    //         contentType: false,
+    //         success: function(res){
+    //             console.log(res);
+    //             if(res.status == 200){
+    //                 toastr.success('Data Save Successfully');
+    //                 fetchAllNotice();
+    //             }
+    //             $("#btnsave").text('SAVE');
+    //             $("#noticeForm")[0].reset();
+    //             $("#addNoticeModal").modal('hide');
+    //         },
+    //         error: function (request, status, error) {
+    //             toastr.error(request.responseText);
+    //             fetchAllNotice();
+    //             $("#btnsave").text('SAVE');
+    //             $("#noticeForm")[0].reset();
+    //             $("#addNoticeModal").modal('hide');
+    //         }
 
-        });
-	});
+    //     });
+	// });
 
     // delete employee ajax request
-    $(document).on('click', '.deleteIcon', function(e) {
-		e.preventDefault();
-        console.log("Delete Button Clicked");
-		let id = $(this).attr('id');
-		let csrf = '{{ csrf_token() }}';
-		Swal.fire({
-			title: 'Are you sure?',
-			text: "You won't be able to revert this!",
-			icon: 'warning',
-			showCancelButton: true,
-			confirmButtonColor: '#3085d6',
-			cancelButtonColor: '#d33',
-			confirmButtonText: 'Yes, delete it!'
-		}).then((result) => {
-		if (result.isConfirmed) {
-		$.ajax({
-			url: '{{ route('deleteNotice') }}',
-			method: 'delete',
-			data: {
-			id: id,
-			_token: csrf
-		},
-		success: function(response) {
-			console.log(response);
-			Swal.fire(
-			'Deleted!',
-			'Your file has been deleted.',
-			'success'
-			)
-			fetchAllNotice();
-		}
-		});
-		}
-		})
-	});
+    // $(document).on('click', '.deleteIcon', function(e) {
+	// 	e.preventDefault();
+    //     console.log("Delete Button Clicked");
+	// 	let id = $(this).attr('id');
+	// 	let csrf = '{{ csrf_token() }}';
+	// 	Swal.fire({
+	// 		title: 'Are you sure?',
+	// 		text: "You won't be able to revert this!",
+	// 		icon: 'warning',
+	// 		showCancelButton: true,
+	// 		confirmButtonColor: '#3085d6',
+	// 		cancelButtonColor: '#d33',
+	// 		confirmButtonText: 'Yes, delete it!'
+	// 	}).then((result) => {
+	// 	if (result.isConfirmed) {
+	// 	$.ajax({
+	// 		url: '{{ route('deleteNotice') }}',
+	// 		method: 'delete',
+	// 		data: {
+	// 		id: id,
+	// 		_token: csrf
+	// 	},
+	// 	success: function(response) {
+	// 		console.log(response);
+	// 		Swal.fire(
+	// 		'Deleted!',
+	// 		'Your file has been deleted.',
+	// 		'success'
+	// 		)
+	// 		fetchAllNotice();
+	// 	}
+	// 	});
+	// 	}
+	// 	})
+	// });
 
     //Edit Icon click for Employee Edit
 		$(document).on('click', '.editIcon', function(e){

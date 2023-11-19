@@ -8,8 +8,8 @@
         <!--breadcrumb-->
         <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
             <div class="breadcrumb-title pe-3">Important Notice</div>
-            <div class="ms-auto"><button class="btn btn-primary radius-30 mt-2 mt-lg-0" data-bs-toggle="modal" data-bs-target="#addINoticeModal">
-                <i class="bx bxs-plus-square"></i>Add Important Notice</button></div>
+            {{-- <div class="ms-auto"><button class="btn btn-primary radius-30 mt-2 mt-lg-0" data-bs-toggle="modal" data-bs-target="#addINoticeModal">
+                <i class="bx bxs-plus-square"></i>Add Important Notice</button></div> --}}
         </div>
         <!--end breadcrumb-->
 
@@ -139,7 +139,7 @@ $(document).ready(function() {
 		});
 
         // update employee ajax request
-	$("#noticeEditForm").submit(function(e) {
+	$("#inoticeEditForm").submit(function(e) {
 	e.preventDefault();
 	const fd = new FormData(this);
 	$("#btnupdate").text('Updating...');

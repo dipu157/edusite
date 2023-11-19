@@ -167,7 +167,6 @@ class NoticeController extends Controller
                 <td>
                   <a class="btn btn-sm btn-edit editIcon" data-bs-toggle="modal" data-bs-target="#editINoticeModal"
                   id="' . $bm->id . '"><i class="bx bxs-edit"></i></a>
-                  <a class="btn btn-sm ms-3 btn-danger deleteIcon" id="' . $bm->id . '"><i class="bx bxs-trash"></i></a>
                 </td>
               </tr>';
             }
@@ -178,19 +177,19 @@ class NoticeController extends Controller
         }
     }
 
-    public function createInotice(Request $request)
-    {
-        $bData = [
-            'title' => $request->title,
-            'description' => $request->description,
-            'user_id' => $this->user_id,
-        ];
+    // public function createInotice(Request $request)
+    // {
+    //     $bData = [
+    //         'title' => $request->title,
+    //         'description' => $request->description,
+    //         'user_id' => $this->user_id,
+    //     ];
 
-        //dd($bData);
+    //     //dd($bData);
 
-        ImportantNotice::create($bData);
-        return response()->json(['status' => 200]);
-    }
+    //     ImportantNotice::create($bData);
+    //     return response()->json(['status' => 200]);
+    // }
 
     public function editInotice(Request $request){
 
@@ -216,8 +215,8 @@ class NoticeController extends Controller
         ]);
     }
 
-    public function deleteInotice(Request $request) {
-        $id = $request->id;
-        ImportantNotice::destroy($id);
-    }
+    // public function deleteInotice(Request $request) {
+    //     $id = $request->id;
+    //     ImportantNotice::destroy($id);
+    // }
 }
