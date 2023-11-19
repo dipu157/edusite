@@ -96,7 +96,7 @@ $(document).on('click', '.deleteIcon', function(e) {
 		}).then((result) => {
 		if (result.isConfirmed) {
 		$.ajax({
-			url: '{{ route('delete') }}',
+			url: '{{ route('deleteMenu') }}',
 			method: 'delete',
 			data: {
 			id: id,

@@ -24,7 +24,7 @@
             <div class="row head-row">
                 <div class="col-lg-3">
                     <div class="header-logo">
-                       <a href="index.html">
+                       <a href="{{ route('frontHomeIndex')}}">
                         <img height="50px" width="300px" src="{{asset('storage/images/'.$institute->logo)}}" alt="LOGO">
                        </a>
                     </div>

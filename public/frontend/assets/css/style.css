@@ -737,6 +737,49 @@ h1,h2,h3,h4,h5,h6,p{
 
 /* administration area end */
 
+#history{
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+.history-wrapper{
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    text-align: justify;
+}
+
+.history-item{
+    margin: 0 12px;
+    text-align: center;
+    box-shadow: 0px 0px 10px 0px #00000033;
+    overflow: hidden;
+}
+
+.history-img{
+    overflow: hidden;
+}
+
+.history-item .history-img img{
+    transition: all linear .2s;
+    -webkit-transition: all linear .2s;
+    -moz-transition: all linear .2s;
+    -ms-transition: all linear .2s;
+    -o-transition: all linear .2s;
+}
+
+.history-item:hover .history-img img{
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+}
+
+/* History area start */
+
+/* History area end */
+
 /* counter area start */
 
 #counter{

@@ -122,7 +122,7 @@ $(document).ready(function() {
 		let id = $(this).attr('id');
         console.log(id + "Clicked");
 		$.ajax({
-		url: '{{ route('editNotice') }}',
+		url: '{{ route('editMessage') }}',
 		method: 'get',
 		data: {
 		id: id,
@@ -132,9 +132,11 @@ $(document).ready(function() {
 			console.log(res);
 
             $("#bmem_id").val(res.id);
-			$("#title").val(res.title);
-			$("#notice_date").val(res.notice_date);
-			$("#description").val(res.description);
+			$("#name").val(res.name);
+			$("#position").val(res.position);
+			$("#message").val(res.message);
+			$("#logo_img").html(`<img src="storage/message/${res.photo}" width="100" class="img-fluid img-thumbnail">`);
+			$("#bmem_photo").val(res.photo);
 		}
 		});
 		});

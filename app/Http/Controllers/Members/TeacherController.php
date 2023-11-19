@@ -123,7 +123,7 @@ class TeacherController extends Controller
         }
 
         $bData = [
-            'name' => $request->full_name,
+            'name' => $request->name,
             'email' => $request->email,
             'position' => $request->position,
             'class_department' => $request->class_department,

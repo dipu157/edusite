@@ -25,7 +25,7 @@
 
                             <div class="form-group">
                                 <label>Slug</label>
-                                <input type="text" class="form-control" name="slug" placeholder="Enter Slug">
+                                <input type="text" class="form-control" id="slug" name="slug" placeholder="Enter Slug">
                             </div>
                         </div>
 

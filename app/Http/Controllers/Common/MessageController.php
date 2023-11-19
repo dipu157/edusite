@@ -46,9 +46,14 @@ class MessageController extends Controller
             </thead>
             <tbody>';
             foreach ($message as $bm) {
+                // Generate the image URL
+                $defaultImage = asset('storage/images/1694713766.png');
+                $imageUrl = asset('storage/message/'.$bm->photo);
+                $imageSrc =  $bm->photo ? $imageUrl : $defaultImage;
+
                 $output .= '<tr>
                 <td>'.$bm->id.'</td>
-                <td>'. $bm->photo.'</td>
+                <td><img src='.$imageSrc.' width="50" class="img-thumbnail"></td>
                 <td>'.$bm->name.'</td>
                 <td>'.$bm->position.'</td>
                 <td>'.$bm->message.'</td>
@@ -96,11 +101,25 @@ class MessageController extends Controller
     // handle update an InstituteInfo ajax request
     public function update(Request $request) {
 
+        $fileName = '';
         $member = Messages::find($request->id);
+
+        if ($request->hasFile('photo')) {
+            $file = $request->file('photo');
+            $fileName = time() . '.' . $file->getClientOriginalExtension();
+            $file->storeAs('public/message', $fileName);
+            if ($member->photo) {
+                Storage::delete('public/message/' . $member->photo);
+            }
+        } else {
+            $fileName = $request->bmem_photo;
+        }
 
         $bData = [
             'name' => $request->name,
             'position' => $request->position,
+            'message' => $request->message,
+            'photo' => $fileName,
             'message' => $request->message,
             'user_id' => $this->user_id,
         ];
@@ -113,6 +132,10 @@ class MessageController extends Controller
 
     public function delete(Request $request) {
         $id = $request->id;
-        Messages::destroy($id);
+        $member = Messages::find($id);
+        if (Storage::delete('public/message/' . $member->photo)) {
+            Messages::destroy($id);
+        }
+        
     }
 }

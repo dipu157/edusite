@@ -133,8 +133,8 @@ $(document).on('click', '.deleteIcon', function(e) {
 
             $("#bmem_id").val(res.id);
             $("#menu_id").val(res.menu_id);
-			$("#sub_menu_name").val(res.sub_menu_name);
-			$("#description").val(res.description);
+			$("#name").val(res.name);
+			$("#slug").val(res.slug);
 		}
 		});
 		});

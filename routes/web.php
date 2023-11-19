@@ -61,12 +61,12 @@ Route::group(['namespace' => 'Institute', 'middleware' => ['auth']], function ()
 Route::group(['namespace' => 'Message', 'middleware' => ['auth']], function () {
 
     //  Institute Manage Route
-    Route::get('/messageIndex',[MessageController::class, 'index'])->name('manageMessage');
+    Route::get('/messageIndex',[MessageController::class, 'index'])->name('messageIndex');
     Route::get('/messageData', [MessageController::class, 'getAllMessage'])->name('messageData');
     Route::post('/saveMessage', [MessageController::class, 'create'])->name('saveMessage');
     Route::get('/editMessage', [MessageController::class, 'edit'])->name('editMessage');
     Route::post('/messageUpdate', [MessageController::class, 'update'])->name('updateMessage');
-    Route::post('/deleteMessage', [MessageController::class, 'delete'])->name('deleteMessage');
+    Route::delete('/deleteMessage', [MessageController::class, 'delete'])->name('deleteMessage');
 
 
 });
