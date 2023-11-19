@@ -24,7 +24,7 @@
 
                             <div class="form-group">
                                 <label>Description</label>
-                                <textarea class="form-control" id="editor" name="description" rows="5" cols="5" ></textarea>
+                                <textarea class="form-control" name="description" rows="5" cols="5" ></textarea>
                             </div>
                         </div>
 
