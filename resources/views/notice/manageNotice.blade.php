@@ -47,37 +47,37 @@ $(document).ready(function() {
     }
 
     // Add Memeber Code
-	// $("#noticeForm").submit(function(e){
-    //     e.preventDefault();
-    //     const fd = new FormData(this);
-    //     $("#btnsave").text('Adding...');
-    //     $.ajax({
-    //         url: '{{ route('saveNotice') }}',
-    //         method: 'post',
-    //         data: fd,
-    //         cache: false,
-    //         processData: false,
-    //         contentType: false,
-    //         success: function(res){
-    //             console.log(res);
-    //             if(res.status == 200){
-    //                 toastr.success('Data Save Successfully');
-    //                 fetchAllNotice();
-    //             }
-    //             $("#btnsave").text('SAVE');
-    //             $("#noticeForm")[0].reset();
-    //             $("#addNoticeModal").modal('hide');
-    //         },
-    //         error: function (request, status, error) {
-    //             toastr.error(request.responseText);
-    //             fetchAllNotice();
-    //             $("#btnsave").text('SAVE');
-    //             $("#noticeForm")[0].reset();
-    //             $("#addNoticeModal").modal('hide');
-    //         }
+	$("#noticeForm").submit(function(e){
+        e.preventDefault();
+        const fd = new FormData(this);
+        $("#btnsave").text('Adding...');
+        $.ajax({
+            url: '{{ route('saveNotice') }}',
+            method: 'post',
+            data: fd,
+            cache: false,
+            processData: false,
+            contentType: false,
+            success: function(res){
+                console.log(res);
+                if(res.status == 200){
+                    toastr.success('Data Save Successfully');
+                    fetchAllNotice();
+                }
+                $("#btnsave").text('SAVE');
+                $("#noticeForm")[0].reset();
+                $("#addNoticeModal").modal('hide');
+            },
+            error: function (request, status, error) {
+                toastr.error(request.responseText);
+                fetchAllNotice();
+                $("#btnsave").text('SAVE');
+                $("#noticeForm")[0].reset();
+                $("#addNoticeModal").modal('hide');
+            }
 
-    //     });
-	// });
+        });
+	});
 
     // delete employee ajax request
     // $(document).on('click', '.deleteIcon', function(e) {
