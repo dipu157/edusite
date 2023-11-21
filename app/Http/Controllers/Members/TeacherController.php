@@ -46,7 +46,7 @@ class TeacherController extends Controller
             <tbody>';
             foreach ($bMember as $bm) {
                 // Generate the image URL
-                $defaultImage = asset('storage/images/1694713766.png');
+                $defaultImage = asset('storage/images/no_img.jpg');
                 $imageUrl = asset('storage/images/teacher/'.$bm->photo);
                 $imageSrc =  $bm->photo ? $imageUrl : $defaultImage;
 

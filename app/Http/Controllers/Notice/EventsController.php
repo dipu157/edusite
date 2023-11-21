@@ -47,7 +47,7 @@ class EventsController extends Controller
                 // Generate the image URL
                 $defaultImage = asset('storage/images/no_img.jpg');
                 $imageUrl = asset('storage/images/events/'.$bm->image);
-                $imageSrc =  $bm->photo ? $imageUrl : $defaultImage;
+                $imageSrc =  $bm->image ? $imageUrl : $defaultImage;
 
                 $output .= '<tr>
                 <td>'.$bm->id.'</td>

@@ -161,7 +161,7 @@ Route::group(['namespace' => 'Notice', 'middleware' => ['auth']], function () {
 
     //  events Manage Route
     Route::get('/eventsIndex',[EventsController::class, 'index'])->name('manageEvents');
-    Route::get('/eventsData', [EventsController::class, 'getAllNews'])->name('eventsData');
+    Route::get('/eventsData', [EventsController::class, 'getAllEvent'])->name('eventsData');
     Route::post('/saveevents', [EventsController::class, 'create'])->name('saveEvents');
     Route::get('/editevents', [EventsController::class, 'edit'])->name('editEvents');
     Route::post('/updateevents', [EventsController::class, 'update'])->name('updateEvents');

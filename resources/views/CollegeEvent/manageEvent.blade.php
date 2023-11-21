@@ -14,7 +14,7 @@
         <!--end breadcrumb-->
 
         <div class="card">
-            <div class="card-body" id="show_teachers">
+            <div class="card-body" id="show_events">
             </div>
         </div>
 
@@ -37,13 +37,13 @@ $(document).ready(function() {
 
     // Get All Teacher function
     function fetchAllEvent(){
-    $.ajax({
-    url: '{{ route('eventsData') }}',
-    method: 'get',
-    success: function(res){
-        $("#show_events").html(res);
-    }
-    });
+        $.ajax({
+        url: '{{ route('eventsData') }}',
+        method: 'get',
+        success: function(res){
+            $("#show_events").html(res);
+        }
+        });
     }
 
     // Add Teacher Code
