@@ -58,7 +58,7 @@
                 <li> <a href="{{ route('boardMembers') }}"><i class="bx bx-right-arrow-alt"></i>Board Members</a></li>
                 <li> <a href="{{ route('teacherIndex') }}"><i class="bx bx-right-arrow-alt"></i>Teacher</a></li>
                 {{-- <li> <a href="#"><i class="bx bx-right-arrow-alt"></i>Staff</a></li>--}}
-                <li> <a href="{{ route('messageIndex') }}"><i class="bx bx-right-arrow-alt"></i>Message</a></li> 
+                <li> <a href="{{ route('messageIndex') }}"><i class="bx bx-right-arrow-alt"></i>Message</a></li>
             </ul>
         </li>
 
@@ -95,6 +95,7 @@
             <ul>
                 <li> <a href="{{route('manageNotice')}}"><i class="bx bx-right-arrow-alt"></i>Manage Notice</a></li>
                 <li> <a href="{{route('manageNews')}}"><i class="bx bx-right-arrow-alt"></i>Manage News</a></li>
+                <li> <a href="{{route('manageEvents')}}"><i class="bx bx-right-arrow-alt"></i>Manage Events</a></li>
                 <li> <a href="{{route('manageInotice')}}"><i class="bx bx-right-arrow-alt"></i>Important Notice</a></li>
             </ul>
         </li>

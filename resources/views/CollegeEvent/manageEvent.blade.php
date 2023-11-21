@@ -7,19 +7,19 @@
     <div class="page-content">
         <!--breadcrumb-->
         <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
-            <div class="breadcrumb-title pe-3">Notice</div>
-            <div class="ms-auto"><button class="btn btn-primary radius-30 mt-2 mt-lg-0" data-bs-toggle="modal" data-bs-target="#addNoticeModal">
-                <i class="bx bxs-plus-square"></i>Add Notice</button></div>
+            <div class="breadcrumb-title pe-3">Events</div>
+            <div class="ms-auto"><button class="btn btn-primary radius-30 mt-2 mt-lg-0" data-bs-toggle="modal" data-bs-target="#addEventModal">
+                <i class="bx bxs-plus-square"></i>Add Event</button></div>
         </div>
         <!--end breadcrumb-->
 
         <div class="card">
-            <div class="card-body" id="show_notices">
+            <div class="card-body" id="show_teachers">
             </div>
         </div>
 
-        @include('notice/modal/add_notice')
-        @include('notice/modal/edit_notice')
+        @include('CollegeEvent/modal/add_event')
+        @include('CollegeEvent/modal/edit_event')
 
     </div>
 </div>
@@ -32,27 +32,27 @@
 <script>
 
 $(document).ready(function() {
-    // Get All Member function call
-    fetchAllNotice();
+    // Get All Teacher function call
+    fetchAllEvent();
 
-    // Get All Member function
-    function fetchAllNotice(){
+    // Get All Teacher function
+    function fetchAllEvent(){
     $.ajax({
-    url: '{{ route('noticeData') }}',
+    url: '{{ route('eventsData') }}',
     method: 'get',
     success: function(res){
-        $("#show_notices").html(res);
+        $("#show_events").html(res);
     }
     });
     }
 
-    // Add Memeber Code
-	$("#noticeForm").submit(function(e){
+    // Add Teacher Code
+	$("#eventForm").submit(function(e){
         e.preventDefault();
         const fd = new FormData(this);
         $("#btnsave").text('Adding...');
         $.ajax({
-            url: '{{ route('saveNotice') }}',
+            url: '{{ route('saveEvents') }}',
             method: 'post',
             data: fd,
             cache: false,
@@ -62,25 +62,25 @@ $(document).ready(function() {
                 console.log(res);
                 if(res.status == 200){
                     toastr.success('Data Save Successfully');
-                    fetchAllNotice();
+                    fetchAllEvent();
                 }
                 $("#btnsave").text('SAVE');
-                $("#noticeForm")[0].reset();
-                $("#addNoticeModal").modal('hide');
+                $("#eventForm")[0].reset();
+                $("#addEventModal").modal('hide');
             },
             error: function (request, status, error) {
                 toastr.error(request.responseText);
-                fetchAllNotice();
+                fetchAllEvent();
                 $("#btnsave").text('SAVE');
-                $("#noticeForm")[0].reset();
-                $("#addNoticeModal").modal('hide');
+            $("#eventForm")[0].reset();
+            $("#addEventModal").modal('hide');
             }
 
         });
 	});
 
-    // delete employee ajax request
-    $(document).on('click', '.deleteIcon', function(e) {
+    // delete Teacher ajax request
+$(document).on('click', '.deleteIcon', function(e) {
 		e.preventDefault();
         console.log("Delete Button Clicked");
 		let id = $(this).attr('id');
@@ -96,7 +96,7 @@ $(document).ready(function() {
 		}).then((result) => {
 		if (result.isConfirmed) {
 		$.ajax({
-			url: '{{ route('deleteNotice') }}',
+			url: '{{ route('deleteEvents') }}',
 			method: 'delete',
 			data: {
 			id: id,
@@ -109,20 +109,20 @@ $(document).ready(function() {
 			'Your file has been deleted.',
 			'success'
 			)
-			fetchAllNotice();
+			fetchAllEvent();
 		}
 		});
 		}
 		})
 	});
 
-    //Edit Icon click for Employee Edit
+    //Edit Icon click for Teacher Edit
 		$(document).on('click', '.editIcon', function(e){
 		e.preventDefault();
 		let id = $(this).attr('id');
         console.log(id + "Clicked");
 		$.ajax({
-		url: '{{ route('editNotice') }}',
+		url: '{{ route('editEvents') }}',
 		method: 'get',
 		data: {
 		id: id,
@@ -133,20 +133,21 @@ $(document).ready(function() {
 
             $("#bmem_id").val(res.id);
 			$("#title").val(res.title);
-			$("#notice_date").val(res.notice_date);
-			$("#description").val(res.description);
-			$("#attach").val(res.attachment);
+			$("#event_date").val(res.event_date);
+			$("#details").val(res.details);
+			$("#logo_img").html(`<img src="storage/images/events/${res.image}" width="100" class="img-fluid img-thumbnail">`);
+			$("#bmem_photo").val(res.photo);
 		}
 		});
 		});
 
-        // update employee ajax request
-	$("#noticeEditForm").submit(function(e) {
+        // update Teacher ajax request
+	$("#eventEditForm").submit(function(e) {
 	e.preventDefault();
 	const fd = new FormData(this);
 	$("#btnupdate").text('Updating...');
 		$.ajax({
-			url: '{{ route('updateNotice') }}',
+			url: '{{ route('updateEvents') }}',
 			method: 'post',
 			data: fd,
 			cache: false,
@@ -156,11 +157,11 @@ $(document).ready(function() {
 		success: function(response) {
 			if (response.status == 200) {
                 toastr.success('Update Successfully');
-				fetchAllNotice();
+				fetchAllEvent();
 			}
 			$("#btnupdate").text('Update');
-			$("#noticeEditForm")[0].reset();
-			$("#editNoticeModal").modal('hide');
+			$("#eventEditForm")[0].reset();
+			$("#editEventModal").modal('hide');
 			}
 		});
 	});

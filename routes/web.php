@@ -150,7 +150,7 @@ Route::group(['namespace' => 'Notice', 'middleware' => ['auth']], function () {
     Route::get('/editInotice', [NoticeController::class, 'editInotice'])->name('editInotice');
     Route::post('/updateInotice', [NoticeController::class, 'updateInotice'])->name('updateInotice');
     Route::delete('/deleteInotice', [NoticeController::class, 'deleteInotice'])->name('deleteInotice');
-    
+
     //  News Manage Route
     Route::get('/newsIndex',[NewsController::class, 'index'])->name('manageNews');
     Route::get('/newsData', [NewsController::class, 'getAllNews'])->name('newsData');
@@ -158,6 +158,14 @@ Route::group(['namespace' => 'Notice', 'middleware' => ['auth']], function () {
     Route::get('/editnews', [NewsController::class, 'edit'])->name('editnews');
     Route::post('/updatenews', [NewsController::class, 'update'])->name('updatenews');
     Route::delete('/deletenews', [NewsController::class, 'delete'])->name('deletenews');
+
+    //  events Manage Route
+    Route::get('/eventsIndex',[EventsController::class, 'index'])->name('manageEvents');
+    Route::get('/eventsData', [EventsController::class, 'getAllNews'])->name('eventsData');
+    Route::post('/saveevents', [EventsController::class, 'create'])->name('saveEvents');
+    Route::get('/editevents', [EventsController::class, 'edit'])->name('editEvents');
+    Route::post('/updateevents', [EventsController::class, 'update'])->name('updateEvents');
+    Route::delete('/deleteevents', [EventsController::class, 'delete'])->name('deleteEvents');
 
 });
 
