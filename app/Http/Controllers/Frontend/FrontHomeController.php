@@ -22,12 +22,12 @@ class FrontHomeController extends Controller
         $institute = InstituteInfo::query()->where('id', 1)->first();
         $menus = Menu::query()->where('status', 1)->get();
         $submenu = Sub_Menu::query()->where('status', 1)->get();
-        $notice = Notice::query()->where('status', 1)->get();
-        $sliders = Slider::query()->where('status', 1)->get();
-        $teachers = Teachers::query()->where('status',1)->get();
+        $notice = Notice::query()->where('status', 1)->take(10)->get();
+        $sliders = Slider::query()->where('status', 1)->take(3)->get();
+        $teachers = Teachers::query()->where('status',1)->take(4)->get();
         $inotice = ImportantNotice::query()->where('status',1)->first();
-        $message = Messages::query()->where('status',1)->get();
-        $events = Event::query()->where('status',1)->get();
+        $message = Messages::query()->where('status',1)->take(2)->get();
+        $events = Event::query()->where('status',1)->take(4)->get();
 
         //dd($message);
 
