@@ -136,7 +136,7 @@ $(document).on('click', '.deleteIcon', function(e) {
 			$("#event_date").val(res.event_date);
 			$("#details").val(res.details);
 			$("#logo_img").html(`<img src="storage/images/events/${res.image}" width="100" class="img-fluid img-thumbnail">`);
-			$("#bmem_photo").val(res.photo);
+			$("#bmem_photo").val(res.image);
 		}
 		});
 		});

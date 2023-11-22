@@ -57,7 +57,6 @@ class EventsController extends Controller
                 <td>'.$bm->details.'</td>
                 <td>
                   <a class="btn-edit editIcon" data-bs-toggle="modal" data-bs-target="#editEventModal" id="' . $bm->id . '"><i class="bx bxs-edit"></i></a>
-
                   <a class="ms-3 btn-danger deleteIcon" id="' . $bm->id . '"><i class="bx bxs-trash"></i></a>
                 </td>
               </tr>';
@@ -103,12 +102,12 @@ class EventsController extends Controller
         $fileName = '';
         $member = Event::find($request->id);
 
-        if ($request->hasFile('photo')) {
-            $file = $request->file('photo');
+        if ($request->hasFile('image')) {
+            $file = $request->file('image');
             $fileName = time() . '.' . $file->getClientOriginalExtension();
             $file->storeAs('public/images/events', $fileName);
-            if ($member->photo) {
-                Storage::delete('public/images/events/' . $member->photo);
+            if ($member->image) {
+                Storage::delete('public/images/events/' . $member->image);
             }
         } else {
             $fileName = $request->bmem_photo;
@@ -131,7 +130,7 @@ class EventsController extends Controller
     public function delete(Request $request) {
         $id = $request->id;
         $member = Event::find($id);
-        if (Storage::delete('public/images/events/' . $member->photo)) {
+        if (Storage::delete('public/images/events/' . $member->image)) {
             Event::destroy($id);
         }
     }
