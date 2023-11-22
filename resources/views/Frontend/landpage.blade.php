@@ -36,32 +36,7 @@
         </div>
         <div class="history-wrapper card-body">
             <p class="card-text">
-                To set up an English medium school in DOHS area was first envisaged and planned by 
-                Mr. S M Al Mamun, the then DML & C and colonel ATMN Chowdhury (retd), the then Station 
-                Commander, Dhaka and founder Chairman of BISC. Foundation Stone of the school building 
-                was laid by Mr. S M Al Mamun on 2nd April 1994. It was decided to start the school with 
-                five classes from Play Group to STD I. It was also proposed that it would be developed 
-                to have classes leading up to the A level standard eventually with a profound motto to 
-                provide high quality education services in English. The School was given the cherished 
-                start on the 14th March 1995 under the dynamic leadership of founder Principal in Charge 
-                Mr. A K M Sufiur Rahman with only 27 students. BISC is situated on 1.60 acre of land in 
-                DOHS Mohakhali. Initially it was planned to establish a standard primary school here but 
-                ubsequently original plan was changed as English medium school. BISC is established with 
-                a prime objective to serve the Bangladeshi and foreign communities living in cantonment 
-                area and its periphery. It is now following both National and International curricula 
-                under Pearson Edexcel, UK and accordingly preparing the students for Secondary School 
-                Certificate (SSC) and O level examination. Presently 3020 students have been studying in 
-                this institution. ‘A’ level and Higher Secondary Certificate Examination (HSC) have been 
-                started from the calendar year 2010 and 2011. This institution was initially managed by 
-                Cantonment Board, Dhaka Cantonment and subsequently by Station Headquarters, Dhaka 
-                Cantonment. Finally, it is now Army Headquarters who has been managing this institution 
-                since October 2005. In the meeting of the Cantonment board held on 4th December 1994 it 
-                was decided that Chief patron of BISC would be Chief of Army Staff, Bangladesh Army. In 
-                this connection it may be mentioned that the Chief of Army Staff was kind enough to accept 
-                the proposal and become Chief Patron with effect from 4th February 1998. The first meeting
-                 of the Governing Body was held on 29th April 1995 and in that meeting Mr. S M Al Mamun 
-                 was adorned as the Life Member of this institution for his outstanding contribution. 
-                 This institution is absolutely a non profitable organization.
+                {{ $institute->history }}
             </p>
         </div>
     </div>
@@ -152,13 +127,13 @@
                 <div class="col-lg-5 col-12">
                     <div class="eventsItem-wrapper">
                        <div class="row">
-                        @foreach ($news as $new)
+                        @foreach ($events as $new)
                             <div class="col-lg-6 col-12 col-sm-6">
                                 <div class="events-item text-center ">
-                                    <img class="w-100 img-fluid " src="{{asset('storage/images/news_events/' .$new->attachment)}}" alt="event1">
+                                    <img class="w-100 img-fluid " src="{{asset('storage/images/events/' .$new->image)}}" alt="event1">
                                     <div class="event-itemText">
-                                        <h4>{{ $new->headline }}</h4>
-                                        <h5><i class="fa-solid fa-calendar-days"></i> {{ $new->headline }}</h5>
+                                        <h4>{{ $new->title }}</h4>
+                                        <h5><i class="fa-solid fa-calendar-days"></i> {{ $new->event_date }}</h5>
                                     </div>
                                     <button>View Details</button>
                                 </div>
@@ -229,7 +204,7 @@
                             <img src="{{asset('storage/images/teacher/' .$teach->photo)}}" alt="teacher">
                         </div>
                         <h3>{{ $teach->position }}</h3>
-                        <h4>{{ $teach->full_name }}</h4>
+                        <h4>{{ $teach->name }}</h4>
                     </a>
                 </div>
             @endforeach

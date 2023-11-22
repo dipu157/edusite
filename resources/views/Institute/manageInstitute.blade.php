@@ -109,6 +109,7 @@ $(document).ready(function() {
 			$("#country").val(res.country);
 			$("#phone").val(res.phone);
 			$("#website").val(res.website);
+            $("#history").val(res.history);
 			$("#logo_img").html(`<img src="storage/images/${res.logo}" width="100" class="img-fluid img-thumbnail">`);
 			$("#ins_logo").val(res.logo);
 		}

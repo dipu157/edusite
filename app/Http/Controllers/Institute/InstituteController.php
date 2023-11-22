@@ -53,8 +53,6 @@ class InstituteController extends Controller
                 <td>'.$i_info->website.'</td>
                 <td>
                   <a class="btn-edit editIcon" data-bs-toggle="modal" data-bs-target="#editInstituteModal" id="' . $i_info->id . '"><i class="bx bxs-edit"></i></a>
-
-                  <a class="ms-3 btn-delete" id="' . $i_info->id . '"><i class="bx bxs-trash"></i></a>
                 </td>
               </tr>';
             }
@@ -88,6 +86,7 @@ class InstituteController extends Controller
             'post_code' => $request->post_code,
             'address' => $request->address,
             'website' => $request->website,
+            'history' => $request->history,
             
         ];
 
@@ -119,7 +118,7 @@ class InstituteController extends Controller
                 Storage::delete('public/images/' . $ins->logo);
             }
         } else {
-            $fileName = $request->ins_logo;
+            $fileName = $request->emp_photo;
         }
 
         $insData = [
@@ -137,6 +136,7 @@ class InstituteController extends Controller
             'post_code' => $request->post_code,
             'address' => $request->address,
             'website' => $request->website,
+            'history' => $request->history,
             'logo' => $fileName
         ];
 

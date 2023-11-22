@@ -1,3 +1,4 @@
+<script src="https://cdn.ckeditor.com/4.17.2/standard/ckeditor.js"></script>
 <div class="modal fade" id="addInstituteModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -69,21 +70,28 @@
                             </div>
 
                             <div class="form-group">
-                                <label>Twitter Link</label>
-                                <input type="text" class="form-control" name="social_link3" placeholder="Enter Twitter Link">
-                              </div>
-
-                              <div class="form-group">
-                                <label>Youtube Link</label>
-                                <input type="text" class="form-control" name="social_link4" placeholder="Enter Youtube Link">
-                              </div>
-
-                              <div class="form-group">
-                                <label>Google Map Link</label>
-                                <textarea class="form-control" cols="50" rows="2" name="map_link"></textarea>
+                            <label>Twitter Link</label>
+                            <input type="text" class="form-control" name="social_link3" placeholder="Enter Twitter Link">
                             </div>
 
-                            
+                            <div class="form-group">
+                            <label>Youtube Link</label>
+                            <input type="text" class="form-control" name="social_link4" placeholder="Enter Youtube Link">
+                            </div>
+
+                            <div class="form-group">
+                            <label>Google Map Link</label>
+                            <textarea class="form-control" cols="50" rows="2" name="map_link"></textarea>
+                            </div>                            
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>History</label>
+                                    <textarea class="form-control" cols="50" rows="2" name="history" id="editor"></textarea>
+                                </div>
+                            </div>
                         </div>
 
                     <div class="row mt-2">
@@ -114,4 +122,6 @@
         };
         reader.readAsDataURL(event.target.files[0]);
     };
-    </script>
+
+    CKEDITOR.replace('editor');
+</script>

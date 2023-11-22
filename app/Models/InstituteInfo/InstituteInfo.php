@@ -24,6 +24,7 @@ class InstituteInfo extends Model
         'social_link4',
         'map_link',
         'address',
+        'history',
         'city',
         'state',
         'post_code',        

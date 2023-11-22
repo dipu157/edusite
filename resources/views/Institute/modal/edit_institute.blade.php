@@ -1,3 +1,4 @@
+<script src="https://cdn.ckeditor.com/4.17.2/standard/ckeditor.js"></script>
 <div class="modal fade" id="editInstituteModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -79,9 +80,16 @@
                             <div class="form-group">
                               <label>Google Map Link</label>
                               <textarea class="form-control" cols="50" rows="2" name="map_link" id="map_link"></textarea>
-                          </div>
+                          </div>                          
+                      </div>
 
-                          
+                      <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>History</label>
+                                <textarea class="form-control" cols="50" rows="2" name="history" id="history"></textarea>
+                            </div>
+                        </div>
                       </div>
 
                          <div class="col-md-12">
@@ -120,4 +128,5 @@
         };
         reader.readAsDataURL(event.target.files[0]);
     };
-    </script>
+
+  </script>

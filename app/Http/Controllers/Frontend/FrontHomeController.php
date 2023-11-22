@@ -9,6 +9,7 @@ use App\Models\InstituteInfo\InstituteInfo;
 use App\Models\Member\Teachers;
 use App\Models\Menu\Menu;
 use App\Models\Menu\Sub_Menu;
+use App\Models\Notice\Event;
 use App\Models\Notice\ImportantNotice;
 use App\Models\Notice\News;
 use App\Models\Notice\Notice;
@@ -26,10 +27,10 @@ class FrontHomeController extends Controller
         $teachers = Teachers::query()->where('status',1)->get();
         $inotice = ImportantNotice::query()->where('status',1)->first();
         $message = Messages::query()->where('status',1)->get();
-        $news = News::query()->where('status',1)->get();
+        $events = Event::query()->where('status',1)->get();
 
         //dd($message);
 
-        return view('Frontend.landpage', compact('institute','message','menus','news','inotice','sliders','submenu','notice','teachers'));
+        return view('Frontend.landpage', compact('institute','message','menus','events','inotice','sliders','submenu','notice','teachers'));
     }
 }
