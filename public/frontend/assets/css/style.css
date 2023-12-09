@@ -491,7 +491,7 @@ h1,h2,h3,h4,h5,h6,p{
 .noticeListItem a{
     padding: 5px 8px;
     background: #FFFFFF;
-    font-size: 11px;
+    font-size: 16px;
     font-weight: 400;
     font-family: var(--ff1);
     color: #000000;
@@ -624,24 +624,48 @@ h1,h2,h3,h4,h5,h6,p{
     margin-bottom: 10px;
     position: relative;
 }
-.event-itemText {
+
+.overlay {
+    position: relative;
+    display: inline-block;
+}
+
+.overlay img {
+    display: block;
+    width: 100%;
+    height: auto;
+    position: relative;
+    z-index: 1;
+}
+
+.overlay .event-itemText {
     position: absolute;
-    bottom: 50px;
-    left: 25px;
-    display: none;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust opacity here */
+    padding: 15px;
+    box-sizing: border-box;
+    color: #fff; /* Text color */
+    z-index: 2;
+}
+
+.overlay .event-itemText h4,
+.overlay .event-itemText h5 {
+    margin: 5px 0; /* Adjust spacing between h4 and h5 */
 }
 
 .event-itemText h4{
     font-size: 15px;
-    font-weight: 500;
+    font-weight: bold;
     font-family: var(--ff1);
-    color: #FFFFFF;
+    color: #f9f0f0;
 }
 .event-itemText h5{
     font-size: 13px;
-    font-weight: 500;
+    font-weight: bold;
     font-family: var(--ff1);
-    color: #FFFFFF;
+    color: #f3f0f0;
 }
 
 .events-item button {

@@ -130,12 +130,14 @@
                         @foreach ($events as $new)
                             <div class="col-lg-6 col-12 col-sm-6">
                                 <div class="events-item text-center ">
-                                    <img class="w-100 img-fluid " src="{{asset('storage/images/events/' .$new->image)}}" alt="event1">
-                                    <div class="event-itemText">
-                                        <h4>{{ $new->title }}</h4>
-                                        <h5><i class="fa-solid fa-calendar-days"></i> {{ $new->event_date }}</h5>
+                                    <div class="overlay">
+                                        <img class="w-100 img-fluid" src="{{ asset('storage/images/events/' . $new->image) }}" alt="event1">
+                                        <div class="event-itemText">
+                                            <h4>{{ $new->title }}</h4>
+                                            <h5><i class="fa-solid fa-calendar-days"></i> {{ $new->event_date }}</h5>
+                                        </div>
                                     </div>
-                                    <button>View Details</button>
+                                    <button class="mt-4">View Details</button>
                                 </div>
                             </div>
                         @endforeach

@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('name',50);
             $table->string('photo',150)->nullable();
             $table->string('position',50)->nullable();
-            $table->string('message',400)->nullable();
+            $table->string('message',1000)->nullable();
             $table->boolean('status')->default(1);
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('RESTRICT');
